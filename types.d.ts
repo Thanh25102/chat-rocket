@@ -19,6 +19,10 @@ declare module '*.module.styl' {
   export default classes;
 }
 
+declare module "sockjs-client/dist/sockjs" {
+  export default (await import("sockjs-client")).default
+}
+
 /* CSS FILES */
 declare module '*.css';
 declare module '*.sass';

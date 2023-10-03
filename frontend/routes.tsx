@@ -1,38 +1,26 @@
 import MainLayout from 'Frontend/views/MainLayout.js';
-import { lazy } from 'react';
-import { createBrowserRouter, IndexRouteObject, NonIndexRouteObject, useMatches } from 'react-router-dom';
+import {lazy} from 'react';
+import {createBrowserRouter, RouteObject} from 'react-router-dom';
+import LoginView from "Frontend/views/login/LoginView";
+import {AuthControl} from "Frontend/views/AuthControl";
 
 const TodoView = lazy(async () => import('Frontend/views/todo/TodoView.js'));
-export type MenuProps = Readonly<{
-  icon?: string;
-  title?: string;
-}>;
+const ChatView = lazy(async () => import('Frontend/views/chat/ChatView.js'));
 
-export type ViewMeta = Readonly<{ handle?: MenuProps }>;
-
-type Override<T, E> = Omit<T, keyof E> & E;
-
-export type IndexViewRouteObject = Override<IndexRouteObject, ViewMeta>;
-export type NonIndexViewRouteObject = Override<
-  Override<NonIndexRouteObject, ViewMeta>,
-  {
-    children?: ViewRouteObject[];
-  }
->;
-export type ViewRouteObject = IndexViewRouteObject | NonIndexViewRouteObject;
-
-type RouteMatch = ReturnType<typeof useMatches> extends (infer T)[] ? T : never;
-
-export type ViewRouteMatch = Readonly<Override<RouteMatch, ViewMeta>>;
-
-export const useViewMatches = useMatches as () => readonly ViewRouteMatch[];
-
-export const routes: readonly ViewRouteObject[] = [
-  {
-    element: <MainLayout />,
-    handle: { icon: 'null', title: 'Main' },
-    children: [{ path: '/', element: <TodoView />, handle: { icon: 'list-alt-solid', title: 'Todo' } }],
-  },
+export const routes: readonly RouteObject[] = [
+    {
+        element: (
+            <AuthControl>
+                <MainLayout/>
+            </AuthControl>
+        ),
+        handle: {icon: 'null', title: 'Main'},
+        children: [
+            {path: '/', element: <TodoView/>, handle: {icon: 'list-alt-solid', title: 'Todo'}},
+            {path: '/chat', element: <ChatView/>, handle: {icon: 'list-alt-solid', title: 'Chat'}}
+        ],
+    },
+    {path: '/login', element: <LoginView/>},
 ];
 
 const router = createBrowserRouter([...routes]);
