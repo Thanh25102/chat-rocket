@@ -93,7 +93,8 @@
     "@types/stompjs": "$@types/stompjs",
     "sockjs-client": "$sockjs-client",
     "stompjs": "$stompjs",
-    "dotenv": "$dotenv"
+    "dotenv": "$dotenv",
+    "react-image": "$react-image"
   },
   "vaadin": {
     "dependencies": {
@@ -134,6 +135,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "86f96aea0ada5c788cbf76fc4c4d5c58a70a8dc08fe3b262706ed62b17c3a539"
+    "hash": "e05e69b5596d318249eabdf75a8a95bbba15f78a2df82a9822b0d3e8c00ee5b2"
   }
 }

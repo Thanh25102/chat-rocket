@@ -18,7 +18,6 @@ import {useRouteMetadata} from "Frontend/utils/routing";
 export default function MainLayout() {
     const currentTitle = useRouteMetadata()?.title ?? 'My App';
     const user = useAppSelector(AuthSelectors.getCurrentUser());
-
     const navigate = useNavigate();
     return (
         <AppLayout primarySection="drawer">
@@ -33,16 +32,16 @@ export default function MainLayout() {
                 </header>
                 <Tabs slot="drawer" orientation="vertical">
                     <Tab>
-                        <a tabIndex={-1}>
+                        <NavLink to={"/chat-bot"} tabIndex={-1} >
                             <Icon icon="vaadin:dashboard"  />
-                            <span>Dashboard</span>
-                        </a>
+                            <span>CHAT GPT</span>
+                        </NavLink>
                     </Tab>
                     <Tab>
-                        <a tabIndex={-1}>
+                        <NavLink  to={"/chat-chit"} tabIndex={-1}>
                             <Icon icon="vaadin:cart"  />
-                            <span>Orders</span>
-                        </a>
+                            <span>CHAT CHIT</span>
+                        </NavLink>
                     </Tab>
                 </Tabs>
                 <footer className="flex flex-col gap-s">

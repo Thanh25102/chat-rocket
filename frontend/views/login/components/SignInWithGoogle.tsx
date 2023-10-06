@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {Button} from "@hilla/react-components/Button";
 import {Loading} from "Frontend/views/login/LoginView";
 
 const SignInWithGoogle = () => {

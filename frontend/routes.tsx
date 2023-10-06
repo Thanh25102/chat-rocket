@@ -5,7 +5,8 @@ import LoginView from "Frontend/views/login/LoginView";
 import {AuthControl} from "Frontend/views/AuthControl";
 
 const TodoView = lazy(async () => import('Frontend/views/todo/TodoView.js'));
-const ChatView = lazy(async () => import('Frontend/views/chat/ChatView.js'));
+const ChatView = lazy(async () => import('Frontend/views/chat/ChatChit'));
+const ChatGPT = lazy(async () => import('Frontend/views/chat/ChatGPT.js'));
 
 export const routes: readonly RouteObject[] = [
     {
@@ -17,7 +18,8 @@ export const routes: readonly RouteObject[] = [
         handle: {icon: 'null', title: 'Main'},
         children: [
             {path: '/', element: <TodoView/>, handle: {icon: 'list-alt-solid', title: 'Todo'}},
-            {path: '/chat', element: <ChatView/>, handle: {icon: 'list-alt-solid', title: 'Chat'}}
+            {path: '/chat-bot', element: <ChatView/>, handle: {icon: 'list-alt-solid', title: 'ChatGPT'}},
+            {path: '/chat-chit', element: <ChatGPT/>, handle: {icon: 'list-alt-solid', title: 'ChatChit'}}
         ],
     },
     {path: '/login', element: <LoginView/>},

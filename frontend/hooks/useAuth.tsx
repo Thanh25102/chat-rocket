@@ -7,19 +7,12 @@ import {hasAccess} from "Frontend/utils/auth";
 
 export const useAuth = () => {
     const dispatch = useAppDispatch();
+    const user = useAppSelector(AuthSelectors.getCurrentUser());
+    const matches = useMatches();
 
     useEffect(() => {
         dispatch(AuthThunks.getUser())
     }, [])
-
-    useEffect(()=>{
-        if(user && user.id){
-            dispatch(AuthThunks.startConnection(user.id))
-        }
-    })
-
-    const matches = useMatches();
-    const user = useAppSelector(AuthSelectors.getCurrentUser());
 
     return matches.every((match) =>
         hasAccess(match.handle as AccessProps, user))
