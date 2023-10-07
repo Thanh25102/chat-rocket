@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Done login">
-      <change afterPath="$PROJECT_DIR$/frontend/views/chat/ChatGPT.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/ChatGptConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ChatGptRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ChatGptResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/BotEndpoint.java" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Build gpt &amp; fix socket connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatListener.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatListener.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/listeners.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/socket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/todo/TodoView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/todo/TodoView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +160,7 @@
       <workItem from="1696334252814" duration="3000000" />
       <workItem from="1696343986771" duration="5009000" />
       <workItem from="1696597595786" duration="154000" />
-      <workItem from="1696597798328" duration="10854000" />
+      <workItem from="1696597798328" duration="15697000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -184,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696336695012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Build gpt &amp; fix socket connection">
+      <option name="closed" value="true" />
+      <created>1696609803017</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696609803017</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +187,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Complete setup" />
     <MESSAGE value="Done login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done login" />
+    <MESSAGE value="Build gpt &amp; fix socket connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build gpt &amp; fix socket connection" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

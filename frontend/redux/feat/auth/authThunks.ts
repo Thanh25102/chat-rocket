@@ -2,7 +2,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import {logout} from "@hilla/frontend"
 import {UserEndpoint} from "Frontend/generated/endpoints";
 import {Socket} from "Frontend/redux/socket";
-import {startListener} from "Frontend/redux/listeners";
+import {chatListener} from "Frontend/redux/feat/chat/chatListener";
 
 
 export const AuthThunks = {
@@ -13,8 +13,7 @@ export const AuthThunks = {
         return UserEndpoint.getAuthenticatedUser();
     }),
     startConnection: createAsyncThunk("auth/start-connection", async (userId:string) =>{
-        const socket = new Socket(userId);
-        startListener(socket);
+        const socket = new Socket(userId,chatListener);
     }),
     
 }
