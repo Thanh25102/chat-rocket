@@ -18,8 +18,8 @@ export const routes: readonly RouteObject[] = [
         handle: {icon: 'null', title: 'Main'},
         children: [
             {path: '/', element: <TodoView/>, handle: {icon: 'list-alt-solid', title: 'Todo'}},
-            {path: '/chat-bot', element: <ChatView/>, handle: {icon: 'list-alt-solid', title: 'ChatGPT'}},
-            {path: '/chat-chit', element: <ChatGPT/>, handle: {icon: 'list-alt-solid', title: 'ChatChit'}}
+            {path: '/chat-bot', element: <ChatGPT/>, handle: {icon: 'list-alt-solid', title: 'ChatGPT'}},
+            {path: '/chat-user/:id', element: <ChatView/>, handle: {icon: 'list-alt-solid', title: 'ChatChit'}}
         ],
     },
     {path: '/login', element: <LoginView/>},

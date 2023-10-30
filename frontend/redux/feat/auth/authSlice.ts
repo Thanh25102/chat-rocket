@@ -5,10 +5,12 @@ import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 export type AuthState = {
     user: User | null,
     error: boolean,
-    loading: boolean
+    loading: boolean,
+    users: User[],
 }
 const initialState: AuthState = {
     user: null,
+    users:[],
     error: false,
     loading: false,
 };
@@ -32,6 +34,9 @@ export const authSlice = createSlice({
             })
             .addCase(AuthThunks.getUser.pending, (state) => {
                 state.loading = true
+            })
+            .addCase(AuthThunks.getAllUsers.fulfilled,(state,action)=>{
+                state.users = action.payload || []
             })
         builder
             .addCase(AuthThunks.logout.pending, (state) => {

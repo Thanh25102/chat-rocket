@@ -13,8 +13,11 @@ import java.util.Optional;
 @Component
 public class SecurityUtils {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
+
+    public SecurityUtils(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     public Optional<UserDetails> getAuthenticatedUser() {
         SecurityContext context = SecurityContextHolder.getContext();

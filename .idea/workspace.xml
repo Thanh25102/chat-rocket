@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Build gpt &amp; fix socket connection">
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Turn off project loom">
+      <change afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSelectors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/listener.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/WebsocketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authSelectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatListener.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/socket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +37,9 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="Record" />
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -158,7 +176,10 @@
       <workItem from="1696343986771" duration="5009000" />
       <workItem from="1696597595786" duration="154000" />
       <workItem from="1696597798328" duration="15697000" />
-      <workItem from="1696682756154" duration="3583000" />
+      <workItem from="1696682756154" duration="6490000" />
+      <workItem from="1696762862304" duration="6538000" />
+      <workItem from="1696995883227" duration="15000" />
+      <workItem from="1698671020293" duration="5361000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -184,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696683030189</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Turn off project loom">
+      <option name="closed" value="true" />
+      <created>1696686988727</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696686988727</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +223,8 @@
     <MESSAGE value="Complete setup" />
     <MESSAGE value="Done login" />
     <MESSAGE value="Build gpt &amp; fix socket connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build gpt &amp; fix socket connection" />
+    <MESSAGE value="Turn off project loom" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turn off project loom" />
   </component>
   <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
     <option name="sizePresets">

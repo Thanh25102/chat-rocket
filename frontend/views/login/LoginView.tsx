@@ -30,8 +30,9 @@ export default function LoginView() {
     const [url, setUrl] = useState<string>('');
     const [disabled, setDisabled] = useState<boolean>(false);
     const dispatch = useAppDispatch();
+
     useEffect(() => {
-        if(user && user.id)dispatch(AuthThunks.startConnection(user.id))
+        if(user && user.id) dispatch(AuthThunks.startConnection(user.id))
     }, [user]);
 
     if (user && url) {

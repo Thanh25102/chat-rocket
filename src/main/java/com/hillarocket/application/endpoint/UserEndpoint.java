@@ -5,6 +5,7 @@ import com.hillarocket.application.domain.User;
 import com.hillarocket.application.repo.UserRepo;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.Endpoint;
+import dev.hilla.Nonnull;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,8 @@ public class UserEndpoint {
         return authenticatedUser.get();
     }
 
-    public List<User> findAll() {
+    @AnonymousAllowed
+    public  List<@Nonnull User> findAll() {
         return userRepo.findAll();
     }
 }
