@@ -1,6 +1,7 @@
 package com.hillarocket.application.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -28,17 +30,21 @@ public class GroupMember {
     @JoinColumn(name = "user_id")
     User user;
 
-    @ManyToOne
-    @MapsId("courseId")
-    @JoinColumn(name = "conversationId")
+    @ManyToOne()
+    @MapsId("conversationId")
+    @JoinColumn(name = "conversation_id")
     Conversion conversion;
+
+    public GroupMember(UUID user,UUID conversationId){
+        this.id = new GroupMemberKey(user,conversationId);
+    }
 
     @Embeddable
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public static class GroupMemberKey {
+    public static class GroupMemberKey implements Serializable {
         UUID userId;
         UUID conversationId;
     }

@@ -39,4 +39,7 @@ public class User implements  Serializable {
     @Enumerated(EnumType.STRING)
     Role role;
 
+    public User(UUID id){
+        this.id = id;
+    }
 }

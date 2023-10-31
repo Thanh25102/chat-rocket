@@ -2,24 +2,24 @@ import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {createSlice} from "@reduxjs/toolkit";
 import Message from "Frontend/generated/com/hillarocket/application/domain/Message";
 
-export type AuthState = {
+export type ChatState = {
     error: boolean,
     loading: boolean,
-    messagesSet: { conversationId: string, messages: Message[] }[],
+    conversations: { conversationId: string, messages: Message[] }[],
 }
-const initialState: AuthState = {
+const initialState: ChatState = {
     error: false,
     loading: false,
-    messagesSet: []
+    conversations: []
 };
-export const authSlice = createSlice({
-    name: "auth",
+export const chatSlice = createSlice({
+    name: "chat",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder
+        // builder
 
     },
 });
 
-export const AuthActions = authSlice.actions;
+export const ChatActions = chatSlice.actions;
