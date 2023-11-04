@@ -1,26 +1,28 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {ChatEndpoint, UserEndpoint} from "Frontend/generated/endpoints";
-import Message from "Frontend/generated/com/hillarocket/application/domain/Message";
 import {Client} from "stompjs";
+import {formMessagesSender} from "Frontend/utils/converter";
+import MessageSender from "Frontend/generated/com/hillarocket/application/dto/MessageSender";
 
 interface ChatThunkApiConfig {
     extra: {
-        chatSocket: Client | undefined;
+        io: Client | undefined;
     };
 }
 
 export const ChatThunks = {
     sendMessage: createAsyncThunk<any, any, ChatThunkApiConfig>(
         "auth/send-message",
-        async (message: Message, thunkApi) => {
-            thunkApi.extra.chatSocket?.send("/private-message", {}, JSON.stringify(message))
+        async (message: MessageSender, thunkApi) => {
+            await thunkApi.extra.io?.send("/rocket/private-message", {}, JSON.stringify(message))
+            return formMessagesSender([message]);
         },
     ),
-    getConversationByUserIds:createAsyncThunk("chat/create-conversation",({u1,u2}:{u1:string,u2:string})=>{
-       return ChatEndpoint.getSingleConversionByUserId(u1,u2);
+    getConversationByUserIds: createAsyncThunk("chat/create-conversation", ({u1, u2}: { u1: string, u2: string }) => {
+        return ChatEndpoint.getSingleConversationByUserId(u1, u2);
     }),
-    getConversation:createAsyncThunk("chat/get-conversation-by-id",(conversionId:string)=>{
-        return ChatEndpoint.getConversionById(conversionId);
+    getConversation: createAsyncThunk("chat/get-conversation-by-id", (conversationId: string) => {
+        return ChatEndpoint.getConversationById(conversationId);
     }),
     getAllConversation: createAsyncThunk("auth/get-all-conversations", async () => {
         return UserEndpoint.findAll();

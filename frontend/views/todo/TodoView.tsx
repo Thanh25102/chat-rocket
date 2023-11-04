@@ -1,5 +1,4 @@
 import {useCallback, useState} from "react";
-import {BotEndpoint} from "Frontend/generated/endpoints";
 
 export default function TodoView() {
 
@@ -7,9 +6,7 @@ export default function TodoView() {
     const [input, setInput] = useState('');
 
     const addTodo = useCallback(() => {
-        BotEndpoint.chat(input).then(response => {
-            setTodos([...todos, response || "call failed"]);
-        });
+
     }, [input]);
     return (
         <div className="flex flex-col h-full items-center justify-center p-l text-center box-border">

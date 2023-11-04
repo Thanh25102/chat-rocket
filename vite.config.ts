@@ -8,10 +8,8 @@ const customConfig: UserConfigFn = (env) => ({
   plugins: [
     react({
       include: '**/*.tsx',
-
     }),
   ],
-
 });
 
 export default overrideVaadinConfig(customConfig);

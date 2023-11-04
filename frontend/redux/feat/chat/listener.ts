@@ -1,6 +1,7 @@
-import {Message} from "stompjs";
+import {ChatActions} from "Frontend/redux/feat/chat/chatSlice";
+import MessageSender from "Frontend/generated/com/hillarocket/application/dto/MessageSender";
 
-function createFunc<T>(endpoint: string, callback: (t:T) => void,type:"PUBLIC"|"PRIVATE" = "PRIVATE") {
+function on(endpoint: string, callback: (payload: any, dispatch: any) => void, type: "PUBLIC" | "PRIVATE" = "PRIVATE") {
     return {
         endpoint,
         callback,
@@ -8,12 +9,9 @@ function createFunc<T>(endpoint: string, callback: (t:T) => void,type:"PUBLIC"|"
     }
 }
 
-
 export const listener = {
-    sendMessage: createFunc<Message>("private", (payload) => {
-        console.log("subscribe send message")
+    sendMessage: on("chat", (payload: MessageSender, dispatch) => {
+        dispatch(ChatActions.receiveMessage(payload))
     }),
-    userJoined: createFunc<Message>("public",(payload)=>{
-        console.log("user joined")
-    },"PUBLIC")
 }
+

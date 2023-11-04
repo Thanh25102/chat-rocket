@@ -1,25 +1,27 @@
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {createSlice} from "@reduxjs/toolkit";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
+import {Client} from "@stomp/stompjs";
+import {io} from "Frontend/stomp";
 
 export type AuthState = {
     user: User | null,
+    stomp?: Client,
     error: boolean,
     loading: boolean,
     users: User[],
 }
 const initialState: AuthState = {
     user: null,
-    users:[],
+    stomp: undefined,
+    users: [],
     error: false,
     loading: false,
 };
 export const authSlice = createSlice({
     name: "auth",
     initialState,
-    reducers: {
-
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(AuthThunks.getUser.fulfilled, (state, action) => {
@@ -35,7 +37,7 @@ export const authSlice = createSlice({
             .addCase(AuthThunks.getUser.pending, (state) => {
                 state.loading = true
             })
-            .addCase(AuthThunks.getAllUsers.fulfilled,(state,action)=>{
+            .addCase(AuthThunks.getAllUsers.fulfilled, (state, action) => {
                 state.users = action.payload || []
             })
         builder

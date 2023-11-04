@@ -2,18 +2,19 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {authSlice} from "Frontend/redux/feat/auth/authSlice";
 import {chatSlice} from "Frontend/redux/feat/chat/chatSlice";
 
+const rootReducer = combineReducers({
+    auth: authSlice.reducer,
+    chat: chatSlice.reducer
+});
 
 export const store = configureStore({
-    reducer: combineReducers({
-        auth: authSlice.reducer,
-        chat: chatSlice.reducer
-    }),
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
             thunk: {
                 extraArgument: {
-                    chatSocket: undefined
+                    io: undefined
                 }
             }
         }),

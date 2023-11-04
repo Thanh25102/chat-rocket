@@ -5,7 +5,6 @@ import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {LoginModal} from "Frontend/views/login/components/LoginModal";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {login} from "Frontend/auth";
-import {AuthActions} from "Frontend/redux/feat/auth/authSlice";
 
 const loginI18nDefault: LoginI18n = {
     form: {
@@ -32,7 +31,7 @@ export default function LoginView() {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        if(user && user.id) dispatch(AuthThunks.startConnection(user.id))
+        // if (user && user.id) dispatch(AuthThunks.startConnection({userId: user.id, dispatch}))
     }, [user]);
 
     if (user && url) {
@@ -53,6 +52,7 @@ export default function LoginView() {
         } else {
             dispatch(AuthThunks.getUser())
             setUrl(redirectUrl ?? defaultUrl ?? '/');
+            setUrl('/');
         }
     }
 

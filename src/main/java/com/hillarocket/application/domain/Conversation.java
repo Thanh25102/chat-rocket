@@ -5,19 +5,18 @@ import com.hillarocket.application.enumration.ConversionType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 import java.util.UUID;
 
-@Table(name = "conversions")
+@Table(name = "conversations")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Conversion {
+public class Conversation {
     @Id
     UUID id;
     String name;
@@ -25,10 +24,10 @@ public class Conversion {
     ConversionType type;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "conversion",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "conversation",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     Set<GroupMember> groupMembers;
 
-    public Conversion(UUID id){
+    public Conversation(UUID id){
         this.id = id;
     }
     public UUID getId() {

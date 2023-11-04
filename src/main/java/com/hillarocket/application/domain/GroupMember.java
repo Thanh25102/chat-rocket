@@ -1,7 +1,6 @@
 package com.hillarocket.application.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -33,7 +32,7 @@ public class GroupMember {
     @ManyToOne()
     @MapsId("conversationId")
     @JoinColumn(name = "conversation_id")
-    Conversion conversion;
+    Conversation conversation;
 
     public GroupMember(UUID user,UUID conversationId){
         this.id = new GroupMemberKey(user,conversationId);

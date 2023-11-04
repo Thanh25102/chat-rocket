@@ -17,6 +17,7 @@
     "@hilla/react-form": "2.2.0",
     "@polymer/polymer": "3.5.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "@stomp/stompjs": "^7.0.0",
     "@types/sockjs-client": "^1.5.2",
     "@types/stompjs": "^2.3.6",
     "@types/ws": "^8.5.5",
@@ -35,7 +36,7 @@
     "redux": "^4.2.1",
     "sockjs-client": "^1.6.1",
     "stompjs": "^2.3.3",
-    "ws": "^8.14.1"
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "@lit-labs/react": "^1.1.0",
@@ -43,6 +44,7 @@
     "@rollup/pluginutils": "5.0.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "@types/sockjs-client": "^1.5.3",
     "@vitejs/plugin-react": "4.0.0",
     "async": "3.2.2",
     "autoprefixer": "^10.4.16",
@@ -94,7 +96,8 @@
     "sockjs-client": "$sockjs-client",
     "stompjs": "$stompjs",
     "dotenv": "$dotenv",
-    "react-image": "$react-image"
+    "react-image": "$react-image",
+    "@stomp/stompjs": "$@stomp/stompjs"
   },
   "vaadin": {
     "dependencies": {
@@ -135,6 +138,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "e05e69b5596d318249eabdf75a8a95bbba15f78a2df82a9822b0d3e8c00ee5b2"
+    "hash": "7bca6ca9ca04c5937fcd9a5e91a6aa28e2ab4ef833d8dfc84a3bff09ed531028"
   }
 }

@@ -6,6 +6,8 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketTransportRegistration;
+import org.springframework.web.socket.server.standard.TomcatRequestUpgradeStrategy;
+import org.springframework.web.socket.server.support.DefaultHandshakeHandler;
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -20,7 +22,8 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws","/wss").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/ws")
+                .setAllowedOriginPatterns("*").withSockJS();
 
     }
 }

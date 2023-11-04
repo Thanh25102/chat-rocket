@@ -14,6 +14,8 @@ import {Icon} from "@hilla/react-components/Icon";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
+import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
+import {io} from "Frontend/redux/socket";
 
 export default function MainLayout() {
     const currentTitle = useRouteMetadata()?.title ?? 'My App';
@@ -29,6 +31,10 @@ export default function MainLayout() {
         dispatch(AuthThunks.getAllUsers());
     }, []);
 
+    const getConversationByUserId = async (userId?: string) => {
+        if (!user.id || !userId) return;
+        dispatch(ChatThunks.getConversationByUserIds({u1: user.id, u2: userId}));
+    }
 
     return (
         <AppLayout primarySection="drawer">
@@ -43,11 +49,12 @@ export default function MainLayout() {
                 </header>
                 <Tabs slot="drawer" orientation="vertical">
                     {
-                        users.map((user) =>
-                            <Tab key={user.id}>
-                                <NavLink to={"/chat-user/" + user.id} tabIndex={-1}>
+                        users.map((u) => (user.id !== u.id) &&
+                            <Tab key={u.id}>
+                                <NavLink to={"/chat-user"} tabIndex={-1}
+                                         onClick={() => getConversationByUserId(u.id)}>
                                     <Icon icon="vaadin:cart"/>
-                                    <span>{user.fullName}</span>
+                                    <span>{u.fullName}</span>
                                 </NavLink>
                             </Tab>
                         )

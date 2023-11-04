@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -30,7 +29,7 @@ public class Message {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conversation_id", referencedColumnName = "id")
-    Conversion conversion;
+    Conversation conversation;
 }
 
 
