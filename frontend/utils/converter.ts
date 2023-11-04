@@ -1,6 +1,5 @@
 import Message from "Frontend/generated/com/hillarocket/application/domain/Message";
 import {MessageListItem} from "@vaadin/message-list";
-import MessageSender from "Frontend/generated/com/hillarocket/application/dto/MessageSender";
 
 export const fromMessages = (messages: Message[]): MessageListItem[] => {
     return messages.map(msg => ({
@@ -9,10 +8,10 @@ export const fromMessages = (messages: Message[]): MessageListItem[] => {
         time: msg.time,
     }))
 }
-export const formMessagesSender = (messages: MessageSender[]): MessageListItem[] => {
-    return messages.map(msg => ({
-        text: msg.content,
-        userName: msg.sender?.fullName,
-        time: msg.time,
-    }))
+export const fromMessage = (message: Message): MessageListItem => {
+    return {
+        text: message.messageText,
+        userName: message.senderName,
+        time: message.time,
+    }
 }

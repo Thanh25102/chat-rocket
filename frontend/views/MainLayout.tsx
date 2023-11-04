@@ -15,7 +15,6 @@ import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
-import {io} from "Frontend/redux/socket";
 
 export default function MainLayout() {
     const currentTitle = useRouteMetadata()?.title ?? 'My App';

@@ -19,38 +19,40 @@ import reactor.core.publisher.Sinks;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 @BrowserCallable
 @AnonymousAllowed
 @Log4j2
 public class ChatEndpoint {
-    private final Sinks.Many<Message> chatSinks;
-    private final Flux<Message> chat;
-
     private final ConversationRepo conversationRepo;
     private final GroupMemberRepo groupMemberRepo;
     private final MessageRepo messageRepo;
     private final UserRepo userRepo;
+
+    private final Map<String, Sinks.Many<Message>> chatRooms = new ConcurrentHashMap<>();
+    private final Map<String, Flux<Message>> replayedFluxes = new ConcurrentHashMap<>();
 
     public ChatEndpoint(ConversationRepo conversationRepo, GroupMemberRepo groupMemberRepo, MessageRepo messageRepo, UserRepo userRepo) {
         this.conversationRepo = conversationRepo;
         this.groupMemberRepo = groupMemberRepo;
         this.messageRepo = messageRepo;
         this.userRepo = userRepo;
-        chatSinks = Sinks.many().multicast().directBestEffort();
-        chat = chatSinks.asFlux().replay(10).autoConnect();
     }
 
-    public @Nonnull Flux<@Nonnull Message> join() {
-        return chat;
+    public @Nonnull Flux<Message> join(String roomId) {
+        Sinks.Many<Message> sink = chatRooms.computeIfAbsent(roomId, id -> Sinks.many().multicast().directBestEffort());
+        return replayedFluxes.computeIfAbsent(roomId, id -> sink.asFlux().replay(10).autoConnect());
     }
 
-    public void send(Message message) {
-        message.setTime(ZonedDateTime.now().toLocalDateTime());
-        chatSinks.emitNext(message, ((signalType, emitResult) -> emitResult == Sinks.EmitResult.FAIL_NON_SERIALIZED));
+    public void send(String roomId, Message message) {
+        Sinks.Many<Message> sink = chatRooms.get(roomId);
+        if (sink != null) {
+            sink.emitNext(message, ((signalType, emitResult) -> emitResult == Sinks.EmitResult.FAIL_NON_SERIALIZED));
+        }
     }
 
     public List<Conversation> getAllConversation() {

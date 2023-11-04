@@ -2,7 +2,6 @@ import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {createSlice} from "@reduxjs/toolkit";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {Client} from "@stomp/stompjs";
-import {io} from "Frontend/stomp";
 
 export type AuthState = {
     user: User | null,

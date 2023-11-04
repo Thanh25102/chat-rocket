@@ -1,32 +1,40 @@
-import React, {useCallback, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {MessageList} from '@hilla/react-components/MessageList.js';
 import {MessageInput} from '@hilla/react-components/MessageInput.js';
 import type {MessageListItem} from '@vaadin/message-list';
-import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
+import {useAppSelector} from "Frontend/redux/hooks";
 import {Navigate} from "react-router-dom";
-import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
-import MessageSender from "Frontend/generated/com/hillarocket/application/dto/MessageSender";
 import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
+import {ChatEndpoint} from "Frontend/generated/endpoints";
+import {fromMessage} from "Frontend/utils/converter";
 
 
 export default function ChatChit() {
     const [items, setItems] = useState<MessageListItem[]>([]);
     const user = useAppSelector(AuthSelectors.getCurrentUser());
     if (!user) return <Navigate to={"/login"} replace/>;
-    const dispatch = useAppDispatch();
     const currentConversation = useAppSelector(ChatSelectors.getCurrentConversation())
+    if (!currentConversation || !currentConversation.conversationId) return <></>;
 
-    const handleMessage = useCallback((msg: string) => {
-        if (!currentConversation) return;
-        const message: MessageSender = {
-            content: msg,
-            room: currentConversation.users.filter(u => u.id !== user.id).map(u => u.id || ""),
-            sender: user,
-            conversationId: currentConversation.conversationId
-        };
-        dispatch(ChatThunks.sendMessage(message))
-    }, [user, user.id, currentConversation, currentConversation?.conversationId])
+    useEffect(() => {
+        const flux = ChatEndpoint.join(currentConversation.conversationId)
+        flux.onNext((msg) => {
+            if (!msg) return;
+            setItems(prev=>[...prev, fromMessage(msg)])
+        })
+        return () => {
+            flux.cancel();
+            setItems([])
+        }
+    }, [currentConversation, currentConversation.conversationId]);
+
+    const handleMessage = (msg: string) => {
+        ChatEndpoint.send(currentConversation.conversationId, {
+            messageText: msg,
+            senderName: user.id
+        })
+    }
 
     return (
         <div className={"content"} style={{height: "90vh", display: "flex", flexDirection: "column"}}>
