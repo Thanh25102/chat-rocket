@@ -13,9 +13,7 @@ export const store = configureStore({
         getDefaultMiddleware({
             serializableCheck: false,
             thunk: {
-                extraArgument: {
-                    io: undefined
-                }
+                extraArgument: {}
             }
         }),
 

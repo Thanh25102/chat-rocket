@@ -1,7 +1,7 @@
 import {AccessProps} from "Frontend/redux/feat/auth/authSelectors";
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 
-export const hasAccess = (access: AccessProps,user:User|null)=>{
+export const hasAccess = (access: AccessProps, user: User | null) => {
     const requiresAuth = access?.requiresLogin || access?.rolesAllowed;
     if (!requiresAuth) {
         return true;

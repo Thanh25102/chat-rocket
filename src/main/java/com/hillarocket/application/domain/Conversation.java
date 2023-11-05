@@ -7,7 +7,9 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.UuidGenerator;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,8 +18,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Conversation {
+public class Conversation implements Serializable {
     @Id
+    @UuidGenerator(style = UuidGenerator.Style.TIME)
     UUID id;
     String name;
     @Enumerated(EnumType.STRING)

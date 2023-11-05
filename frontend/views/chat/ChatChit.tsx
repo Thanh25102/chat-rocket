@@ -7,7 +7,7 @@ import {Navigate} from "react-router-dom";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 import {ChatEndpoint} from "Frontend/generated/endpoints";
-import {fromMessage} from "Frontend/utils/converter";
+import {fromMessage, fromMessages} from "Frontend/utils/converter";
 
 
 export default function ChatChit() {
@@ -15,24 +15,32 @@ export default function ChatChit() {
     const user = useAppSelector(AuthSelectors.getCurrentUser());
     if (!user) return <Navigate to={"/login"} replace/>;
     const currentConversation = useAppSelector(ChatSelectors.getCurrentConversation())
-    if (!currentConversation || !currentConversation.conversationId) return <></>;
 
     useEffect(() => {
+        if (!currentConversation || !currentConversation.conversationId) return;
+        if (items.length === 0) setItems(fromMessages(currentConversation.messages));
+    }, []);
+
+    useEffect(() => {
+        if (!currentConversation || !currentConversation.conversationId) return;
         const flux = ChatEndpoint.join(currentConversation.conversationId)
         flux.onNext((msg) => {
             if (!msg) return;
-            setItems(prev=>[...prev, fromMessage(msg)])
+            setItems(prev => [...prev, fromMessage(msg)])
         })
         return () => {
             flux.cancel();
             setItems([])
         }
-    }, [currentConversation, currentConversation.conversationId]);
+    }, [currentConversation, currentConversation?.conversationId]);
 
     const handleMessage = (msg: string) => {
+        if (!currentConversation || !currentConversation.conversationId) return;
         ChatEndpoint.send(currentConversation.conversationId, {
             messageText: msg,
-            senderName: user.id
+            senderName: user.fullName,
+            senderId: user.id,
+            conversationId: currentConversation.conversationId
         })
     }
 

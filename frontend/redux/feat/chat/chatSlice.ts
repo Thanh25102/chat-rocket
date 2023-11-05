@@ -19,16 +19,9 @@ export const chatSlice = createSlice({
         name: "chat",
         initialState,
         reducers: {
-            /**
-             * @ManhThanh
-             * SocketActions
-             */
             getConversationById(state, action: PayloadAction<string>) {
                 state.conversations.find(conversation => conversation.conversationId === action.payload);
             }
-            /**
-             * @End
-             */
         },
         extraReducers: (builder) => {
             builder

@@ -4,23 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="fix create redundant conversation">
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: setup redis handle save">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/MessageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/MessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authThunks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/listener.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/socket.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/stomp.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/utils/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/converter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/WebSocketConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/WebsocketHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ConversationMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ConversationMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/MessageSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/BotEndpoint.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +68,9 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -63,39 +79,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JPA.DatabaseSchemaImportDialog": "9ca79357-9e56-4402-8125-086d1d606467",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/DiskLearn/Intellij/JavaSpring/hilla-rocket",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "4ef287ed9e9ab3ebcc238fe42b239463",
-    "ts.external.directory.path": "C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;9ca79357-9e56-4402-8125-086d1d606467&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -198,7 +214,8 @@
       <workItem from="1699082034131" duration="6964000" />
       <workItem from="1699094961916" duration="103000" />
       <workItem from="1699095600683" duration="1406000" />
-      <workItem from="1699102086074" duration="5326000" />
+      <workItem from="1699102086074" duration="13066000" />
+      <workItem from="1699148096893" duration="6426000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -261,7 +278,8 @@
     <MESSAGE value="Turn off project loom" />
     <MESSAGE value="Fix bug version Java 21, complete setup socket" />
     <MESSAGE value="feat get &amp; create conversation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat get &amp; create conversation" />
+    <MESSAGE value="feat: setup redis handle save" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: setup redis handle save" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -269,10 +287,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.net.ConnectException" package="java.net" />
           <option name="timeStamp" value="5" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
-          <option name="timeStamp" value="6" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

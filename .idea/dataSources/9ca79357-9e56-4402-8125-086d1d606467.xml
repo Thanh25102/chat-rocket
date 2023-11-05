@@ -3,17 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G</Grants>
-      <IntrospectionStateNumber>1638</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
-      <StartupTime>1698800737</StartupTime>
+      <StartupTime>1699080116</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -809,7 +801,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1638</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
       <ObjectId>16821</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4235,9 +4227,9 @@ false Zulu
     <schema id="264" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1638</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-01.16:58:05.537</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-01.09:58:06</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-11-04.21:37:40.548</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-04.14:37:41</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4256,7 +4248,7 @@ false Zulu
     </table>
     <table id="267" parent="264" name="messages">
       <ObjectId>16993</ObjectId>
-      <StateNumber>1144</StateNumber>
+      <StateNumber>1737</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4393,7 +4385,13 @@ conversation_id</ColNames>
       <StateNumber>1144</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <foreign-key id="287" parent="267" name="messages_conversation_id_fkey">
+    <column id="287" parent="267" name="sender_id">
+      <DasType>uuid|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>1737</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <foreign-key id="288" parent="267" name="messages_conversation_id_fkey">
       <ColNames>conversation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17000</ObjectId>
@@ -4401,7 +4399,15 @@ conversation_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16988</RefTableId>
     </foreign-key>
-    <index id="288" parent="267" name="messages_pkey">
+    <foreign-key id="289" parent="267" name="messages_sender_id_fkey">
+      <ColNames>sender_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25459</ObjectId>
+      <StateNumber>1737</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16981</RefTableId>
+    </foreign-key>
+    <index id="290" parent="267" name="messages_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16998</ObjectId>
@@ -4410,49 +4416,49 @@ conversation_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="289" parent="267" name="messages_pkey">
+    <key id="291" parent="267" name="messages_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16999</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1144</StateNumber>
       <UnderlyingIndexId>16998</UnderlyingIndexId>
     </key>
-    <column id="290" parent="268" name="id">
+    <column id="292" parent="268" name="id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="291" parent="268" name="fullname">
+    <column id="293" parent="268" name="fullname">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="292" parent="268" name="email">
+    <column id="294" parent="268" name="email">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="293" parent="268" name="password">
+    <column id="295" parent="268" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="294" parent="268" name="role">
+    <column id="296" parent="268" name="role">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="295" parent="268" name="users_pkey">
+    <index id="297" parent="268" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16986</ObjectId>
@@ -4461,7 +4467,7 @@ conversation_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="296" parent="268" name="users_pkey">
+    <key id="298" parent="268" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16987</ObjectId>
       <Primary>1</Primary>

@@ -1,18 +1,15 @@
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {createSlice} from "@reduxjs/toolkit";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
-import {Client} from "@stomp/stompjs";
 
 export type AuthState = {
     user: User | null,
-    stomp?: Client,
     error: boolean,
     loading: boolean,
     users: User[],
 }
 const initialState: AuthState = {
     user: null,
-    stomp: undefined,
     users: [],
     error: false,
     loading: false,

@@ -1,17 +1,9 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {logout} from "@hilla/frontend"
 import {UserEndpoint} from "Frontend/generated/endpoints";
-import {Client} from "stompjs";
-
-interface ChatThunkApiConfig {
-    extra: {
-        io: Client | undefined;
-    };
-}
-
 export const AuthThunks = {
-    logout: createAsyncThunk<any, any, ChatThunkApiConfig>("auth/logout", async (thunkApi) => {
-        return logout().then(() => thunkApi.extra.io.disconnect(() => console.log("disconnect socket .... logged out ....")));
+    logout: createAsyncThunk("auth/logout", async (thunkApi) => {
+        return logout()
     }),
     getUser: createAsyncThunk("auth/get-user", async () => {
         return UserEndpoint.getAuthenticatedUser();

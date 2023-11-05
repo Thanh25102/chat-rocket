@@ -20,7 +20,7 @@ public class UserEndpoint {
         this.authenticatedUser = authenticatedUser;
     }
 
-    public String hello() {
+    public String currentThread() {
         return Thread.currentThread().toString();
     }
 
