@@ -2,9 +2,11 @@ package com.hillarocket.application.endpoint;
 
 import com.hillarocket.application.config.AuthenticatedUser;
 import com.hillarocket.application.domain.User;
+import com.hillarocket.application.dto.OnlineEvent;
 import com.hillarocket.application.handler.UserHandler;
 import com.hillarocket.application.repo.UserRepo;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import dev.hilla.BrowserCallable;
 import dev.hilla.Endpoint;
 import dev.hilla.Nonnull;
 import reactor.core.publisher.Flux;
@@ -12,7 +14,7 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 import java.util.Optional;
 
-@Endpoint
+@BrowserCallable
 @AnonymousAllowed
 public class UserEndpoint {
     private final UserRepo userRepo;
@@ -37,11 +39,15 @@ public class UserEndpoint {
         return userRepo.findAll();
     }
 
-    public Flux<@Nonnull String> join() {
+    public List<@Nonnull String> findUsersOnline() {
+        return userHandler.getUsersOnline();
+    }
+
+    public Flux<@Nonnull OnlineEvent> join() {
         return userHandler.join();
     }
 
-    public void send(@Nonnull String userId) {
+    public void send(@Nonnull OnlineEvent userId) {
         userHandler.send(userId);
     }
 }

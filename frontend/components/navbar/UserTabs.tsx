@@ -7,6 +7,8 @@ import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import {useAppDispatch} from "Frontend/redux/hooks";
 import {UserEndpoint} from "Frontend/generated/endpoints";
+import OnlineEvent from "Frontend/generated/com/hillarocket/application/dto/OnlineEvent";
+import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 
 type Props = {
     users?: User[];
@@ -23,11 +25,21 @@ export const UserTabs: FC<Props> = ({users = [], userId}) => {
 
     const [usersOnline, setUsersOnline] = useState<string[]>([]);
 
-    console.log("usersOnline: ", usersOnline)
+    const handleUserOnline = (event: OnlineEvent) => {
+        if (event.status === UserStatus.ONLINE) setUsersOnline(prev => [...prev, event.userId])
+        if (event.status === UserStatus.OFFLINE) setUsersOnline(prev => prev.filter(id => id !== event.userId))
+    }
+
     useEffect(() => {
+        UserEndpoint.findUsersOnline()
+            .then(usersId => setUsersOnline(usersId || []));
+
         const onlineFlux = UserEndpoint.join()
-            .onNext(userId => setUsersOnline(prev => [...prev, userId]));
-        return () => onlineFlux.cancel()
+            .onNext(event => handleUserOnline(event));
+
+        return () =>{
+            onlineFlux.cancel()
+        }
     }, []);
 
     return <Tabs slot="drawer" orientation="vertical">

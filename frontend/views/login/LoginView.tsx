@@ -1,11 +1,12 @@
 import {LoginI18n} from '@hilla/react-components/LoginOverlay.js';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {Navigate} from 'react-router-dom';
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {LoginModal} from "Frontend/views/login/components/LoginModal";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {login} from "Frontend/auth";
 import {UserEndpoint} from "Frontend/generated/endpoints";
+import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 
 const loginI18nDefault: LoginI18n = {
     form: {
@@ -33,7 +34,7 @@ export default function LoginView() {
 
     if (user && user.id && url) {
         const path = new URL(url, document.baseURI).pathname;
-        UserEndpoint.send(user.id);
+        UserEndpoint.send({userId: user.id, status: UserStatus.ONLINE});
         return <Navigate to={path} replace/>;
     }
 

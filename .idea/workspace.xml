@@ -5,36 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat(online): set up user online">
-      <change afterPath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/navbar/NavSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/hooks/useDebounce.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/OnlineEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/enumration/UserStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/converter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/auth/authSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/GroupMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/GroupMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ConversationMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/ConversationMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/CreateConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/CreateConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/enumration/ConversionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/enumration/ConversionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/MessageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/GroupMemberRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/GroupMemberRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/vaadin-featureflags.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vaadin-featureflags.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +30,8 @@
         <option value="Record" />
         <option value="Interface" />
         <option value="TypeScript File" />
-        <option value="Class" />
         <option value="TypeScript JSX File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,7 +202,7 @@
       <workItem from="1699148096893" duration="7850000" />
       <workItem from="1699132562511" duration="4415000" />
       <workItem from="1699198590354" duration="777000" />
-      <workItem from="1699245774647" duration="7624000" />
+      <workItem from="1699245774647" duration="15617000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -278,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699155347686</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat(online): set up user online">
+      <option name="closed" value="true" />
+      <created>1699254524716</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699254524716</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +293,11 @@
           <properties class="java.net.ConnectException" package="java.net" />
           <option name="timeStamp" value="5" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

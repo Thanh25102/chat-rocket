@@ -1,5 +1,5 @@
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 
 export type AuthState = {
@@ -17,7 +17,11 @@ const initialState: AuthState = {
 export const authSlice = createSlice({
     name: "auth",
     initialState,
-    reducers: {},
+    reducers: {
+        setCurrentUser(state,action: PayloadAction<User>){
+            state.user = action.payload
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(AuthThunks.getUser.fulfilled, (state, action) => {
