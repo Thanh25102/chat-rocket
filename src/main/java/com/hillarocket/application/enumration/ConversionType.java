@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public enum ConversionType {
-    SINGLE,GROUP
+    SINGLE, GROUP
 
 }

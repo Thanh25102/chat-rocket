@@ -1,7 +1,6 @@
 import {AppLayout} from '@hilla/react-components/AppLayout.js';
-import {DrawerToggle} from '@hilla/react-components/DrawerToggle.js';
 import Placeholder from 'Frontend/components/placeholder/Placeholder';
-import {Suspense, useEffect} from 'react';
+import {Suspense, useEffect, useState} from 'react';
 import {Navigate, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import css from './MainLayout.module.css';
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
@@ -10,11 +9,14 @@ import {Button} from "@hilla/react-components/Button";
 import {logout} from "@hilla/frontend";
 import {Tabs} from "@hilla/react-components/Tabs";
 import {Tab} from "@hilla/react-components/Tab";
-import {Icon} from "@hilla/react-components/Icon";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
+import {NavItem} from "Frontend/components/navbar/NavItem";
+import {NavSearch} from "Frontend/components/navbar/NavSearch";
+import {UserEndpoint} from "Frontend/generated/endpoints";
+import {UserTabs} from "Frontend/components/navbar/UserTabs";
 
 export default function MainLayout() {
     const currentTitle = useRouteMetadata()?.title ?? 'My App';
@@ -30,10 +32,6 @@ export default function MainLayout() {
         dispatch(AuthThunks.getAllUsers());
     }, []);
 
-    const getConversationByUserId = async (userId?: string) => {
-        if (!user.id || !userId) return;
-        dispatch(ChatThunks.getConversationByUserIds({u1: user.id, u2: userId}));
-    }
 
     return (
         <AppLayout primarySection="drawer">
@@ -45,20 +43,9 @@ export default function MainLayout() {
                         {user && <NavLink to="/about">About</NavLink>}
                         {user && <NavLink to="/chat">Chat</NavLink>}
                     </nav>
+                    <NavSearch/>
                 </header>
-                <Tabs slot="drawer" orientation="vertical">
-                    {
-                        users.map((u) => (user.id !== u.id) &&
-                            <Tab key={u.id}>
-                                <NavLink to={"/chat-user"} tabIndex={-1}
-                                         onClick={() => getConversationByUserId(u.id)}>
-                                    <Icon icon="vaadin:cart"/>
-                                    <span>{u.fullName}</span>
-                                </NavLink>
-                            </Tab>
-                        )
-                    }
-                </Tabs>
+                <UserTabs userId={user.id} users={users}/>
                 <footer className="flex flex-col gap-s">
                     {user ? (
                         <>
@@ -75,12 +62,6 @@ export default function MainLayout() {
                 </footer>
             </div>
 
-            <div style={{display: "flex", alignItems: "center", height: "10vh"}}>
-                <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
-                <h2 slot="navbar" className="text-l m-0">
-                    {currentTitle}
-                </h2>
-            </div>
             <Suspense fallback={<Placeholder/>}>
                 <Outlet/>
             </Suspense>

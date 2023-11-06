@@ -26,6 +26,7 @@
     "@vaadin/router": "1.7.5",
     "classnames": "^2.3.2",
     "construct-style-sheets-polyfill": "3.1.0",
+    "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
     "lit": "2.7.6",
     "react": "^18.2.0",
@@ -97,7 +98,8 @@
     "stompjs": "$stompjs",
     "dotenv": "$dotenv",
     "react-image": "$react-image",
-    "@stomp/stompjs": "$@stomp/stompjs"
+    "@stomp/stompjs": "$@stomp/stompjs",
+    "date-fns": "$date-fns"
   },
   "vaadin": {
     "dependencies": {
@@ -138,6 +140,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "7bca6ca9ca04c5937fcd9a5e91a6aa28e2ab4ef833d8dfc84a3bff09ed531028"
+    "hash": "7ca763c1f9a1602e7e6970131e8701a1b86c51cf3f007d6c7017f5e10d6aab8c"
   }
 }

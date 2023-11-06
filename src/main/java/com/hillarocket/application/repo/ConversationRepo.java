@@ -12,13 +12,13 @@ import java.util.UUID;
 public interface ConversationRepo extends JpaRepository<Conversation, UUID> {
 
     @Query("""
-        SELECT c
-        FROM Conversation c
-        JOIN GroupMember gm ON c.id = gm.conversation.id
-        WHERE gm.user.id IN (?1,?2) and c.type = 'SINGLE'
-        GROUP BY c.id
-        HAVING COUNT(DISTINCT gm.user.id) = 2
-    """)
+                SELECT c
+                FROM Conversation c
+                JOIN GroupMember gm ON c.id = gm.conversation.id
+                WHERE gm.user.id IN (?1,?2) and c.type = 'SINGLE'
+                GROUP BY c.id
+                HAVING COUNT(DISTINCT gm.user.id) = 2
+            """)
     Optional<Conversation> getSingleConversionByUserId(UUID u1, UUID u2);
 
 }

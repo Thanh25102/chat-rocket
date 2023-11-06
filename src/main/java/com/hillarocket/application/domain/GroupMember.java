@@ -34,8 +34,8 @@ public class GroupMember {
     @JoinColumn(name = "conversation_id")
     Conversation conversation;
 
-    public GroupMember(UUID user,UUID conversationId){
-        this.id = new GroupMemberKey(user,conversationId);
+    public GroupMember(UUID user, UUID conversationId) {
+        this.id = new GroupMemberKey(user, conversationId);
     }
 
     @Embeddable

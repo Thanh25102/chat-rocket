@@ -37,7 +37,6 @@ public class ChatHandler {
     private final MessageMapper messageMapper;
     private final UserMapper userMapper;
 
-
     private final RedisTemplate<String, MessageDto> redisTemplate;
 
     private final Map<String, Sinks.Many<MessageDto>> chatRooms = new ConcurrentHashMap<>();
@@ -55,7 +54,7 @@ public class ChatHandler {
 
     public Flux<MessageDto> join(String roomId) {
         Sinks.Many<MessageDto> sink = chatRooms.computeIfAbsent(roomId, id -> Sinks.many().multicast().directBestEffort());
-        return replayedFluxes.computeIfAbsent(roomId, id -> sink.asFlux().replay(20).autoConnect());
+        return replayedFluxes.computeIfAbsent(roomId, id -> sink.asFlux());
     }
 
     public void send(String roomId, MessageDto message) {
@@ -110,20 +109,20 @@ public class ChatHandler {
         var users = userRepo.findUserByConversationId(conversation.getId())
                 .orElse(List.of())
                 .stream().map(userMapper::mapToDto).toList();
-        ;
-        return new ConversationMessage(conversation.getId(), users, messagesDto);
+        return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, messagesDto);
     }
 
     public ConversationMessage getConversationById(String conversationId) throws IOException {
         var id = UUID.fromString(conversationId);
-        var conversation = conversationRepo.findById(id);
-        if (conversation.isEmpty()) throw new IOException("không tồn tại cuộc trò chuyện");
+        var optConversation = conversationRepo.findById(id);
+        if (optConversation.isEmpty()) throw new IOException("không tồn tại cuộc trò chuyện");
+        var conversation = optConversation.get();
 
         var messages = messageRepo.find20NewestMessagesByConversationId(id).orElse(List.of());
         var messagesDto = messages.stream().map(messageMapper::mapToDto).toList();
         var users = userRepo.findUserByConversationId(id)
                 .orElse(List.of())
                 .stream().map(userMapper::mapToDto).toList();
-        return new ConversationMessage(id, users, messagesDto);
+        return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, messagesDto);
     }
 }

@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.domain.Persistable;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -23,7 +21,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = {"newUser", "password"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User implements  Serializable {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
@@ -39,7 +37,7 @@ public class User implements  Serializable {
     @Enumerated(EnumType.STRING)
     Role role;
 
-    public User(UUID id){
+    public User(UUID id) {
         this.id = id;
     }
 }

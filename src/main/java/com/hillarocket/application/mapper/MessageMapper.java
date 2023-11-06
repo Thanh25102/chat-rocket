@@ -6,8 +6,6 @@ import com.hillarocket.application.domain.User;
 import com.hillarocket.application.dto.MessageDto;
 import org.springframework.stereotype.Service;
 
-import java.util.function.Function;
-
 @Service
 public class MessageMapper {
     public MessageDto mapToDto(Message message) {

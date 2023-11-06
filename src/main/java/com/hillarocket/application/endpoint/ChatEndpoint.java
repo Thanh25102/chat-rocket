@@ -1,7 +1,6 @@
 package com.hillarocket.application.endpoint;
 
 import com.hillarocket.application.domain.Conversation;
-import com.hillarocket.application.domain.Message;
 import com.hillarocket.application.dto.ConversationMessage;
 import com.hillarocket.application.dto.MessageDto;
 import com.hillarocket.application.handler.ChatHandler;

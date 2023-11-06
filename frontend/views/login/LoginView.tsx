@@ -5,6 +5,7 @@ import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {LoginModal} from "Frontend/views/login/components/LoginModal";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {login} from "Frontend/auth";
+import {UserEndpoint} from "Frontend/generated/endpoints";
 
 const loginI18nDefault: LoginI18n = {
     form: {
@@ -30,12 +31,9 @@ export default function LoginView() {
     const [disabled, setDisabled] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        // if (user && user.id) dispatch(AuthThunks.startConnection({userId: user.id, dispatch}))
-    }, [user]);
-
-    if (user && url) {
+    if (user && user.id && url) {
         const path = new URL(url, document.baseURI).pathname;
+        UserEndpoint.send(user.id);
         return <Navigate to={path} replace/>;
     }
 

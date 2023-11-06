@@ -27,12 +27,13 @@ public class Conversation implements Serializable {
     ConversionType type;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "conversation",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     Set<GroupMember> groupMembers;
 
-    public Conversation(UUID id){
+    public Conversation(UUID id) {
         this.id = id;
     }
+
     public UUID getId() {
         return id;
     }

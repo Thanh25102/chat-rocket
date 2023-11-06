@@ -8,6 +8,7 @@ import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 import {ChatEndpoint} from "Frontend/generated/endpoints";
 import {fromMessage, fromMessages} from "Frontend/utils/converter";
+import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
 
 
 export default function ChatChit() {
@@ -18,11 +19,7 @@ export default function ChatChit() {
 
     useEffect(() => {
         if (!currentConversation || !currentConversation.conversationId) return;
-        if (items.length === 0) setItems(fromMessages(currentConversation.messages));
-    }, []);
-
-    useEffect(() => {
-        if (!currentConversation || !currentConversation.conversationId) return;
+        setItems(fromMessages(currentConversation.messages));
         const flux = ChatEndpoint.join(currentConversation.conversationId)
         flux.onNext((msg) => {
             if (!msg) return;
@@ -44,8 +41,24 @@ export default function ChatChit() {
         })
     }
 
+    const handleConversationName = () => {
+        if (!currentConversation) return "Chat";
+        if (currentConversation.conversationName) return currentConversation.conversationName;
+        const userGroup = currentConversation.users.filter(u => u.id !== user.id)
+        return userGroup.map(u => u.fullName).join(", ");
+    }
+
     return (
-        <div className={"content"} style={{height: "90vh", display: "flex", flexDirection: "column"}}>
+        <div className={"content"} style={{height: "100vh", display: "flex", flexDirection: "column"}}>
+            <div style={{display: "flex", alignItems: "center", height: "10vh"}}>
+                <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
+                <div>
+                    <h2 slot="navbar" className="text-m m-0">
+                        {handleConversationName()}
+                    </h2>
+                    <span className="text-xs">Online 3p truoc</span>
+                </div>
+            </div>
             <MessageList items={items} className={"flex-grow"} style={{maxHeight: "800px", overflowY: "scroll"}}/>
             <div>
                 <MessageInput className={"flex-grow"} style={{height: "60px"}}
