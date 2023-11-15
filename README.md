@@ -47,5 +47,6 @@ source directory, contains the server-side Java views</td></tr>
 ## Useful links
 
 - Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
+- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join
+  our [Discord channel](https://discord.gg/MYFq5RTbBn).
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).

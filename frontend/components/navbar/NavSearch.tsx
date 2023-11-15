@@ -1,5 +1,4 @@
 import {FC, useState} from "react";
-import {MdOutlineGroupAdd} from "react-icons/md";
 import {HorizontalLayout} from "@hilla/react-components/HorizontalLayout";
 import {type ConfirmDialogOpenedChangedEvent,} from '@hilla/react-components/ConfirmDialog.js';
 import {CreateGroup} from "Frontend/components/dialog/create-group";

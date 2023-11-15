@@ -20,7 +20,7 @@ import java.util.UUID;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"newUser", "password","groupMembers"})
+@JsonIgnoreProperties(value = {"newUser", "password", "groupMembers"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User implements Serializable {
     @Id

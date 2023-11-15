@@ -18,7 +18,8 @@ export default function ChatView() {
             <div>
                 <MessageInput className={"flex-grow"}
                               style={{height: "60px"}}
-                              onSubmit={(e: CustomEvent) => {}}
+                              onSubmit={(e: CustomEvent) => {
+                              }}
                 />
             </div>
         </div>

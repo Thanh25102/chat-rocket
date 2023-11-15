@@ -11,6 +11,6 @@ public record MessageDto(
         String senderName,
         UUID conversationId,
         UUID senderId
-)  implements Serializable {
+) implements Serializable {
 
 }

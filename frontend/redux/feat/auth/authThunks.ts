@@ -1,6 +1,7 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {logout} from "@hilla/frontend"
 import {UserEndpoint} from "Frontend/generated/endpoints";
+
 export const AuthThunks = {
     logout: createAsyncThunk("auth/logout", async (thunkApi) => {
         return logout()

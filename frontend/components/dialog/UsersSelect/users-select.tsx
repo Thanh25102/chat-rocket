@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import {FC, useState} from "react";
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';

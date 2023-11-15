@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {Button} from "@hilla/react-components/Button";
 import {Loading} from "Frontend/views/login/LoginView";
 import {Img} from "react-image";
 
@@ -20,7 +19,7 @@ const SignInWithGithub = () => {
             className='w-full mb-3 bg-black rounded-full flex items-center justify-center gap-4 p-2'
         >
             {loading ?
-                <Loading /> :
+                <Loading/> :
                 <Img
                     width={20}
                     height={20}
@@ -29,7 +28,7 @@ const SignInWithGithub = () => {
                     className='w-[20px] h-[20xp] bg-[transparent]'
                 />
             }
-            <p className='font-bold text-md text-white' >
+            <p className='font-bold text-md text-white'>
                 Sign in with Github
             </p>
         </button>

@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {MessageListItem} from "@vaadin/message-list";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
-import { fromMessages} from "Frontend/utils/converter";
+import {fromMessages} from "Frontend/utils/converter";
 import ConversationMessage from "Frontend/generated/com/hillarocket/application/dto/ConversationMessage";
 
 export type ChatState = {

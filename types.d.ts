@@ -1,26 +1,26 @@
 declare module '*.module.css' {
-  declare const styles: Record<string, string>;
-  export default styles;
+    declare const styles: Record<string, string>;
+    export default styles;
 }
 declare module '*.module.sass' {
-  declare const styles: Record<string, string>;
-  export default styles;
+    declare const styles: Record<string, string>;
+    export default styles;
 }
 declare module '*.module.scss' {
-  declare const styles: Record<string, string>;
-  export default styles;
+    declare const styles: Record<string, string>;
+    export default styles;
 }
 declare module '*.module.less' {
-  declare const classes: Record<string, string>;
-  export default classes;
+    declare const classes: Record<string, string>;
+    export default classes;
 }
 declare module '*.module.styl' {
-  declare const classes: Record<string, string>;
-  export default classes;
+    declare const classes: Record<string, string>;
+    export default classes;
 }
 
 declare module "sockjs-client/dist/sockjs" {
-  export default (await import("sockjs-client")).default
+    export default (await import("sockjs-client")).default
 }
 
 /* CSS FILES */
@@ -32,34 +32,34 @@ declare module '*.styl';
 
 /* IMAGES */
 declare module '*.svg' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.bmp' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.gif' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.jpg' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.jpeg' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.png' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.avif' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }
 declare module '*.webp' {
-  const ref: string;
-  export default ref;
+    const ref: string;
+    export default ref;
 }

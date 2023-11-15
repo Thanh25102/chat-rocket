@@ -31,7 +31,7 @@ public class Conversation implements Serializable {
     @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     Set<GroupMember> groupMembers;
 
-    public Conversation(String name,ConversionType type){
+    public Conversation(String name, ConversionType type) {
         this.name = name;
         this.type = type;
     }

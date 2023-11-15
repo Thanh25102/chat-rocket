@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat(online): set up user online, offline">
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="fix bug">
       <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
@@ -254,7 +254,7 @@
       <workItem from="1699927173817" duration="4824000" />
       <workItem from="1700038446349" duration="11000" />
       <workItem from="1700038668772" duration="740000" />
-      <workItem from="1700040058081" duration="1785000" />
+      <workItem from="1700040058081" duration="2101000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -328,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699266024396</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix bug">
+      <option name="closed" value="true" />
+      <created>1700042843349</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700042843349</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +353,8 @@
     <MESSAGE value="attach redis and flux together" />
     <MESSAGE value="feat(online): set up user online" />
     <MESSAGE value="feat(online): set up user online, offline" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(online): set up user online, offline" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

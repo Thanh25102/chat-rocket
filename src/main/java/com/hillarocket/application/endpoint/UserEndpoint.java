@@ -7,7 +7,6 @@ import com.hillarocket.application.handler.UserHandler;
 import com.hillarocket.application.repo.UserRepo;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
-import dev.hilla.Endpoint;
 import dev.hilla.Nonnull;
 import reactor.core.publisher.Flux;
 
@@ -51,7 +50,7 @@ public class UserEndpoint {
         userHandler.send(userId);
     }
 
-    public List<@Nonnull User> searchUser(@Nonnull String searchKey){
+    public List<@Nonnull User> searchUser(@Nonnull String searchKey) {
         return userRepo.findByFullNameOrEmail(searchKey);
     }
 }

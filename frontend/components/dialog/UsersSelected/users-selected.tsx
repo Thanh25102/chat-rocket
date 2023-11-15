@@ -1,7 +1,6 @@
 import {FC} from "react";
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {HorizontalLayout} from "@hilla/react-components/HorizontalLayout";
-import {AiFillCloseCircle} from "react-icons/ai";
 import {Avatar} from "@hilla/react-components/Avatar";
 import List from "@mui/material/List";
 

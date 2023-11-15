@@ -162,16 +162,16 @@
                 </configuration>
             </plugin>
             <!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <source>21</source>-->
-<!--                    <target>21</target>-->
-<!--                    <compilerArgs>-->
-<!--                        &#45;&#45;enable-preview-->
-<!--                    </compilerArgs>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+            <!--                <configuration>-->
+            <!--                    <source>21</source>-->
+            <!--                    <target>21</target>-->
+            <!--                    <compilerArgs>-->
+            <!--                        &#45;&#45;enable-preview-->
+            <!--                    </compilerArgs>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 

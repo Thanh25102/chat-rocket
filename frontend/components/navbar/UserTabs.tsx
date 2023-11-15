@@ -37,7 +37,7 @@ export const UserTabs: FC<Props> = ({users = [], userId}) => {
         const onlineFlux = UserEndpoint.join()
             .onNext(event => handleUserOnline(event));
 
-        return () =>{
+        return () => {
             onlineFlux.cancel()
         }
     }, []);

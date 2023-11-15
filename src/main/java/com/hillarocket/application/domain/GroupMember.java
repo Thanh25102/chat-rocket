@@ -1,4 +1,5 @@
 package com.hillarocket.application.domain;
+
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

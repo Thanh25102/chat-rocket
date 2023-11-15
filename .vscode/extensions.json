@@ -1,1 +1,7 @@
-{"recommendations":["vscjava.vscode-java-pack","vmware.vscode-spring-boot"],"unwantedRecommendations":[]}
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "vmware.vscode-spring-boot"
+  ],
+  "unwantedRecommendations": []
+}

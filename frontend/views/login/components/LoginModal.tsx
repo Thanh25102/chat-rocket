@@ -68,7 +68,7 @@ export const LoginModal: FC<Props> = ({i18n, onLogin, error = false, disabled = 
                             className='rounded-md text-dark-text font-semibold text-md bg-dark-background-50 border-none outline-none py-2.5 px-3 shadow-sm border'
                         />
                     </div>
-                    <div className={` ${error ?  'mb-4' : 'mb-8'} flex flex-col gap-2`}>
+                    <div className={` ${error ? 'mb-4' : 'mb-8'} flex flex-col gap-2`}>
                         <label htmlFor='password' className='text-dark-text-50 font-bold text-md'>
                             {form.password || "Password"}
                         </label>

@@ -16,7 +16,7 @@ const SignInWithGoogle = () => {
             className='w-full mb-3 bg-black rounded-full flex items-center justify-center gap-4 p-2'
         >
             {loading ?
-                <Loading /> :
+                <Loading/> :
                 <img
                     width={20}
                     height={20}

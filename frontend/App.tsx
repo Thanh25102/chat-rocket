@@ -1,5 +1,5 @@
 import router from 'Frontend/routes.js';
-import {RouterProvider, useNavigate} from 'react-router-dom';
+import {RouterProvider} from 'react-router-dom';
 import {Provider} from "react-redux";
 import {store} from "Frontend/redux/store";
 import "./main.css";

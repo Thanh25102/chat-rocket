@@ -6,5 +6,6 @@ import dev.hilla.Nonnull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public record OnlineEvent(@Nonnull String userId, @Nonnull UserStatus status, LocalDateTime lastOnlineTime) implements Serializable {
+public record OnlineEvent(@Nonnull String userId, @Nonnull UserStatus status,
+                          LocalDateTime lastOnlineTime) implements Serializable {
 }
