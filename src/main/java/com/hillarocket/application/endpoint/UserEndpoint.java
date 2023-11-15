@@ -50,4 +50,8 @@ public class UserEndpoint {
     public void send(@Nonnull OnlineEvent userId) {
         userHandler.send(userId);
     }
+
+    public List<@Nonnull User> searchUser(@Nonnull String searchKey){
+        return userRepo.findByFullNameOrEmail(searchKey);
+    }
 }

@@ -23,12 +23,12 @@ public class Initialize implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        if (userRepo.findAll().isEmpty()) initUsers(10);
+    public void run(String... args) {
+        if (userRepo.findAll().isEmpty()) initUsers();
     }
 
-    private void initUsers(int range) {
-        IntStream.range(0, range)
+    private void initUsers() {
+        IntStream.range(0, 10)
                 .forEach(i ->
                         userRepo.save(new User(null, faker.name().fullName(), faker.internet().emailAddress(), passwordEncoder.encode("123456"), null, Role.USER)
                         )

@@ -12,6 +12,12 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, UUID> {
+    @Query("""
+            select u from User u where upper(u.fullName)
+            like upper(concat('%',?1,'%')) and upper(u.email) like upper(concat('%',?1,'%'))
+            """)
+    List<User> findByFullNameOrEmail(String searchKey);
+
     Optional<User> findByEmail(String email);
 
     @Query("""

@@ -2,6 +2,7 @@ package com.hillarocket.application.endpoint;
 
 import com.hillarocket.application.domain.Conversation;
 import com.hillarocket.application.dto.ConversationMessage;
+import com.hillarocket.application.dto.CreateGroupConversion;
 import com.hillarocket.application.dto.MessageDto;
 import com.hillarocket.application.handler.ChatHandler;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -33,6 +34,11 @@ public class ChatEndpoint {
 
     public List<Conversation> getAllConversation() {
         return chatHandler.getAllConversation();
+    }
+
+    @AnonymousAllowed
+    public Conversation createConversation(CreateGroupConversion conversionDto) {
+        return chatHandler.createConversation(conversionDto);
     }
 
     public @Nonnull ConversationMessage getSingleConversationByUserId(@Nonnull String u1, @Nonnull String u2) {

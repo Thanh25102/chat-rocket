@@ -4,17 +4,29 @@ import com.hillarocket.application.domain.Conversation;
 import com.hillarocket.application.domain.Message;
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.dto.MessageDto;
-import org.springframework.stereotype.Service;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
 
-@Service
-public class MessageMapper {
-    public MessageDto mapToDto(Message message) {
-        return new MessageDto(message.getId(), message.getMessageText(), message.getTime(), message.getSenderName(), message.getConversation().getId(), message.getSender().getId());
+import java.util.UUID;
+
+@Mapper(componentModel = "spring")
+public interface MessageMapper {
+    @Mapping(target = "conversationId", source = "conversation.id")
+    @Mapping(target = "senderId", source = "sender.id")
+    MessageDto toMsgDto(Message msg);
+
+    @Mapping(source = "conversationId", target = "conversation", qualifiedByName = "idToConversation")
+    @Mapping(source = "senderId", target = "sender", qualifiedByName = "idToUser")
+    Message toMsgEntity(MessageDto msg);
+
+    @Named("idToConversation")
+    default Conversation idToConversation(UUID id) {
+        return id == null ? null : new Conversation(id);
     }
 
-    public Message mapToEntity(MessageDto message) {
-        var user = new User(message.getSenderId());
-        var conversation = new Conversation(message.getConversationId());
-        return new Message(message.getId(), message.getMessageText(), message.getTime(), message.getSenderName(), conversation, user);
+    @Named("idToUser")
+    default User idToUser(UUID id) {
+        return id == null ? null : new User(id);
     }
 }

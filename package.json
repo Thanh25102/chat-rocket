@@ -3,6 +3,8 @@
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@hilla/form": "2.2.0",
     "@hilla/frontend": "2.2.0",
     "@hilla/generator-typescript-cli": "2.2.0",
@@ -15,12 +17,9 @@
     "@hilla/generator-typescript-utils": "2.2.0",
     "@hilla/react-components": "2.1.7",
     "@hilla/react-form": "2.2.0",
+    "@mui/material": "^5.14.17",
     "@polymer/polymer": "3.5.1",
     "@reduxjs/toolkit": "^1.9.5",
-    "@stomp/stompjs": "^7.0.0",
-    "@types/sockjs-client": "^1.5.2",
-    "@types/stompjs": "^2.3.6",
-    "@types/ws": "^8.5.5",
     "@vaadin/bundles": "24.1.7",
     "@vaadin/common-frontend": "0.0.18",
     "@vaadin/router": "1.7.5",
@@ -31,13 +30,12 @@
     "lit": "2.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.11.0",
     "react-image": "^4.1.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.4.2",
-    "redux": "^4.2.1",
-    "sockjs-client": "^1.6.1",
-    "stompjs": "^2.3.3",
-    "ws": "^8.14.2"
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@lit-labs/react": "^1.1.0",
@@ -90,16 +88,14 @@
     "@reduxjs/toolkit": "$@reduxjs/toolkit",
     "redux": "$redux",
     "react-redux": "$react-redux",
-    "@types/ws": "$@types/ws",
-    "ws": "$ws",
-    "@types/sockjs-client": "$@types/sockjs-client",
-    "@types/stompjs": "$@types/stompjs",
-    "sockjs-client": "$sockjs-client",
-    "stompjs": "$stompjs",
     "dotenv": "$dotenv",
     "react-image": "$react-image",
-    "@stomp/stompjs": "$@stomp/stompjs",
-    "date-fns": "$date-fns"
+    "date-fns": "$date-fns",
+    "react-icons": "$react-icons",
+    "react-dropzone": "$react-dropzone",
+    "@emotion/react": "$@emotion/react",
+    "@emotion/styled": "$@emotion/styled",
+    "@mui/material": "$@mui/material"
   },
   "vaadin": {
     "dependencies": {
@@ -140,6 +136,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "7ca763c1f9a1602e7e6970131e8701a1b86c51cf3f007d6c7017f5e10d6aab8c"
+    "hash": "74c6731f01a403c2c8b699edb2867f4e2296d7312f0d098d1827b8591d085fb8"
   }
 }

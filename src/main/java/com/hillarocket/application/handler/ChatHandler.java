@@ -4,8 +4,11 @@ import com.hillarocket.application.domain.Conversation;
 import com.hillarocket.application.domain.GroupMember;
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.dto.ConversationMessage;
+import com.hillarocket.application.dto.CreateGroupConversion;
+import com.hillarocket.application.dto.GroupMemberDto;
 import com.hillarocket.application.dto.MessageDto;
 import com.hillarocket.application.enumration.ConversionType;
+import com.hillarocket.application.mapper.GroupMemberMapper;
 import com.hillarocket.application.mapper.MessageMapper;
 import com.hillarocket.application.mapper.UserMapper;
 import com.hillarocket.application.repo.ConversationRepo;
@@ -36,19 +39,21 @@ public class ChatHandler {
 
     private final MessageMapper messageMapper;
     private final UserMapper userMapper;
+    private final GroupMemberMapper groupMemberMapper;
 
     private final RedisTemplate<String, MessageDto> redisTemplate;
 
     private final Map<String, Sinks.Many<MessageDto>> chatRooms = new ConcurrentHashMap<>();
     private final Map<String, Flux<MessageDto>> replayedFluxes = new ConcurrentHashMap<>();
 
-    public ChatHandler(ConversationRepo conversationRepo, GroupMemberRepo groupMemberRepo, MessageRepo messageRepo, UserRepo userRepo, MessageMapper messageMapper, UserMapper userMapper, RedisTemplate<String, MessageDto> redisTemplate) {
+    public ChatHandler(ConversationRepo conversationRepo, GroupMemberRepo groupMemberRepo, MessageRepo messageRepo, UserRepo userRepo, MessageMapper messageMapper, UserMapper userMapper, GroupMemberMapper groupMemberMapper, RedisTemplate<String, MessageDto> redisTemplate) {
         this.conversationRepo = conversationRepo;
         this.groupMemberRepo = groupMemberRepo;
         this.messageRepo = messageRepo;
         this.userRepo = userRepo;
         this.messageMapper = messageMapper;
         this.userMapper = userMapper;
+        this.groupMemberMapper = groupMemberMapper;
         this.redisTemplate = redisTemplate;
     }
 
@@ -58,7 +63,6 @@ public class ChatHandler {
     }
 
     public void send(String roomId, MessageDto message) {
-        message.setTime(LocalDateTime.now());
         Sinks.Many<MessageDto> sink = chatRooms.get(roomId);
         if (sink != null) {
             sink.emitNext(message, ((signalType, emitResult) -> emitResult == Sinks.EmitResult.FAIL_NON_SERIALIZED));
@@ -67,7 +71,7 @@ public class ChatHandler {
                 var messages = redisTemplate.opsForList().range(roomId, 0, -1);
                 if (messages != null && !messages.isEmpty()) {
                     redisTemplate.delete(roomId);
-                    messageRepo.saveAll(messages.stream().map(messageMapper::mapToEntity).toList());
+                    messageRepo.saveAll(messages.stream().map(messageMapper::toMsgEntity).toList());
                 }
             } else {
                 redisTemplate.opsForList().rightPush(roomId, message);
@@ -104,11 +108,11 @@ public class ChatHandler {
         var messagesDto = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
         if (messagesDto == null || messagesDto.isEmpty()) {
             var messages = messageRepo.find20NewestMessagesByConversationId(conversation.getId()).orElse(List.of());
-            messagesDto = messages.stream().map(messageMapper::mapToDto).toList();
+            messagesDto = messages.stream().map(messageMapper::toMsgDto).toList();
         }
         var users = userRepo.findUserByConversationId(conversation.getId())
                 .orElse(List.of())
-                .stream().map(userMapper::mapToDto).toList();
+                .stream().map(userMapper::toUserDto).toList();
         return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, messagesDto);
     }
 
@@ -119,10 +123,19 @@ public class ChatHandler {
         var conversation = optConversation.get();
 
         var messages = messageRepo.find20NewestMessagesByConversationId(id).orElse(List.of());
-        var messagesDto = messages.stream().map(messageMapper::mapToDto).toList();
+        var messagesDto = messages.stream().map(messageMapper::toMsgDto).toList();
         var users = userRepo.findUserByConversationId(id)
                 .orElse(List.of())
-                .stream().map(userMapper::mapToDto).toList();
+                .stream().map(userMapper::toUserDto).toList();
         return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, messagesDto);
+    }
+
+    public Conversation createConversation(CreateGroupConversion conversionDto) {
+        var conversation = conversationRepo.save(new Conversation(conversionDto.name(), ConversionType.GROUP));
+        var groupMember = conversionDto.userIds().stream()
+                .map(id -> groupMemberMapper.toGroupMemberEntity(new GroupMemberDto(UUID.fromString(id), conversation.getId(), LocalDateTime.now(), null)))
+                .toList();
+        groupMemberRepo.saveAll(groupMember);
+        return conversationRepo.getConversationById(conversation.getId()).orElse(conversation);
     }
 }

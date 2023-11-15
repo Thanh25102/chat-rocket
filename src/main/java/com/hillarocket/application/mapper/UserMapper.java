@@ -2,11 +2,9 @@ package com.hillarocket.application.mapper;
 
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.dto.UserDto;
-import org.springframework.stereotype.Service;
+import org.mapstruct.Mapper;
 
-@Service
-public class UserMapper {
-    public UserDto mapToDto(User user) {
-        return new UserDto(user.getId(), user.getFullName(), user.getEmail());
-    }
+@Mapper(componentModel = "spring")
+public interface UserMapper {
+    UserDto toUserDto(User user);
 }

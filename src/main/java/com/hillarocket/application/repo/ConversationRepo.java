@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -20,5 +22,11 @@ public interface ConversationRepo extends JpaRepository<Conversation, UUID> {
                 HAVING COUNT(DISTINCT gm.user.id) = 2
             """)
     Optional<Conversation> getSingleConversionByUserId(UUID u1, UUID u2);
+
+    @Nonnull
+    List<Conversation> findAll();
+
+    @Query("select c from Conversation c where c.id = ?1")
+    Optional<Conversation> getConversationById(UUID id);
 
 }

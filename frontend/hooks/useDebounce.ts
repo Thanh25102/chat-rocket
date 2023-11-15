@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-function useDebounce(value: any, delay: number) {
+function useDebounce(value: any, delay: number = 500) {
     //like useTransition, useDeferredValue in react 18
     const [debouncedValue, setDebouncedValue] = useState(value);
     useEffect(() => {
