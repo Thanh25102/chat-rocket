@@ -13,6 +13,7 @@ import reactor.core.publisher.Flux;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @BrowserCallable
 @AnonymousAllowed
@@ -32,8 +33,12 @@ public class ChatEndpoint {
         chatHandler.send(roomId, message);
     }
 
-    public List<Conversation> getAllConversation() {
+    public List<@Nonnull Conversation> getAllConversation() {
         return chatHandler.getAllConversation();
+    }
+
+    public @Nonnull List<@Nonnull ConversationMessage> getConversationByUserId(UUID userId) {
+        return chatHandler.getConversationByUserId(userId);
     }
 
     @AnonymousAllowed
@@ -44,7 +49,6 @@ public class ChatEndpoint {
     public @Nonnull ConversationMessage getSingleConversationByUserId(@Nonnull String u1, @Nonnull String u2) {
         return chatHandler.getSingleConversationByUserId(u1, u2);
     }
-
     public @Nonnull ConversationMessage getConversationById(@Nonnull String conversationId) throws IOException {
         return chatHandler.getConversationById(conversationId);
     }

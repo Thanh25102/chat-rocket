@@ -83,6 +83,15 @@ public class ChatHandler {
         return conversationRepo.findAll();
     }
 
+    public List<ConversationMessage> getConversationByUserId(UUID userId) {
+        var conversations = conversationRepo.findConversationByUserId(userId);
+        return conversations.stream().map(conversation -> {
+            var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
+            var lastedMessage = messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList();
+            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, lastedMessage.stream().map(messageMapper::toMsgDto).toList());
+        }).toList();
+    }
+
     public ConversationMessage getSingleConversationByUserId(String u1, String u2) {
         var id1 = UUID.fromString(u1);
         var id2 = UUID.fromString(u2);

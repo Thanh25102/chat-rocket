@@ -37,7 +37,8 @@ export default function ChatChit() {
             messageText: msg,
             senderName: user.fullName,
             senderId: user.id,
-            conversationId: currentConversation.conversationId
+            conversationId: currentConversation.conversationId,
+            time: new Date().toISOString()
         })
     }
 

@@ -24,7 +24,16 @@ public interface ConversationRepo extends JpaRepository<Conversation, UUID> {
     Optional<Conversation> getSingleConversionByUserId(UUID u1, UUID u2);
 
     @Nonnull
+    @Query("select c from Conversation c")
     List<Conversation> findAll();
+
+    @Query("""
+                SELECT c
+                FROM Conversation c
+                JOIN GroupMember gm ON c.id = gm.conversation.id
+                WHERE gm.user.id = ?1
+            """)
+    List<Conversation> findConversationByUserId(UUID u1);
 
     @Query("select c from Conversation c where c.id = ?1")
     Optional<Conversation> getConversationById(UUID id);

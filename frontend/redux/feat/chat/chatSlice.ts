@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {MessageListItem} from "@vaadin/message-list";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import {fromMessages} from "Frontend/utils/converter";
 import ConversationMessage from "Frontend/generated/com/hillarocket/application/dto/ConversationMessage";
@@ -7,7 +6,7 @@ import ConversationMessage from "Frontend/generated/com/hillarocket/application/
 export type ChatState = {
     error: boolean,
     loading: boolean,
-    conversations: { conversationId: string, messages: MessageListItem[] }[],
+    conversations: ConversationMessage[],
     currentConversation?: ConversationMessage,
 }
 const initialState: ChatState = {
@@ -25,20 +24,35 @@ export const chatSlice = createSlice({
         },
         extraReducers: (builder) => {
             builder
+                .addCase(ChatThunks.getConversationByUserId.fulfilled, (state, action) => {
+                    state.conversations = action.payload
+                    state.error = false
+                    state.loading = false
+                })
                 .addCase(ChatThunks.getConversationByUserIds.fulfilled, (state, action) => {
                     const {conversationId, messages} = action.payload;
                     const conversation = state.conversations.find(c => c.conversationId === conversationId);
                     if (conversation) {
-                        conversation.messages = fromMessages(messages);
+                        conversation.messages = messages;
                     } else {
-                        state.conversations.push({
-                            conversationId: conversationId,
-                            messages: fromMessages(messages || [])
-                        })
+                        state.conversations.push(action.payload)
                     }
                     state.currentConversation = action.payload;
                     state.error = false
                     state.loading = false
+                })
+                .addCase(ChatThunks.getCurrentConversation.fulfilled, (state, action) => {
+                    state.currentConversation = action.payload
+                    state.error = false
+                    state.loading = false
+                })
+                .addCase(ChatThunks.getCurrentConversation.pending, (state, action) => {
+                    state.loading = true
+                })
+                .addCase(ChatThunks.getCurrentConversation.rejected, (state, action) => {
+                    state.loading = false
+                    state.error = true
+
                 })
         },
     })

@@ -17,6 +17,14 @@ public interface MessageRepo extends JpaRepository<Message, UUID> {
                 SELECT msg FROM Message msg
                 WHERE msg.conversation.id = ?1
                 ORDER BY msg.time DESC
+                LIMIT 1
+            """)
+    Optional<Message> findNewestMessageByConversationId(UUID conversationId);
+
+    @Query("""
+                SELECT msg FROM Message msg
+                WHERE msg.conversation.id = ?1
+                ORDER BY msg.time DESC
                 LIMIT 20
             """)
     Optional<List<@Nonnull Message>> find20NewestMessagesByConversationId(UUID conversationId);

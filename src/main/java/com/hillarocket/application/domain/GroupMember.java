@@ -1,5 +1,6 @@
 package com.hillarocket.application.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -34,6 +35,7 @@ public class GroupMember {
     @MapsId("conversationId")
     @JoinColumn(name = "conversation_id")
     @Nonnull
+    @JsonIgnore
     Conversation conversation;
 
     public GroupMember(UUID user, UUID conversationId) {

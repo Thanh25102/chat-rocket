@@ -48,8 +48,8 @@ export const UserTabs: FC<Props> = ({users = [], userId}) => {
                 <Tab key={u.id}>
                     <NavLink to={"/chat-user"} tabIndex={-1} className="flex justify-between gap-x-6 py-3"
                              onClick={() => getConversationByUserId(u.id)}>
-                        <NavItem fullName={u.fullName} message={u.email}
-                                 isOnline={usersOnline.find(id => u.id === id) !== undefined}/>
+                        {/*<NavItem fullName={u.fullName} message={u.email}*/}
+                        {/*         isOnline={usersOnline.find(id => u.id === id) !== undefined}/>*/}
                     </NavLink>
                 </Tab>
             )

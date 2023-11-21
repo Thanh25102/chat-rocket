@@ -27,8 +27,8 @@ public class Conversation implements Serializable {
     String name;
     @Enumerated(EnumType.STRING)
     ConversionType type;
-    @JsonIgnore
-    @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Getter
+    @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     Set<GroupMember> groupMembers;
 
     public Conversation(String name, ConversionType type) {

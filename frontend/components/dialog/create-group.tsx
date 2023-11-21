@@ -62,16 +62,16 @@ export const CreateGroup = ({opened = true, openedChanged, handleStatus}: {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                    {"Create conversation?"}
                 </DialogTitle>
                 <DialogContent>
                     <TextField placeholder={"Enter name or email of user . . . "} className={"w-full"}
                                onChange={(e) => setSearchValue(e.target.value)}/>
-                    <div className="flex-row">
-                        <UsersSelect users={users} className={"col-span-7"} onAddUser={handleAddUserSelected}
+                    <div className="flex px-3">
+                        <UsersSelect users={users} className={"col-span-8"} onAddUser={handleAddUserSelected}
                                      onRemoveUser={handleRemoveUserSelected}></UsersSelect>
                         <UsersSelected onRemoveUser={handleRemoveUserSelected} users={usersSelected}
-                                       className={"col-span-5 border rounded-l"}></UsersSelected>
+                                       className={"col-span-4 border rounded-l"}></UsersSelected>
                     </div>
                 </DialogContent>
                 <DialogActions>

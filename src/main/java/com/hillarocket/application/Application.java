@@ -19,7 +19,6 @@ import java.util.concurrent.Executors;
 @SpringBootApplication
 @Theme(value = "hilla-rocket")
 public class Application implements AppShellConfigurator {
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -33,5 +32,4 @@ public class Application implements AppShellConfigurator {
     Faker faker() {
         return new Faker();
     }
-
 }

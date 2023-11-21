@@ -10,11 +10,11 @@ type Props = {
     onRemoveUser: (id: string) => void
 }
 export const UsersSelected: FC<Props> = ({users = [], className, onRemoveUser}) => {
-    return <List className={`${className}`}>{
+    return <List className={`${className} min-w-full max-w-full`}>{
         users.map((user) => (
             <HorizontalLayout
-                className={"flex items-center justify-between mx-1.5 mt-2 bg-blue-500 bg-opacity-10 rounded-full py-2  px-2"}>
-                <div className={"flex items-center space-x-2"}>
+                className={"flex items-center justify-between mt-2 bg-blue-500 bg-opacity-10 rounded-full py-2"}>
+                <div className={"flex items-center"}>
                     <Avatar
                         name={`${user.fullName}`}
                         theme={"xsmall"}
