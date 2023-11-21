@@ -31,7 +31,7 @@ public interface ConversationRepo extends JpaRepository<Conversation, UUID> {
                 SELECT c
                 FROM Conversation c
                 JOIN GroupMember gm ON c.id = gm.conversation.id
-                WHERE gm.user.id = ?1
+                WHERE gm.user.id = ?1 ORDER BY c.createDate ASC
             """)
     List<Conversation> findConversationByUserId(UUID u1);
 

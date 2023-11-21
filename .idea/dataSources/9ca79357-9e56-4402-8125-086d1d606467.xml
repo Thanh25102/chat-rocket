@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
-      <StartupTime>1699080116</StartupTime>
+      <StartupTime>1700572049</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -87,8 +87,8 @@ false Africa/Timbuktu
 false Africa/Tripoli
 false Africa/Tunis
 false Africa/Windhoek
-true America/Adak
-true America/Anchorage
+false America/Adak
+false America/Anchorage
 false America/Anguilla
 false America/Antigua
 false America/Araguaina
@@ -108,7 +108,7 @@ false America/Argentina/Ushuaia
 false America/Aruba
 true America/Asuncion
 false America/Atikokan
-true America/Atka
+false America/Atka
 false America/Bahia
 false America/Bahia_Banderas
 false America/Barbados
@@ -117,18 +117,18 @@ false America/Belize
 false America/Blanc-Sablon
 false America/Boa_Vista
 false America/Bogota
-true America/Boise
+false America/Boise
 false America/Buenos_Aires
-true America/Cambridge_Bay
+false America/Cambridge_Bay
 false America/Campo_Grande
 false America/Cancun
 false America/Caracas
 false America/Catamarca
 false America/Cayenne
 false America/Cayman
-true America/Chicago
+false America/Chicago
 false America/Chihuahua
-true America/Ciudad_Juarez
+false America/Ciudad_Juarez
 false America/Coral_Harbour
 false America/Cordoba
 false America/Costa_Rica
@@ -138,123 +138,123 @@ false America/Curacao
 false America/Danmarkshavn
 false America/Dawson
 false America/Dawson_Creek
-true America/Denver
-true America/Detroit
+false America/Denver
+false America/Detroit
 false America/Dominica
-true America/Edmonton
+false America/Edmonton
 false America/Eirunepe
 false America/El_Salvador
-true America/Ensenada
+false America/Ensenada
 false America/Fort_Nelson
-true America/Fort_Wayne
+false America/Fort_Wayne
 false America/Fortaleza
-true America/Glace_Bay
+false America/Glace_Bay
 false America/Godthab
-true America/Goose_Bay
-true America/Grand_Turk
+false America/Goose_Bay
+false America/Grand_Turk
 false America/Grenada
 false America/Guadeloupe
 false America/Guatemala
 false America/Guayaquil
 false America/Guyana
-true America/Halifax
-true America/Havana
+false America/Halifax
+false America/Havana
 false America/Hermosillo
-true America/Indiana/Indianapolis
-true America/Indiana/Knox
-true America/Indiana/Marengo
-true America/Indiana/Petersburg
-true America/Indiana/Tell_City
-true America/Indiana/Vevay
-true America/Indiana/Vincennes
-true America/Indiana/Winamac
-true America/Indianapolis
-true America/Inuvik
-true America/Iqaluit
+false America/Indiana/Indianapolis
+false America/Indiana/Knox
+false America/Indiana/Marengo
+false America/Indiana/Petersburg
+false America/Indiana/Tell_City
+false America/Indiana/Vevay
+false America/Indiana/Vincennes
+false America/Indiana/Winamac
+false America/Indianapolis
+false America/Inuvik
+false America/Iqaluit
 false America/Jamaica
 false America/Jujuy
-true America/Juneau
-true America/Kentucky/Louisville
-true America/Kentucky/Monticello
-true America/Knox_IN
+false America/Juneau
+false America/Kentucky/Louisville
+false America/Kentucky/Monticello
+false America/Knox_IN
 false America/Kralendijk
 false America/La_Paz
 false America/Lima
-true America/Los_Angeles
-true America/Louisville
+false America/Los_Angeles
+false America/Louisville
 false America/Lower_Princes
 false America/Maceio
 false America/Managua
 false America/Manaus
 false America/Marigot
 false America/Martinique
-true America/Matamoros
+false America/Matamoros
 false America/Mazatlan
 false America/Mendoza
-true America/Menominee
+false America/Menominee
 false America/Merida
-true America/Metlakatla
+false America/Metlakatla
 false America/Mexico_City
-true America/Miquelon
-true America/Moncton
+false America/Miquelon
+false America/Moncton
 false America/Monterrey
 false America/Montevideo
-true America/Montreal
+false America/Montreal
 false America/Montserrat
-true America/Nassau
-true America/New_York
-true America/Nipigon
-true America/Nome
+false America/Nassau
+false America/New_York
+false America/Nipigon
+false America/Nome
 false America/Noronha
-true America/North_Dakota/Beulah
-true America/North_Dakota/Center
-true America/North_Dakota/New_Salem
+false America/North_Dakota/Beulah
+false America/North_Dakota/Center
+false America/North_Dakota/New_Salem
 false America/Nuuk
-true America/Ojinaga
+false America/Ojinaga
 false America/Panama
-true America/Pangnirtung
+false America/Pangnirtung
 false America/Paramaribo
 false America/Phoenix
-true America/Port-au-Prince
+false America/Port-au-Prince
 false America/Port_of_Spain
 false America/Porto_Acre
 false America/Porto_Velho
 false America/Puerto_Rico
 false America/Punta_Arenas
-true America/Rainy_River
-true America/Rankin_Inlet
+false America/Rainy_River
+false America/Rankin_Inlet
 false America/Recife
 false America/Regina
-true America/Resolute
+false America/Resolute
 false America/Rio_Branco
 false America/Rosario
-true America/Santa_Isabel
+false America/Santa_Isabel
 false America/Santarem
 true America/Santiago
 false America/Santo_Domingo
 false America/Sao_Paulo
 false America/Scoresbysund
-true America/Shiprock
-true America/Sitka
+false America/Shiprock
+false America/Sitka
 false America/St_Barthelemy
-true America/St_Johns
+false America/St_Johns
 false America/St_Kitts
 false America/St_Lucia
 false America/St_Thomas
 false America/St_Vincent
 false America/Swift_Current
 false America/Tegucigalpa
-true America/Thule
-true America/Thunder_Bay
-true America/Tijuana
-true America/Toronto
+false America/Thule
+false America/Thunder_Bay
+false America/Tijuana
+false America/Toronto
 false America/Tortola
-true America/Vancouver
+false America/Vancouver
 false America/Virgin
 false America/Whitehorse
-true America/Winnipeg
-true America/Yakutat
-true America/Yellowknife
+false America/Winnipeg
+false America/Yakutat
+false America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
 false Antarctica/DumontDUrville
@@ -368,7 +368,7 @@ false Asia/Yangon
 false Asia/Yekaterinburg
 false Asia/Yerevan
 false Atlantic/Azores
-true Atlantic/Bermuda
+false Atlantic/Bermuda
 false Atlantic/Canary
 false Atlantic/Cape_Verde
 false Atlantic/Faeroe
@@ -431,19 +431,19 @@ true CLST
 true CLT
 false COT
 false CST
-true CST6CDT
+false CST6CDT
 false CXT
-true Canada/Atlantic
-true Canada/Central
-true Canada/Eastern
-true Canada/Mountain
-true Canada/Newfoundland
-true Canada/Pacific
+false Canada/Atlantic
+false Canada/Central
+false Canada/Eastern
+false Canada/Mountain
+false Canada/Newfoundland
+false Canada/Pacific
 false Canada/Saskatchewan
 false Canada/Yukon
 true Chile/Continental
 true Chile/EasterIsland
-true Cuba
+false Cuba
 false DAVT
 false DDUT
 true EASST
@@ -456,7 +456,7 @@ true EETDST
 true EGST
 false EGT
 false EST
-true EST5EDT
+false EST5EDT
 false Egypt
 true Eire
 false Etc/GMT
@@ -638,12 +638,12 @@ false MPT
 true MSD
 false MSK
 false MST
-true MST7MDT
+false MST7MDT
 true MUST
 false MUT
 false MVT
 false MYT
-true Mexico/BajaNorte
+false Mexico/BajaNorte
 false Mexico/BajaSur
 false Mexico/General
 true NDT
@@ -658,7 +658,7 @@ true NZ-CHAT
 true NZDT
 false NZST
 false NZT
-true Navajo
+false Navajo
 false OMSST
 false OMST
 true PDT
@@ -675,7 +675,7 @@ false PMST
 false PONT
 false PRC
 false PST
-true PST8PDT
+false PST8PDT
 false PWT
 true PYST
 true PYT
@@ -745,17 +745,17 @@ false Turkey
 false UCT
 true ULAST
 false ULAT
-true US/Alaska
-true US/Aleutian
+false US/Alaska
+false US/Aleutian
 false US/Arizona
-true US/Central
-true US/East-Indiana
-true US/Eastern
+false US/Central
+false US/East-Indiana
+false US/Eastern
 false US/Hawaii
-true US/Indiana-Starke
-true US/Michigan
-true US/Mountain
-true US/Pacific
+false US/Indiana-Starke
+false US/Michigan
+false US/Mountain
+false US/Pacific
 false US/Samoa
 false UT
 false UTC
@@ -801,7 +801,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
       <ObjectId>16821</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4227,16 +4227,16 @@ false Zulu
     <schema id="264" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1739</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-04.21:37:40.548</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-04.14:37:41</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-11-21.20:36:18.998</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-21.13:36:20</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <table id="265" parent="264" name="conversations">
       <ObjectId>16988</ObjectId>
-      <StateNumber>1637</StateNumber>
+      <StateNumber>1958</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4277,7 +4277,19 @@ false Zulu
       <StateNumber>1524</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="272" parent="265" name="conversions_pkey">
+    <column id="272" parent="265" name="create_date">
+      <DasType>timestamp|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>1957</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="273" parent="265" name="last_modified">
+      <DasType>timestamp|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>1958</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="274" parent="265" name="conversions_pkey">
       <ColNames>id</ColNames>
       <ObjectId>16991</ObjectId>
       <Primary>1</Primary>
@@ -4285,40 +4297,40 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="273" parent="265" name="conversions_pkey">
+    <key id="275" parent="265" name="conversions_pkey">
       <ObjectId>16992</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1143</StateNumber>
       <UnderlyingIndexId>16991</UnderlyingIndexId>
     </key>
-    <column id="274" parent="266" name="user_id">
+    <column id="276" parent="266" name="user_id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1145</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="275" parent="266" name="conversation_id">
+    <column id="277" parent="266" name="conversation_id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1145</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="276" parent="266" name="joined_datetime">
+    <column id="278" parent="266" name="joined_datetime">
       <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1537</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="277" parent="266" name="left_datetime">
+    <column id="279" parent="266" name="left_datetime">
       <DasType>timestamp|0s</DasType>
       <Position>4</Position>
       <StateNumber>1539</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <foreign-key id="278" parent="266" name="group_member_user_id_fkey">
+    <foreign-key id="280" parent="266" name="group_member_user_id_fkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17010</ObjectId>
@@ -4326,7 +4338,7 @@ false Zulu
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16981</RefTableId>
     </foreign-key>
-    <foreign-key id="279" parent="266" name="group_member_conversation_id_fkey">
+    <foreign-key id="281" parent="266" name="group_member_conversation_id_fkey">
       <ColNames>conversation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17015</ObjectId>
@@ -4334,7 +4346,7 @@ false Zulu
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16988</RefTableId>
     </foreign-key>
-    <index id="280" parent="266" name="group_member_pkey">
+    <index id="282" parent="266" name="group_member_pkey">
       <ColNames>user_id
 conversation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -4344,54 +4356,54 @@ conversation_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="281" parent="266" name="group_member_pkey">
+    <key id="283" parent="266" name="group_member_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17009</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1145</StateNumber>
       <UnderlyingIndexId>17008</UnderlyingIndexId>
     </key>
-    <column id="282" parent="267" name="id">
+    <column id="284" parent="267" name="id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1144</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="283" parent="267" name="message_text">
+    <column id="285" parent="267" name="message_text">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
       <StateNumber>1144</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="267" name="conversation_id">
+    <column id="286" parent="267" name="conversation_id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1144</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="285" parent="267" name="sender_name">
+    <column id="287" parent="267" name="sender_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1144</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="286" parent="267" name="time">
+    <column id="288" parent="267" name="time">
       <DasType>timestamp|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1144</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="287" parent="267" name="sender_id">
+    <column id="289" parent="267" name="sender_id">
       <DasType>uuid|0s</DasType>
       <Position>7</Position>
       <StateNumber>1737</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <foreign-key id="288" parent="267" name="messages_conversation_id_fkey">
+    <foreign-key id="290" parent="267" name="messages_conversation_id_fkey">
       <ColNames>conversation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17000</ObjectId>
@@ -4399,7 +4411,7 @@ conversation_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16988</RefTableId>
     </foreign-key>
-    <foreign-key id="289" parent="267" name="messages_sender_id_fkey">
+    <foreign-key id="291" parent="267" name="messages_sender_id_fkey">
       <ColNames>sender_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25459</ObjectId>
@@ -4407,7 +4419,7 @@ conversation_id</ColNames>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>16981</RefTableId>
     </foreign-key>
-    <index id="290" parent="267" name="messages_pkey">
+    <index id="292" parent="267" name="messages_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16998</ObjectId>
@@ -4416,49 +4428,49 @@ conversation_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="291" parent="267" name="messages_pkey">
+    <key id="293" parent="267" name="messages_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16999</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1144</StateNumber>
       <UnderlyingIndexId>16998</UnderlyingIndexId>
     </key>
-    <column id="292" parent="268" name="id">
+    <column id="294" parent="268" name="id">
       <DasType>uuid|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="293" parent="268" name="fullname">
+    <column id="295" parent="268" name="fullname">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="294" parent="268" name="email">
+    <column id="296" parent="268" name="email">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="295" parent="268" name="password">
+    <column id="297" parent="268" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="296" parent="268" name="role">
+    <column id="298" parent="268" name="role">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1142</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="297" parent="268" name="users_pkey">
+    <index id="299" parent="268" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16986</ObjectId>
@@ -4467,7 +4479,7 @@ conversation_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="298" parent="268" name="users_pkey">
+    <key id="300" parent="268" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16987</ObjectId>
       <Primary>1</Primary>

@@ -1,6 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
-import {fromMessages} from "Frontend/utils/converter";
 import ConversationMessage from "Frontend/generated/com/hillarocket/application/dto/ConversationMessage";
 
 export type ChatState = {
@@ -53,6 +52,11 @@ export const chatSlice = createSlice({
                     state.loading = false
                     state.error = true
 
+                })
+                .addCase(ChatThunks.createConversation.fulfilled,(state,action)=>{
+                    state.loading = false
+                    state.error = false
+                    state.conversations.unshift(action.payload)
                 })
         },
     })

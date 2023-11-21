@@ -1,6 +1,5 @@
 package com.hillarocket.application.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hillarocket.application.enumration.ConversionType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -9,8 +8,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.UuidGenerator;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
 
@@ -20,6 +23,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@EntityListeners(AuditingEntityListener.class)
 public class Conversation implements Serializable {
     @Id
     @UuidGenerator(style = UuidGenerator.Style.TIME)
@@ -27,9 +31,16 @@ public class Conversation implements Serializable {
     String name;
     @Enumerated(EnumType.STRING)
     ConversionType type;
+
+    @CreatedDate
+    LocalDateTime createDate;
+    @LastModifiedDate
+    LocalDateTime lastModified;
+
     @Getter
     @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     Set<GroupMember> groupMembers;
+
 
     public Conversation(String name, ConversionType type) {
         this.name = name;
@@ -54,5 +65,13 @@ public class Conversation implements Serializable {
 
     public void setGroupMembers(Set<GroupMember> groupMembers) {
         this.groupMembers = groupMembers;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+    }
+
+    public void setLastModified(LocalDateTime lastModified) {
+        this.lastModified = lastModified;
     }
 }

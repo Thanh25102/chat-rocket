@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="cmpl change conversation online">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/hooks/useDebounce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useDebounce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +250,10 @@
       <workItem from="1700101962023" duration="989000" />
       <workItem from="1700482429679" duration="5003000" />
       <workItem from="1700545357150" duration="14483000" />
-      <workItem from="1700569796913" duration="1324000" />
+      <workItem from="1700569796913" duration="1482000" />
+      <workItem from="1700571342594" duration="649000" />
+      <workItem from="1700572129546" duration="2657000" />
+      <workItem from="1700577041805" duration="190000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -349,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700559746431</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="cmpl change conversation online">
+      <option name="closed" value="true" />
+      <created>1700571210988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700571210988</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

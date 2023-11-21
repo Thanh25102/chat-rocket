@@ -139,12 +139,12 @@ public class ChatHandler {
         return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, messagesDto);
     }
 
-    public Conversation createConversation(CreateGroupConversion conversionDto) {
+    public ConversationMessage createConversation(CreateGroupConversion conversionDto) throws IOException {
         var conversation = conversationRepo.save(new Conversation(conversionDto.name(), ConversionType.GROUP));
         var groupMember = conversionDto.userIds().stream()
                 .map(id -> groupMemberMapper.toGroupMemberEntity(new GroupMemberDto(UUID.fromString(id), conversation.getId(), LocalDateTime.now(), null)))
                 .toList();
         groupMemberRepo.saveAll(groupMember);
-        return conversationRepo.getConversationById(conversation.getId()).orElse(conversation);
+        return this.getConversationById(conversation.getId().toString());
     }
 }

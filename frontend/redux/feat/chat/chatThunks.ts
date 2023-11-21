@@ -20,7 +20,7 @@ export const ChatThunks = {
     }),
     createConversation: createAsyncThunk("chat/create-conversation", (createConversation: CreateGroupConversion) => {
         return ChatEndpoint.createConversation(createConversation);
-    })
+    }),
 
 }
 

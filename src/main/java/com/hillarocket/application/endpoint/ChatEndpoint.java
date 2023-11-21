@@ -42,7 +42,7 @@ public class ChatEndpoint {
     }
 
     @AnonymousAllowed
-    public Conversation createConversation(CreateGroupConversion conversionDto) {
+    public @Nonnull ConversationMessage createConversation(CreateGroupConversion conversionDto) throws IOException {
         return chatHandler.createConversation(conversionDto);
     }
 
