@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="docker compose support &amp; refactor logic conversation &amp; refactor ui avatar &amp; temp onl feat">
-      <change afterPath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="cmpl change conversation online">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/GroupMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/GroupMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/enumration/ConversionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/enumration/ConversionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/MessageRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/MessageRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +242,8 @@
       <workItem from="1700100305894" duration="322000" />
       <workItem from="1700101962023" duration="989000" />
       <workItem from="1700482429679" duration="5003000" />
-      <workItem from="1700545357150" duration="12580000" />
+      <workItem from="1700545357150" duration="14483000" />
+      <workItem from="1700569796913" duration="1324000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -357,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700043203133</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="docker compose support &amp; refactor logic conversation &amp; refactor ui avatar &amp; temp onl feat">
+      <option name="closed" value="true" />
+      <created>1700559746431</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700559746431</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +370,8 @@
     <MESSAGE value="Refactor &amp; optimize &amp; clean up code" />
     <MESSAGE value="Add db docker compose" />
     <MESSAGE value="docker compose support &amp; refactor logic conversation &amp; refactor ui avatar &amp; temp onl feat" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker compose support &amp; refactor logic conversation &amp; refactor ui avatar &amp; temp onl feat" />
+    <MESSAGE value="cmpl change conversation online" />
+    <option name="LAST_COMMIT_MESSAGE" value="cmpl change conversation online" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -391,12 +384,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java</url>
           <line>49</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx</url>
-          <line>234</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

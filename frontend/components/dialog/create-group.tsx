@@ -40,15 +40,25 @@ export const CreateGroup = ({opened = true, openedChanged, handleStatus}: {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
+        setUsersSelected([])
         setOpen(true);
     };
 
     const handleCreateConversation = () => {
-        dispatch(ChatThunks.createConversation({name: "", userIds: usersSelected.map(u => u.id)}));
+        dispatch(ChatThunks.createConversation({
+            name: conversationName,
+            userIds: usersSelected.map(u => u.id)
+        })).then(() => {
+            setUsersSelected([]);
+            handleClose();
+        });
     }
+
     const handleClose = () => {
+        setUsersSelected([])
         setOpen(false);
     };
+    const [conversationName, setConversationName] = useState("");
 
     return (
         <React.Fragment>
@@ -67,11 +77,13 @@ export const CreateGroup = ({opened = true, openedChanged, handleStatus}: {
                 <DialogContent>
                     <TextField placeholder={"Enter name or email of user . . . "} className={"w-full"}
                                onChange={(e) => setSearchValue(e.target.value)}/>
-                    <div className="flex px-3">
-                        <UsersSelect users={users} className={"col-span-8"} onAddUser={handleAddUserSelected}
+                    <TextField placeholder={"Enter name of conversation . . . "} className={"w-full"}
+                               onChange={(e) => setConversationName(e.target.value)}/>
+                    <div className="flex">
+                        <UsersSelect users={users} className={""} onAddUser={handleAddUserSelected}
                                      onRemoveUser={handleRemoveUserSelected}></UsersSelect>
                         <UsersSelected onRemoveUser={handleRemoveUserSelected} users={usersSelected}
-                                       className={"col-span-4 border rounded-l"}></UsersSelected>
+                                       className={"border rounded-l"}></UsersSelected>
                     </div>
                 </DialogContent>
                 <DialogActions>

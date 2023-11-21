@@ -17,7 +17,7 @@ type Props = {
 }
 export const UsersSelect: FC<Props> = ({users = [], className, usersSelected, onAddUser, onRemoveUser}) => {
 
-    const [checked, setChecked] = useState([0]);
+    const [checked, setChecked] = useState<number[]>([]);
 
     const handleToggle = (value: number, user: User) => () => {
         const currentIndex = checked.indexOf(value);
