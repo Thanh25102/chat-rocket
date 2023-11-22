@@ -4,19 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="cmpl change conversation online">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="realtime create conversation">
+      <change afterPath="$PROJECT_DIR$/frontend/components/loading/MessageLoading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/hooks/useDidUpdate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/cache/MessageCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/FocusHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useDebounce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useDebounce.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatThunks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/MessageRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/MessageRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +27,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
-        <option value="Class" />
         <option value="com.haulmont.jpb.NewClass" />
         <option value="Record" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -53,6 +53,9 @@
         <option name="url" value="https://github.com/Thanh25102/chat-rocket.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -84,41 +87,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;9ca79357-9e56-4402-8125-086d1d606467&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/src/main/resources/META-INF/resources/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "9ca79357-9e56-4402-8125-086d1d606467",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/src/main/resources/META-INF/resources/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "4ef287ed9e9ab3ebcc238fe42b239463",
+    "ts.external.directory.path": "C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -254,6 +258,9 @@
       <workItem from="1700571342594" duration="649000" />
       <workItem from="1700572129546" duration="2657000" />
       <workItem from="1700577041805" duration="190000" />
+      <workItem from="1700583328642" duration="2996000" />
+      <workItem from="1700634402852" duration="3185000" />
+      <workItem from="1700640536338" duration="14401000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -367,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700571210988</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="realtime create conversation">
+      <option name="closed" value="true" />
+      <created>1700583506858</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700583506858</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +404,8 @@
     <MESSAGE value="Add db docker compose" />
     <MESSAGE value="docker compose support &amp; refactor logic conversation &amp; refactor ui avatar &amp; temp onl feat" />
     <MESSAGE value="cmpl change conversation online" />
-    <option name="LAST_COMMIT_MESSAGE" value="cmpl change conversation online" />
+    <MESSAGE value="realtime create conversation" />
+    <option name="LAST_COMMIT_MESSAGE" value="realtime create conversation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -398,10 +414,15 @@
           <properties class="java.net.ConnectException" package="java.net" />
           <option name="timeStamp" value="5" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="7" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/auth.ts</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -15,8 +15,7 @@ import com.hillarocket.application.repo.ConversationRepo;
 import com.hillarocket.application.repo.GroupMemberRepo;
 import com.hillarocket.application.repo.MessageRepo;
 import com.hillarocket.application.repo.UserRepo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -31,7 +30,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class ChatHandler {
-    private final Logger log = LoggerFactory.getLogger(ChatHandler.class);
     private final ConversationRepo conversationRepo;
     private final GroupMemberRepo groupMemberRepo;
     private final MessageRepo messageRepo;
@@ -114,15 +112,25 @@ public class ChatHandler {
                     groupMemberRepo.saveAll(List.of(groupMem1, groupMem2));
                     return savedConversation;
                 });
-        var messagesDto = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
-        if (messagesDto == null || messagesDto.isEmpty()) {
-            var messages = messageRepo.find20NewestMessagesByConversationId(conversation.getId()).orElse(List.of());
-            messagesDto = messages.stream().map(messageMapper::toMsgDto).toList();
-        }
         var users = userRepo.findUserByConversationId(conversation.getId())
                 .orElse(List.of())
                 .stream().map(userMapper::toUserDto).toList();
-        return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, messagesDto);
+        return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, getMessageFromRedis(conversation));
+    }
+
+    private List<MessageDto> getMessageFromRedis(Conversation conversation) {
+        var messagesDto = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
+        if (messagesDto == null || messagesDto.isEmpty()) {
+            var messages = messageRepo.find20NewestMessagesByConversationId(conversation.getId()).orElse(List.of());
+            return messages.stream().map(messageMapper::toMsgDto).toList().reversed();
+        }
+        int size = messagesDto.size();
+        if(size < 20){
+            int limit = 20 - size;
+            var messages = messageRepo.findMessagesByConversationIdAndTime(conversation.getId(),messagesDto.getFirst().time(), PageRequest.of(0, limit));
+            messagesDto.addAll(0,messages.stream().map(messageMapper::toMsgDto).toList().reversed());
+        }
+        return messagesDto;
     }
 
     public ConversationMessage getConversationById(String conversationId) throws IOException {
@@ -131,12 +139,10 @@ public class ChatHandler {
         if (optConversation.isEmpty()) throw new IOException("không tồn tại cuộc trò chuyện");
         var conversation = optConversation.get();
 
-        var messages = messageRepo.find20NewestMessagesByConversationId(id).orElse(List.of());
-        var messagesDto = messages.stream().map(messageMapper::toMsgDto).toList();
         var users = userRepo.findUserByConversationId(id)
                 .orElse(List.of())
                 .stream().map(userMapper::toUserDto).toList();
-        return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, messagesDto);
+        return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, getMessageFromRedis(conversation));
     }
 
     public ConversationMessage createConversation(CreateGroupConversion conversionDto) throws IOException {

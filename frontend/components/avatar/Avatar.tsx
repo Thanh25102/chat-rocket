@@ -8,6 +8,7 @@ type Props = {
     removeIcon?: boolean;
     onTouch?: () => void;
     isOnline?: boolean;
+    type?:"round"|"horizontal"
 };
 
 export const Avatar: React.FC<Props> = ({
@@ -17,15 +18,20 @@ export const Avatar: React.FC<Props> = ({
                                             size = 50,
                                             sizeIconRemove,
                                             removeIcon,
-                                            onTouch
+                                            onTouch,
+                                            type="round"
                                         }) => {
     if (name) names.push(name);
+    if(type==="horizontal") return (
+        <div style={{position: "relative"}} onTouchEnd={onTouch}>
+            <AvatarHorizontal names={names} size={size}/>
+        </div>
+    )
     switch (names.length) {
         case 1:
             return (
                 <div style={{position: "relative"}} onTouchEnd={onTouch}>
                     <AvatarSingle name={names[0]} size={size}/>
-
                 </div>
             );
 
@@ -69,6 +75,46 @@ const bgColors = [
     "#1abc9c", // turquoise
     "#2c3e50", // midnight blue
 ];
+
+
+const AvatarHorizontal: React.FC<Props> = ({names, size = 50}) => {
+    return (
+        <div
+            style={{
+                display: "flex",
+                width: `${names.length * size/2}px`,
+                height: `${size}px`,
+                justifyContent: "left",
+                alignItems: "center",
+            }}
+        >
+            <div
+                style={{
+                    flexDirection: "row",
+                    position: "relative",
+                    width: `${size / 2}px`,
+                    height: `${size / 2}px`,
+                }}
+            >
+                {names.map((name,index)=>(
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: `${index*80}%`,
+                            backgroundColor: "#fff",
+                            padding: 2,
+                            borderRadius: `${size / 2}px`,
+                            zIndex: `${index}`,
+                        }}
+                    >
+                        <AvatarSingle name={names[0]} size={size / 2}/>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 const AvatarSingle: React.FC<Omit<Props, "names">> = ({name, size = 50}) => {
     let fullName = name || "U K";
@@ -399,6 +445,7 @@ const AvatarMore: React.FC<Props> = ({names, size = 50}) => {
                 >
                     <div
                         style={{
+                            display:"flex",
                             justifyContent: "center",
                             alignItems: "center",
                             backgroundColor: "gray",

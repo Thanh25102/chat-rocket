@@ -9,6 +9,8 @@ import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 import {ChatEndpoint} from "Frontend/generated/endpoints";
 import {fromMessage, fromMessages} from "Frontend/utils/converter";
 import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
+import MessageLoader from "Frontend/components/loading/MessageLoading";
+import {Avatar} from "Frontend/components/avatar/Avatar";
 
 
 export default function ChatChit() {
@@ -31,6 +33,8 @@ export default function ChatChit() {
         }
     }, [currentConversation, currentConversation?.conversationId]);
 
+    const [userFocused, setUserFocused] = useState<string[]>([]);
+
     const handleMessage = (msg: string) => {
         if (!currentConversation || !currentConversation.conversationId) return;
         ChatEndpoint.send(currentConversation.conversationId, {
@@ -41,7 +45,6 @@ export default function ChatChit() {
             time: new Date().toISOString()
         })
     }
-
     const handleConversationName = () => {
         if (!currentConversation) return "Chat";
         if (currentConversation.conversationName) return currentConversation.conversationName;
@@ -49,22 +52,60 @@ export default function ChatChit() {
         return userGroup.map(u => u.fullName).join(", ");
     }
 
+    useEffect(() => {
+        if (!currentConversation || !currentConversation.conversationId) return;
+        const flux = ChatEndpoint.joinFocus(currentConversation.conversationId)
+        flux.onNext((focusEvent) => {
+            if (!focusEvent) return;
+            focusEvent.isFocus ?
+                setUserFocused(prev => [...prev, focusEvent?.fullName || ""]) :
+                setUserFocused(prev => prev.filter(user => user !== focusEvent.fullName));
+        })
+        return () => {
+            flux.cancel();
+            setUserFocused([])
+        }
+    }, [currentConversation, currentConversation?.conversationId]);
+
+    const handleFocus = () => ChatEndpoint.focus(currentConversation?.conversationId, {
+        isFocus: true,
+        fullName: user.fullName
+    });
+
+    const handleBlur = () => ChatEndpoint.focus(currentConversation?.conversationId, {
+        isFocus: false,
+        fullName: user.fullName
+    });
+
     return (
         <div className={"content"} style={{height: "100vh", display: "flex", flexDirection: "column"}}>
             <div style={{display: "flex", alignItems: "center", height: "10vh"}}>
+
                 <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
                 <div>
                     <h2 slot="navbar" className="text-m m-0">
                         {handleConversationName()}
                     </h2>
                     <span className="text-xs">Online 3p truoc</span>
+
                 </div>
             </div>
             <MessageList items={items} className={"flex-grow"} style={{maxHeight: "800px", overflowY: "scroll"}}/>
             <div>
-                <MessageInput className={"flex-grow"} style={{height: "60px"}}
+                {
+                    userFocused.length > 0 && (
+                        <div className={"flex w-[100] ml-4 space-x-1 align-middle"}>
+                            <Avatar names={userFocused} size={40} type={"horizontal"}/>
+                            <div className={"flex align-middle"}>
+                                <MessageLoader/>
+                            </div>
+                        </div>
+                    )
+                }
+                <MessageInput className={"flex-grow"} style={{height: "60px"}} onFocus={handleFocus} onBlur={handleBlur}
                               onSubmit={(e: CustomEvent) => handleMessage(e.detail.value)}/>
             </div>
+
         </div>
     );
 }

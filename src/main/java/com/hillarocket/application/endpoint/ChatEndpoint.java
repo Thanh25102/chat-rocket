@@ -5,6 +5,7 @@ import com.hillarocket.application.dto.ConversationMessage;
 import com.hillarocket.application.dto.CreateGroupConversion;
 import com.hillarocket.application.dto.MessageDto;
 import com.hillarocket.application.handler.ChatHandler;
+import com.hillarocket.application.handler.FocusHandler;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import dev.hilla.Nonnull;
@@ -20,9 +21,11 @@ import java.util.UUID;
 @Log4j2
 public class ChatEndpoint {
     private final ChatHandler chatHandler;
+    private final FocusHandler focusHandler;
 
-    public ChatEndpoint(ChatHandler chatHandler) {
+    public ChatEndpoint(ChatHandler chatHandler, FocusHandler focusHandler) {
         this.chatHandler = chatHandler;
+        this.focusHandler = focusHandler;
     }
 
     public @Nonnull Flux<MessageDto> join(String roomId) {
@@ -31,6 +34,14 @@ public class ChatEndpoint {
 
     public void send(String roomId, MessageDto message) {
         chatHandler.send(roomId, message);
+    }
+
+    public @Nonnull Flux<FocusHandler.Focus> joinFocus(String roomId) {
+        return focusHandler.join(roomId);
+    }
+
+    public void focus(String roomId, FocusHandler.Focus focus) {
+        focusHandler.focus(roomId, focus);
     }
 
     public List<@Nonnull Conversation> getAllConversation() {
