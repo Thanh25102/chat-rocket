@@ -10,13 +10,14 @@ import {UserEndpoint} from "Frontend/generated/endpoints";
 import OnlineEvent from "Frontend/generated/com/hillarocket/application/dto/OnlineEvent";
 import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
+import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 
-type Props = {
-    conversations: ConversationMessage[]
-}
-export const ConversationTabs: React.FC<Props> = ({conversations}) => {
+
+export const ConversationTabs: React.FC = () => {
     const dispatch = useAppDispatch();
     const curUser = useAppSelector(AuthSelectors.getCurrentUser());
+    const conversations = useAppSelector(ChatSelectors.getAllConversation());
+
 
     const getConversationById = async (id?: string) => {
         if (!id) return;

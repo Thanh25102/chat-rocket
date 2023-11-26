@@ -22,6 +22,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = {"newUser", "password", "groupMembers"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

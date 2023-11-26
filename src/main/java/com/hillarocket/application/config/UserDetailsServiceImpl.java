@@ -23,15 +23,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email)  {
         var user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("No user present with email: " + email));
-
         return new org.springframework.security.core.userdetails.User
                 (user.getEmail(), user.getPassword(), getAuthorities(user));
     }
 
-    private List<GrantedAuthority> getAuthorities(User user) {
+    public List<GrantedAuthority> getAuthorities(User user) {
         return List.of(
                 new SimpleGrantedAuthority("ROLE_" + user.getRole())
         );

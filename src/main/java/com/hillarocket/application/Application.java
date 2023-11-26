@@ -34,4 +34,6 @@ public class Application implements AppShellConfigurator {
     Faker faker() {
         return new Faker();
     }
+
+
 }

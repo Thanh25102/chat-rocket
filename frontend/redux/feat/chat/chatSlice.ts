@@ -51,7 +51,6 @@ export const chatSlice = createSlice({
                 .addCase(ChatThunks.getCurrentConversation.rejected, (state, action) => {
                     state.loading = false
                     state.error = true
-
                 })
                 .addCase(ChatThunks.createConversation.fulfilled,(state,action)=>{
                     state.loading = false

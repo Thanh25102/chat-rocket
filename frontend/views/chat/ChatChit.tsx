@@ -21,11 +21,11 @@ export default function ChatChit() {
 
     useEffect(() => {
         if (!currentConversation || !currentConversation.conversationId) return;
-        setItems(fromMessages(currentConversation.messages));
+        setItems(fromMessages(currentConversation.messages,user.id));
         const flux = ChatEndpoint.join(currentConversation.conversationId)
         flux.onNext((msg) => {
             if (!msg) return;
-            setItems(prev => [...prev, fromMessage(msg)])
+            setItems(prev => [...prev, fromMessage(msg,user.id)])
         })
         return () => {
             flux.cancel();
@@ -94,8 +94,8 @@ export default function ChatChit() {
             <div>
                 {
                     userFocused.length > 0 && (
-                        <div className={"flex w-[100] ml-4 space-x-1 align-middle"}>
-                            <Avatar names={userFocused} size={40} type={"horizontal"}/>
+                        <div className={"flex w-[100] ml-4 space-x-2 align-middle"}>
+                            <Avatar names={userFocused} size={46} type={"horizontal"}/>
                             <div className={"flex align-middle"}>
                                 <MessageLoader/>
                             </div>

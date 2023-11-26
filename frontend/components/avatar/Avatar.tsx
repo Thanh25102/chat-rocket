@@ -107,6 +107,7 @@ const AvatarHorizontal: React.FC<Props> = ({names, size = 50}) => {
                             borderRadius: `${size / 2}px`,
                             zIndex: `${index}`,
                         }}
+                        key={index}
                     >
                         <AvatarSingle name={names[0]} size={size / 2}/>
                     </div>

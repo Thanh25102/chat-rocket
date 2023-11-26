@@ -30,7 +30,6 @@ public class SecurityConfig extends VaadinWebSecurity {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         // Disable creating and using sessions in Spring Security
         http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
@@ -41,10 +40,13 @@ public class SecurityConfig extends VaadinWebSecurity {
                         new AntPathRequestMatcher("/videos/*.mp4"),
                         new AntPathRequestMatcher("/icons/*.png"),
                         new AntPathRequestMatcher("/ws/**"),
-                        new AntPathRequestMatcher("/**")
-                ).permitAll());
+                        new AntPathRequestMatcher("/**"),
+                        new AntPathRequestMatcher("/oauth2/authorization/github")
+                ).permitAll())
+                .oauth2Login(oauth2->{
+                    oauth2.loginPage("/login");
+                });
         super.configure(http);
-
 
         // Register your login view to the view access checker mechanism
         setLoginView(http, "/login");
