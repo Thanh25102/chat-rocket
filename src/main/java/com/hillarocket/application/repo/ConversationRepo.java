@@ -1,6 +1,7 @@
 package com.hillarocket.application.repo;
 
 import com.hillarocket.application.domain.Conversation;
+import com.hillarocket.application.enumration.ConversionType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -34,6 +35,12 @@ public interface ConversationRepo extends JpaRepository<Conversation, UUID> {
                 WHERE gm.user.id = ?1 ORDER BY c.createDate ASC
             """)
     List<Conversation> findConversationByUserId(UUID u1);
+    @Query("""
+                SELECT c
+                FROM Conversation c
+                WHERE upper(c.name) like upper(concat('%',?1,'%')) AND c.type = ?2 ORDER BY c.createDate ASC
+            """)
+    List<Conversation> findConversationGroupByName(String name, ConversionType type);
 
     @Query("select c from Conversation c where c.id = ?1")
     Optional<Conversation> getConversationById(UUID id);

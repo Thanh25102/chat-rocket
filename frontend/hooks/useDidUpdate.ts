@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
 // This hook will run the provided callback function after every update,
 // but not on the initial mount.

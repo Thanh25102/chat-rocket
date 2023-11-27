@@ -8,7 +8,7 @@ type Props = {
     removeIcon?: boolean;
     onTouch?: () => void;
     isOnline?: boolean;
-    type?:"round"|"horizontal"
+    type?: "round" | "horizontal"
 };
 
 export const Avatar: React.FC<Props> = ({
@@ -19,10 +19,10 @@ export const Avatar: React.FC<Props> = ({
                                             sizeIconRemove,
                                             removeIcon,
                                             onTouch,
-                                            type="round"
+                                            type = "round"
                                         }) => {
     if (name) names.push(name);
-    if(type==="horizontal") return (
+    if (type === "horizontal") return (
         <div style={{position: "relative"}} onTouchEnd={onTouch}>
             <AvatarHorizontal names={names} size={size}/>
         </div>
@@ -82,7 +82,7 @@ const AvatarHorizontal: React.FC<Props> = ({names, size = 50}) => {
         <div
             style={{
                 display: "flex",
-                width: `${names.length * size/2}px`,
+                width: `${names.length * size / 2}px`,
                 height: `${size}px`,
                 justifyContent: "left",
                 alignItems: "center",
@@ -96,12 +96,12 @@ const AvatarHorizontal: React.FC<Props> = ({names, size = 50}) => {
                     height: `${size / 2}px`,
                 }}
             >
-                {names.map((name,index)=>(
+                {names.map((name, index) => (
                     <div
                         style={{
                             position: "absolute",
                             top: 0,
-                            left: `${index*80}%`,
+                            left: `${index * 80}%`,
                             backgroundColor: "#fff",
                             padding: 2,
                             borderRadius: `${size / 2}px`,
@@ -212,8 +212,8 @@ const AvatarTriple: React.FC<Props> = ({names, size = 50}) => {
                 height: `${size}px`,
                 justifyContent: "center",
                 alignItems: "center",
-                display:"flex",
-                flexDirection:"column",
+                display: "flex",
+                flexDirection: "column",
             }}
         >
             <div
@@ -285,8 +285,8 @@ const AvatarQuadruple: React.FC<Props> = ({names, size = 50}) => {
             style={{
                 width: `${size}px`,
                 height: `${size}px`,
-                display:"flex",
-                flexDirection:"column",
+                display: "flex",
+                flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
             }}
@@ -373,8 +373,8 @@ const AvatarMore: React.FC<Props> = ({names, size = 50}) => {
                 height: `${size}px`,
                 justifyContent: "center",
                 alignItems: "center",
-                display:"flex",
-                flexDirection:"column",
+                display: "flex",
+                flexDirection: "column",
             }}
         >
             <div
@@ -446,7 +446,7 @@ const AvatarMore: React.FC<Props> = ({names, size = 50}) => {
                 >
                     <div
                         style={{
-                            display:"flex",
+                            display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
                             backgroundColor: "gray",

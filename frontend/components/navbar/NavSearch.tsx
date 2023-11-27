@@ -1,15 +1,20 @@
-import {FC, useState} from "react";
+import React, {FC, useState} from "react";
 import {HorizontalLayout} from "@hilla/react-components/HorizontalLayout";
 import {type ConfirmDialogOpenedChangedEvent,} from '@hilla/react-components/ConfirmDialog.js';
 import {CreateGroup} from "Frontend/components/dialog/create-group";
+import {ConversationTabs} from "Frontend/components/navbar/ConversationTabs";
+import {TextField} from "@hilla/react-components/TextField";
+import {useAppSelector} from "Frontend/redux/hooks";
+import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 
 type Props = {
+    onFocus?: () => void;
     title?: string;
 }
-export const NavSearch: FC<Props> = ({title}) => {
-
+export const NavSearch: FC<Props> = ({title, onFocus}) => {
     const [dialogOpened, setDialogOpened] = useState(true);
     const [status, setStatus] = useState('');
+    const conversations = useAppSelector(ChatSelectors.getAllConversation());
 
     function openedChanged(event: ConfirmDialogOpenedChangedEvent) {
         setDialogOpened(event.detail.value);
@@ -18,13 +23,15 @@ export const NavSearch: FC<Props> = ({title}) => {
         }
     }
 
-
-    return <HorizontalLayout className="mb-4 px-2 space-x-4">
-        <input
-            type="text"
-            placeholder="Search..."
-            className="px-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-        />
-        <CreateGroup openedChanged={openedChanged} handleStatus={setStatus} opened={dialogOpened}/>
-    </HorizontalLayout>
+    return <>
+        <HorizontalLayout className="flex justify-center space-x-4">
+            <TextField
+                placeholder="Search..."
+                className="rounded-md w-3/5"
+                onFocus={onFocus}
+            />
+            <CreateGroup openedChanged={openedChanged} handleStatus={setStatus} opened={dialogOpened}/>
+        </HorizontalLayout>
+        <ConversationTabs conversations={conversations}/>
+    </>
 }

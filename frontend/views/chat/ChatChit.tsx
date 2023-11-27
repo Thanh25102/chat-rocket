@@ -21,11 +21,11 @@ export default function ChatChit() {
 
     useEffect(() => {
         if (!currentConversation || !currentConversation.conversationId) return;
-        setItems(fromMessages(currentConversation.messages,user.id));
+        setItems(fromMessages(currentConversation.messages, user.id));
         const flux = ChatEndpoint.join(currentConversation.conversationId)
         flux.onNext((msg) => {
             if (!msg) return;
-            setItems(prev => [...prev, fromMessage(msg,user.id)])
+            setItems(prev => [...prev, fromMessage(msg, user.id)])
         })
         return () => {
             flux.cancel();
@@ -78,16 +78,16 @@ export default function ChatChit() {
     });
 
     return (
-        <div className={"content"} style={{height: "100vh", display: "flex", flexDirection: "column"}}>
-            <div style={{display: "flex", alignItems: "center", height: "10vh"}}>
-
-                <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
+        <div className={"content"} style={{height: "90vh", display: "flex", flexDirection: "column"}}>
+            <div style={{display: "flex", alignItems: "center", height: "10vh"}} className={"space-x-4 ml-4 py-2"}>
+                    <Avatar
+                        names={currentConversation?.users.filter(u => u.id !== user.id).map(u => u.fullName || "u") || ["U"]}
+                        size={36}/>
                 <div>
                     <h2 slot="navbar" className="text-m m-0">
                         {handleConversationName()}
                     </h2>
                     <span className="text-xs">Online 3p truoc</span>
-
                 </div>
             </div>
             <MessageList items={items} className={"flex-grow"} style={{maxHeight: "800px", overflowY: "scroll"}}/>

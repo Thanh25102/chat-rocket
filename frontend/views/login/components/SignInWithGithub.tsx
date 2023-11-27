@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Loading} from "Frontend/views/login/LoginView";
 import {Img} from "react-image";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const SignInWithGithub = () => {
     const [loading, setLoading] = useState<boolean>(false);

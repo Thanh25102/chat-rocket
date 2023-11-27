@@ -90,6 +90,14 @@ public class ChatHandler {
         }).toList();
     }
 
+    public List<ConversationMessage> getConversationGroupByName(String name) {
+        var conversations = conversationRepo.findConversationGroupByName(name, ConversionType.GROUP);
+        return conversations.stream().map(conversation -> {
+            var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
+            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, List.of());
+        }).toList();
+    }
+
     public ConversationMessage getSingleConversationByUserId(String u1, String u2) {
         var id1 = UUID.fromString(u1);
         var id2 = UUID.fromString(u2);
@@ -125,10 +133,10 @@ public class ChatHandler {
             return messages.stream().map(messageMapper::toMsgDto).toList().reversed();
         }
         int size = messagesDto.size();
-        if(size < 20){
+        if (size < 20) {
             int limit = 20 - size;
-            var messages = messageRepo.findMessagesByConversationIdAndTime(conversation.getId(),messagesDto.getFirst().time(), PageRequest.of(0, limit));
-            messagesDto.addAll(0,messages.stream().map(messageMapper::toMsgDto).toList().reversed());
+            var messages = messageRepo.findMessagesByConversationIdAndTime(conversation.getId(), messagesDto.getFirst().time(), PageRequest.of(0, limit));
+            messagesDto.addAll(0, messages.stream().map(messageMapper::toMsgDto).toList().reversed());
         }
         return messagesDto;
     }

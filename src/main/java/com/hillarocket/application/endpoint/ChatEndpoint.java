@@ -52,6 +52,10 @@ public class ChatEndpoint {
         return chatHandler.getConversationByUserId(userId);
     }
 
+    public @Nonnull List<@Nonnull ConversationMessage> getConversationGroupByName(@Nonnull String name) {
+        return chatHandler.getConversationGroupByName(name);
+    }
+
     @AnonymousAllowed
     public @Nonnull ConversationMessage createConversation(CreateGroupConversion conversionDto) throws IOException {
         return chatHandler.createConversation(conversionDto);
@@ -60,6 +64,7 @@ public class ChatEndpoint {
     public @Nonnull ConversationMessage getSingleConversationByUserId(@Nonnull String u1, @Nonnull String u2) {
         return chatHandler.getSingleConversationByUserId(u1, u2);
     }
+
     public @Nonnull ConversationMessage getConversationById(@Nonnull String conversationId) throws IOException {
         return chatHandler.getConversationById(conversationId);
     }

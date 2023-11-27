@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String email)  {
+    public UserDetails loadUserByUsername(String email) {
         var user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("No user present with email: " + email));
         return new org.springframework.security.core.userdetails.User

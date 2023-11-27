@@ -62,7 +62,7 @@ export const CreateGroup = ({opened = true, openedChanged, handleStatus}: {
 
     return (
         <React.Fragment>
-            <Button onClick={handleClickOpen}>
+            <Button onClick={handleClickOpen} className={"w-1/4"}>
                 <MdOutlineGroupAdd size={"20"}/>
             </Button>
             <Dialog

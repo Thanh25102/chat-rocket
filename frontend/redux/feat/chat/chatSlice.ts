@@ -52,7 +52,7 @@ export const chatSlice = createSlice({
                     state.loading = false
                     state.error = true
                 })
-                .addCase(ChatThunks.createConversation.fulfilled,(state,action)=>{
+                .addCase(ChatThunks.createConversation.fulfilled, (state, action) => {
                     state.loading = false
                     state.error = false
                     state.conversations.unshift(action.payload)

@@ -4,24 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: type messaging realtime">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: temp to build">
+      <change afterPath="$PROJECT_DIR$/frontend/components/navigation/NavigationSearch.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/loading/MessageLoading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/loading/MessageLoading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavSearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/hooks/useDidUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useDidUpdate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/converter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +125,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -268,6 +276,18 @@
       <workItem from="1700640536338" duration="14508000" />
       <workItem from="1700823093829" duration="11003000" />
       <workItem from="1700998183618" duration="1296000" />
+      <workItem from="1701000089188" duration="791000" />
+      <workItem from="1701000907390" duration="2148000" />
+      <workItem from="1701007498266" duration="631000" />
+      <workItem from="1701008154483" duration="458000" />
+      <workItem from="1701008765034" duration="1244000" />
+      <workItem from="1701074445940" duration="1895000" />
+      <workItem from="1701076480251" duration="281000" />
+      <workItem from="1701081569468" duration="320000" />
+      <workItem from="1701082097017" duration="462000" />
+      <workItem from="1701082710216" duration="69000" />
+      <workItem from="1701082792382" duration="277000" />
+      <workItem from="1701083081381" duration="7804000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -397,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700665259215</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: temp to build">
+      <option name="closed" value="true" />
+      <created>1701000158649</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701000158649</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +449,8 @@
     <MESSAGE value="cmpl change conversation online" />
     <MESSAGE value="realtime create conversation" />
     <MESSAGE value="feat: type messaging realtime" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: type messaging realtime" />
+    <MESSAGE value="feat: temp to build" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: temp to build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

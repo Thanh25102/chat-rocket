@@ -35,23 +35,23 @@ public class OAuth2LoginHandler extends SavedRequestAwareAuthenticationSuccessHa
 
         var oauthToken = (OAuth2AuthenticationToken) authentication;
 
-        if("github".equals(oauthToken.getAuthorizedClientRegistrationId())){
+        if ("github".equals(oauthToken.getAuthorizedClientRegistrationId())) {
             var principal = (DefaultOAuth2User) authentication.getPrincipal();
             var attributes = principal.getAttributes();
-            String email = attributes.getOrDefault("email","").toString();
-            String name = attributes.getOrDefault("name","").toString();
-            try{
-                var user =  userDetailsService.loadUserByUsername(email);
-                var newUser = new DefaultOAuth2User(user.getAuthorities(),attributes,"name");
-                var securityAuth = new OAuth2AuthenticationToken(newUser,user.getAuthorities(),"id");
+            String email = attributes.getOrDefault("email", "").toString();
+            String name = attributes.getOrDefault("name", "").toString();
+            try {
+                var user = userDetailsService.loadUserByUsername(email);
+                var newUser = new DefaultOAuth2User(user.getAuthorities(), attributes, "name");
+                var securityAuth = new OAuth2AuthenticationToken(newUser, user.getAuthorities(), "id");
                 SecurityContextHolder.getContext().setAuthentication(securityAuth);
-            }catch (UsernameNotFoundException e){
+            } catch (UsernameNotFoundException e) {
                 var user = User.builder()
                         .fullName(name).email(email).role(Role.USER).build();
                 userRepo.save(user);
 
-                var newUser = new DefaultOAuth2User(userDetailsService.getAuthorities(user),attributes,"name");
-                var securityAuth = new OAuth2AuthenticationToken(newUser,userDetailsService.getAuthorities(user),"id");
+                var newUser = new DefaultOAuth2User(userDetailsService.getAuthorities(user), attributes, "name");
+                var securityAuth = new OAuth2AuthenticationToken(newUser, userDetailsService.getAuthorities(user), "id");
                 SecurityContextHolder.getContext().setAuthentication(securityAuth);
             }
 

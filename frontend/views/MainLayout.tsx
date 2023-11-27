@@ -1,11 +1,10 @@
 import {AppLayout} from '@hilla/react-components/AppLayout.js';
 import Placeholder from 'Frontend/components/placeholder/Placeholder';
-import React, {Suspense, useEffect} from 'react';
-import {NavLink, Outlet, useNavigate} from 'react-router-dom';
+import React, {Suspense, useEffect, useState} from 'react';
+import {Outlet, useNavigate} from 'react-router-dom';
 import css from './MainLayout.module.css';
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {Avatar} from "@hilla/react-components/Avatar";
-import {Button} from "@hilla/react-components/Button";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
@@ -13,8 +12,12 @@ import {NavSearch} from "Frontend/components/navbar/NavSearch";
 import {UserEndpoint} from "Frontend/generated/endpoints";
 import {AuthActions} from "Frontend/redux/feat/auth/authSlice";
 import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
-import {ConversationTabs} from "Frontend/components/navbar/ConversationTabs";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
+import {NavigationSearch} from "Frontend/components/navigation/NavigationSearch";
+import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
+import {MenuBar} from "@hilla/react-components/MenuBar";
+import {createRoot} from "react-dom/client";
+import {Img} from "react-image";
 
 export default function MainLayout() {
     const currentTitle = useRouteMetadata()?.title ?? 'My App';
@@ -22,10 +25,12 @@ export default function MainLayout() {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
+    const [searchState, setSearchState] = useState(false);
+
     useEffect(() => {
-        if(!user || !user.id) return;
-        dispatch(ChatThunks.getConversationByUserId(user.id)).then(()=>console.log("ceheck"))
-    }, [user ,user?.id]);
+        if (!user || !user.id) return;
+        dispatch(ChatThunks.getConversationByUserId(user.id)).then(() => console.log("ceheck"))
+    }, [user, user?.id]);
 
     useEffect(() => {
         (async () => {
@@ -48,33 +53,46 @@ export default function MainLayout() {
             })
     }
 
+    const menuComponent = (component: React.ReactNode) => {
+        const container = document.createElement('div');
+        createRoot(container).render(component);
+        return container;
+    }
+    const menuBarItems = [
+        {
+            component: menuComponent(
+                <Avatar/>
+            ),
+            children: [
+                {
+                    text: 'Profile',
+                },
+                {
+                    text: 'Settings',
+                },
+                {
+                    text: 'Help',
+                },
+                {
+                    text: 'Sign out',
+                },
+            ],
+        },
+    ];
     return user ? (
         <AppLayout primarySection="drawer">
-            <div slot="drawer" className={css.drawer}>
-                <header>
-                    <h1 className="text-l m-0">My App</h1>
-                    <nav>
-                        {user && <NavLink to="/">Hello World</NavLink>}
-                        {user && <NavLink to="/about">About</NavLink>}
-                        {user && <NavLink to="/chat">Chat</NavLink>}
-                    </nav>
-                    <NavSearch/>
-                </header>
-                {/*{user && <UserTabs userId={user?.id} users={users}/>}*/}
-                {<ConversationTabs/>}
+            <DrawerToggle slot="navbar"></DrawerToggle>
+            <h1 slot="navbar">MyApp</h1>
+            <div slot="navbar" className={"w-full flex mr-4 justify-end items-end"}>
+                <MenuBar items={menuBarItems} theme="tertiary-inline"/>;
+            </div>
+            <div slot="drawer" className={`${css.drawer}`}>
+                <Img src={"images/logo.png"}/>
+                <div className="mt-2">
+                    {searchState ? <NavigationSearch onClose={() => setSearchState(false)}/> :
+                        <NavSearch onFocus={() => setSearchState(true)}/>}
+                </div>
                 <footer className="flex flex-col gap-s">
-                    {user ? (
-                        <>
-                            <div className="flex items-center gap-s">
-                                <Avatar theme="xsmall" name={user.fullName}/>
-                                {user.fullName}
-                            </div>
-                            <Button onClick={async () => logout()}>Sign out</Button>
-                        </>
-                    ) : (
-                        <Button onClick={logout}>Sign out</Button>
-                    )}
-                    <Button onClick={() => navigate("/login")}>Sign in</Button>
                 </footer>
             </div>
             <Suspense fallback={<Placeholder/>}>
