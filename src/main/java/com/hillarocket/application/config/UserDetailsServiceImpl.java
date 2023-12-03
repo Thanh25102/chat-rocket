@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class    UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepo userRepo;
 
     public UserDetailsServiceImpl(UserRepo userRepo) {

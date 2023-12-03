@@ -36,7 +36,6 @@ public class UserHandler {
             usersOnline.add(event.userId());
         else
             usersOnline.remove(event.userId());
-
         userOnlineSink.emitNext(event,
                 (signalType, emitResult) -> emitResult == Sinks.EmitResult.FAIL_NON_SERIALIZED
         );

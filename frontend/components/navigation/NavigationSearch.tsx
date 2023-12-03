@@ -7,7 +7,6 @@ import {ConversationTabs} from "Frontend/components/navbar/ConversationTabs";
 import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import useDebounce from "Frontend/hooks/useDebounce";
 import {ChatEndpoint, UserEndpoint} from "Frontend/generated/endpoints";
-import useDidUpdate from "Frontend/hooks/useDidUpdate";
 import ConversationMessage from "Frontend/generated/com/hillarocket/application/dto/ConversationMessage";
 import {Tabs} from "@hilla/react-components/Tabs";
 import {Tab} from "@hilla/react-components/Tab";

@@ -12,7 +12,8 @@ public class RedisConfig {
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
         // Tạo Standalone Connection tới Redis
-        var redisConfig = new RedisStandaloneConfiguration("localhost", 6379);
+        var redisConfig = new RedisStandaloneConfiguration("cache", 6379);
+//        var redisConfig = new RedisStandaloneConfiguration("local", 6379);
         redisConfig.setPassword("eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81");
         return new LettuceConnectionFactory(redisConfig);
     }

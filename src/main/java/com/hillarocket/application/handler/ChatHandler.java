@@ -85,8 +85,10 @@ public class ChatHandler {
         var conversations = conversationRepo.findConversationByUserId(userId);
         return conversations.stream().map(conversation -> {
             var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
-            var lastedMessage = messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList();
-            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, lastedMessage.stream().map(messageMapper::toMsgDto).toList());
+            var lastedMessageRedis = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
+            var lastedMessage = lastedMessageRedis == null || lastedMessageRedis.isEmpty() ?
+                    messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList().stream().map(messageMapper::toMsgDto).toList() : lastedMessageRedis;
+            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, lastedMessage);
         }).toList();
     }
 

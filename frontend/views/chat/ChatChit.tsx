@@ -6,9 +6,8 @@ import {useAppSelector} from "Frontend/redux/hooks";
 import {Navigate} from "react-router-dom";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
-import {ChatEndpoint} from "Frontend/generated/endpoints";
+import {ChatEndpoint, ChatEndpoint2} from "Frontend/generated/endpoints";
 import {fromMessage, fromMessages} from "Frontend/utils/converter";
-import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
 import MessageLoader from "Frontend/components/loading/MessageLoading";
 import {Avatar} from "Frontend/components/avatar/Avatar";
 
@@ -37,13 +36,15 @@ export default function ChatChit() {
 
     const handleMessage = (msg: string) => {
         if (!currentConversation || !currentConversation.conversationId) return;
-        ChatEndpoint.send(currentConversation.conversationId, {
+        const message = {
             messageText: msg,
             senderName: user.fullName,
             senderId: user.id,
             conversationId: currentConversation.conversationId,
             time: new Date().toISOString()
-        })
+        }
+        ChatEndpoint.send(currentConversation.conversationId, message)
+        ChatEndpoint2.send(currentConversation.users.map(u => u.id), message)
     }
     const handleConversationName = () => {
         if (!currentConversation) return "Chat";
@@ -80,9 +81,9 @@ export default function ChatChit() {
     return (
         <div className={"content"} style={{height: "90vh", display: "flex", flexDirection: "column"}}>
             <div style={{display: "flex", alignItems: "center", height: "10vh"}} className={"space-x-4 ml-4 py-2"}>
-                    <Avatar
-                        names={currentConversation?.users.filter(u => u.id !== user.id).map(u => u.fullName || "u") || ["U"]}
-                        size={36}/>
+                <Avatar
+                    names={currentConversation?.users.filter(u => u.id !== user.id).map(u => u.fullName || "u") || ["U"]}
+                    size={36}/>
                 <div>
                     <h2 slot="navbar" className="text-m m-0">
                         {handleConversationName()}

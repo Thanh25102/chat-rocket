@@ -4,10 +4,16 @@ import com.github.javafaker.Faker;
 import com.hillarocket.application.domain.Role;
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.repo.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.DataSourceInitializer;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
 import java.util.stream.IntStream;
 
 @Component
@@ -26,6 +32,7 @@ public class Initialize implements CommandLineRunner {
     public void run(String... args) {
         if (userRepo.findAll().isEmpty()) initUsers();
     }
+
 
     private void initUsers() {
         IntStream.range(0, 10)

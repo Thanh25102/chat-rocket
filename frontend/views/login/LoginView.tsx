@@ -63,7 +63,7 @@ export default function LoginView() {
             >
                 <source src='videos/login-page.mp4' type='video/mp4'/>
             </video>
-            <div className='absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)]'/>
+            <div className='absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)]' />
             <LoginModal i18n={loginI18nDefault}
                         onLogin={handleLogin}
                         error={hasError}

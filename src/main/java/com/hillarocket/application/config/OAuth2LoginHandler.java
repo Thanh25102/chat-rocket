@@ -49,12 +49,10 @@ public class OAuth2LoginHandler extends SavedRequestAwareAuthenticationSuccessHa
                 var user = User.builder()
                         .fullName(name).email(email).role(Role.USER).build();
                 userRepo.save(user);
-
                 var newUser = new DefaultOAuth2User(userDetailsService.getAuthorities(user), attributes, "name");
                 var securityAuth = new OAuth2AuthenticationToken(newUser, userDetailsService.getAuthorities(user), "id");
                 SecurityContextHolder.getContext().setAuthentication(securityAuth);
             }
-
         }
         this.setAlwaysUseDefaultTargetUrl(true);
         this.setDefaultTargetUrl(homePageUrl);

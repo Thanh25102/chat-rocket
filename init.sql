@@ -1,3 +1,6 @@
+CREATE DATABASE hillarocket;
+\c hillarocket;
+
 CREATE TABLE IF NOT EXISTS USERS
 (
     id       UUID         NOT NULL PRIMARY KEY,

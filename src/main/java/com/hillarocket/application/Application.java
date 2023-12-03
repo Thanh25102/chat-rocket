@@ -3,13 +3,20 @@ package com.hillarocket.application;
 import com.github.javafaker.Faker;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
+import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatProtocolHandlerCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.concurrent.Executors;
+
 
 /**
  * The entry point of the Spring Boot application.
@@ -19,6 +26,7 @@ import java.util.concurrent.Executors;
  */
 @SpringBootApplication
 @EnableJpaAuditing
+@Slf4j
 @Theme(value = "hilla-rocket")
 public class Application implements AppShellConfigurator {
     public static void main(String[] args) {
@@ -34,5 +42,4 @@ public class Application implements AppShellConfigurator {
     Faker faker() {
         return new Faker();
     }
-
 }

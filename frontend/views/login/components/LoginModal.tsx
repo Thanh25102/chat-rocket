@@ -17,8 +17,9 @@ export const LoginModal: FC<Props> = ({i18n, onLogin, error = false, disabled = 
     const [password, setPassword] = useState('');
 
     return (
+
         <div
-            className='absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-dark-background shadow-md flex items-start gap-3 rounded-lg min-w-[850px] max-w-[100vh]'>
+            className='absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-[rgba(0,0,0,0.8)] backdrop-blur-sm shadow-md flex items-start gap-3 rounded-lg min-w-[900px] w-max max-w-[100vh]'>
             <div className='h-full w-[400px] p-4'>
                 <div className='w-[400px] h-full relative'>
                     <img
@@ -107,7 +108,7 @@ export const LoginModal: FC<Props> = ({i18n, onLogin, error = false, disabled = 
                     <p className='flex items-center justify-center gap-1 font-semibold text-dark-text-50 text-md'>
                         Don&apos;t have an account?
                         <a
-                            href={"/sign-up"}
+                            href={"/register"}
                             className='text-dark-text'
                         >
                             Sign up

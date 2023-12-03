@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import ConversationMessage from "Frontend/generated/com/hillarocket/application/dto/ConversationMessage";
+import MessageDto from "Frontend/generated/com/hillarocket/application/dto/MessageDto";
 
 export type ChatState = {
     error: boolean,
@@ -19,6 +20,14 @@ export const chatSlice = createSlice({
         reducers: {
             getConversationById(state, action: PayloadAction<string>) {
                 state.conversations.find(conversation => conversation.conversationId === action.payload);
+            },
+            sendMessage(state, action: PayloadAction<MessageDto>) {
+                const index = state.conversations.findIndex(conversation => conversation.conversationId === action.payload.conversationId);
+                if (index !== -1) {
+                    const [conversation] = state.conversations.splice(index, 1);
+                    conversation.messages.push(action.payload);
+                    state.conversations.unshift(conversation);
+                }
             }
         },
         extraReducers: (builder) => {

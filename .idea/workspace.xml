@@ -4,30 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: temp to build">
-      <change afterPath="$PROJECT_DIR$/frontend/components/navigation/NavigationSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: refactor &amp; change ui">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/admin/user/UserManagement.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/register/RegisterView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserManageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/NavSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/NavSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useDidUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useDidUpdate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navigation/NavigationSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navigation/NavigationSearch.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/redux/feat/chat/chatSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ChatEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/ConversationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
@@ -45,6 +50,7 @@
         <option value="Interface" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="Dockerfile" />
         <option value="Class" />
       </list>
     </option>
@@ -69,6 +75,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/utils/SecurityUtils.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-21.0.1/lib/src.zip!/java.base/javax/crypto/spec/SecretKeySpec.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -114,7 +121,7 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/src/main/resources/META-INF/resources/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/src/main/resources/META-INF/resources&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -144,6 +151,7 @@
       <recent name="com.hillarocket.application.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources" />
       <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources\images" />
       <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views" />
     </key>
@@ -287,7 +295,16 @@
       <workItem from="1701082097017" duration="462000" />
       <workItem from="1701082710216" duration="69000" />
       <workItem from="1701082792382" duration="277000" />
-      <workItem from="1701083081381" duration="7804000" />
+      <workItem from="1701083081381" duration="8685000" />
+      <workItem from="1701239083780" duration="8962000" />
+      <workItem from="1701268356750" duration="961000" />
+      <workItem from="1701269356160" duration="521000" />
+      <workItem from="1701269987666" duration="656000" />
+      <workItem from="1701270676138" duration="3065000" />
+      <workItem from="1701343030742" duration="3605000" />
+      <workItem from="1701599340087" duration="247000" />
+      <workItem from="1701599855026" duration="9816000" />
+      <workItem from="1701613691025" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -425,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701000158649</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: refactor &amp; change ui">
+      <option name="closed" value="true" />
+      <created>1701092216475</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701092216475</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +475,8 @@
     <MESSAGE value="realtime create conversation" />
     <MESSAGE value="feat: type messaging realtime" />
     <MESSAGE value="feat: temp to build" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: temp to build" />
+    <MESSAGE value="feat: refactor &amp; change ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor &amp; change ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -467,11 +493,6 @@
           <url>file://$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx</url>
           <line>37</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
