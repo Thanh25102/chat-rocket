@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="feat: refactor &amp; change ui">
-      <change afterPath="$PROJECT_DIR$/frontend/views/admin/MainAdmin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/admin/MainLayout.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/register/RegisterView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/dto/RegisterUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo2.png" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/admin/user/UserManagement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/admin/user/UserManagement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/register/RegisterView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/register/RegisterView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserManageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserManageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/repo/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -303,7 +280,7 @@
       <workItem from="1701599340087" duration="247000" />
       <workItem from="1701599855026" duration="9816000" />
       <workItem from="1701613691025" duration="1438000" />
-      <workItem from="1701636323945" duration="13665000" />
+      <workItem from="1701636323945" duration="13862000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -449,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701092216475</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="complete">
+      <option name="closed" value="true" />
+      <created>1701651439398</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701651439398</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +460,8 @@
     <MESSAGE value="feat: type messaging realtime" />
     <MESSAGE value="feat: temp to build" />
     <MESSAGE value="feat: refactor &amp; change ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor &amp; change ui" />
+    <MESSAGE value="complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

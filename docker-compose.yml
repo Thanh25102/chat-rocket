@@ -1,18 +1,18 @@
 version: '3.8'
 services:
-#  app:
-#    build: .
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      - db
-#      - cache
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/hillarocket
-#      - SPRING_DATASOURCE_USERNAME=postgres
-#      - SPRING_DATASOURCE_PASSWORD=thanh
-#      - SPRING_REDIS_HOST=cache
-#      - SPRING_REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - cache
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/hillarocket
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=thanh
+      - SPRING_REDIS_HOST=cache
+      - SPRING_REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
   cache:
     image: redis:6.2-alpine
     restart: always
@@ -21,20 +21,20 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
     volumes:
       - cache:/data
-#  db:
-#    image: postgres
-#    restart: always
-#    environment:
-#      POSTGRES_PASSWORD: thanh
-#    ports:
-#      - "5432:5432"
-#    volumes:
-#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-#  adminer:
-#    image: adminer
-#    restart: always
-#    ports:
-#      - "8081:8080"
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: thanh
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
 
 volumes:
   my_dbdata:
