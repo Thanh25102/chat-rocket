@@ -19,6 +19,7 @@ public interface UserRepo extends JpaRepository<User, UUID> , JpaSpecificationEx
             """)
     List<User> findByFullNameOrEmail(String searchKey);
 
+
     Optional<User> findByEmail(String email);
 
     @Query("""

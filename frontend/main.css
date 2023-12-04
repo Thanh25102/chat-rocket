@@ -9,6 +9,9 @@
         transform: translateY(-3px);
     }
 }
+
 vaadin-message[theme~="current-user"]::part(name)::after {
     content: " (You)";
 }
+
+

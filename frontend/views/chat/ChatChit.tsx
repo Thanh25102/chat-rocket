@@ -94,9 +94,9 @@ export default function ChatChit() {
             <MessageList items={items} className={"flex-grow"} style={{maxHeight: "800px", overflowY: "scroll"}}/>
             <div>
                 {
-                    userFocused.length > 0 && (
+                    userFocused.filter(u => u !== user.fullName).length > 0 && (
                         <div className={"flex w-[100] ml-4 space-x-2 align-middle"}>
-                            <Avatar names={userFocused} size={46} type={"horizontal"}/>
+                            <Avatar names={userFocused.filter(u => u !== user.fullName)} size={46} type={"horizontal"}/>
                             <div className={"flex align-middle"}>
                                 <MessageLoader/>
                             </div>

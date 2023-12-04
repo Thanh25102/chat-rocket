@@ -1,0 +1,35 @@
+vaadin-text-field > input, vaadin-text-field::part(input-field) {
+    background-color: whitesmoke;
+}
+
+vaadin-password-field > input, vaadin-password-field::part(input-field) {
+    background-color: whitesmoke;
+}
+
+vaadin-email-field > input, vaadin-email-field::part(input-field) {
+    background-color: whitesmoke;
+}
+
+vaadin-email-field > label{
+    color: hsla(214, 87%, 92%, 0.69);
+}
+
+vaadin-email-field[focused] > label {
+    color: hsl(214, 100%, 98%);
+}
+
+vaadin-password-field > label{
+    color: hsla(214, 87%, 92%, 0.69);
+}
+
+vaadin-password-field[focused] > label {
+    color: hsl(214, 100%, 98%);
+}
+
+vaadin-text-field > label{
+    color: hsla(214, 87%, 92%, 0.69);
+}
+
+vaadin-text-field[focused] > label {
+    color: hsl(214, 100%, 98%);
+}

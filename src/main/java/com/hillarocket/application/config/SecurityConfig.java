@@ -1,5 +1,6 @@
 package com.hillarocket.application.config;
 
+import com.hillarocket.application.domain.Role;
 import com.vaadin.flow.spring.security.VaadinWebSecurity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -35,14 +36,16 @@ public class SecurityConfig extends VaadinWebSecurity {
                 .sessionManagement(customizer -> customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.authorizeHttpRequests(
-                        authorize -> authorize.requestMatchers(
-                                new AntPathRequestMatcher("/images/*.png", "/line-awesome/**/*.svg"),
-                                new AntPathRequestMatcher("/videos/*.mp4"),
-                                new AntPathRequestMatcher("/icons/*.png"),
-                                new AntPathRequestMatcher("/ws/**"),
-                                new AntPathRequestMatcher("/**"),
-                                new AntPathRequestMatcher("/oauth2/authorization/github")
-                        ).permitAll())
+                        authorize -> {
+                            authorize.requestMatchers(
+                                    new AntPathRequestMatcher("/images/*.png", "/line-awesome/**/*.svg"),
+                                    new AntPathRequestMatcher("/videos/*.mp4"),
+                                    new AntPathRequestMatcher("/icons/*.png"),
+                                    new AntPathRequestMatcher("/ws/**"),
+                                    new AntPathRequestMatcher("/**"),
+                                    new AntPathRequestMatcher("/oauth2/authorization/github")
+                            ).permitAll();
+                        })
                 .oauth2Login(oauth2 -> {
                     oauth2.loginPage("/login");
                 });

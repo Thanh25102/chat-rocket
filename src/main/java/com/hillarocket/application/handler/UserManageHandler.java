@@ -6,6 +6,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import dev.hilla.Nullable;
 import dev.hilla.crud.CrudRepositoryService;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @BrowserCallable
-@AnonymousAllowed
+@RolesAllowed("ROLE_ADMIN")
 public class UserManageHandler extends CrudRepositoryService<User, UUID, UserRepo> {
     private final PasswordEncoder passwordEncoder;
 

@@ -20,7 +20,7 @@ import java.util.UUID;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(value = {"newUser", "password", "groupMembers"})
+@JsonIgnoreProperties(value = {"newUser", "groupMembers"})
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
 public class User implements Serializable {
@@ -30,8 +30,9 @@ public class User implements Serializable {
     @Column(name = "fullname")
     String fullName;
     String email;
-    @JsonIgnore
     String password;
+    @Transient
+    String repeatedPassword;
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude

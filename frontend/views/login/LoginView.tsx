@@ -1,12 +1,13 @@
 import {LoginI18n} from '@hilla/react-components/LoginOverlay.js';
-import {useState} from 'react';
-import {Navigate} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {LoginModal} from "Frontend/views/login/components/LoginModal";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {login} from "Frontend/auth";
 import {UserEndpoint} from "Frontend/generated/endpoints";
 import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
+import Role from "Frontend/generated/com/hillarocket/application/domain/Role";
 
 const loginI18nDefault: LoginI18n = {
     form: {
@@ -32,11 +33,17 @@ export default function LoginView() {
     const [disabled, setDisabled] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
-    if (user && user.id && url) {
-        const path = new URL(url, document.baseURI).pathname;
-        UserEndpoint.send({userId: user.id, status: UserStatus.ONLINE});
-        return <Navigate to={path} replace/>;
-    }
+    const navigate = useNavigate();
+    useEffect(() => {
+        console.log("role", user?.role)
+        if (user && user.id && url) {
+            console.log("user.role === Role.ADMIN ", user.role === Role.ADMIN)
+            const path = new URL(url, document.baseURI).pathname;
+            UserEndpoint.send({userId: user.id, status: UserStatus.ONLINE});
+            user.role === Role.ADMIN ? navigate(`/admin`) : navigate("/")
+        }
+    }, [user, url]);
+
 
     const handleLogin = async (username: string, password: string) => {
         setDisabled(true)
@@ -49,9 +56,10 @@ export default function LoginView() {
             setError(true);
             setDisabled(false)
         } else {
-            dispatch(AuthThunks.getUser())
-            setUrl(redirectUrl ?? defaultUrl ?? '/');
-            setUrl('/');
+            dispatch(AuthThunks.getUser()).then(() => {
+                setUrl(redirectUrl ?? defaultUrl ?? '/');
+                setUrl('/');
+            })
         }
     }
 
@@ -63,7 +71,7 @@ export default function LoginView() {
             >
                 <source src='videos/login-page.mp4' type='video/mp4'/>
             </video>
-            <div className='absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)]' />
+            <div className='absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)]'/>
             <LoginModal i18n={loginI18nDefault}
                         onLogin={handleLogin}
                         error={hasError}

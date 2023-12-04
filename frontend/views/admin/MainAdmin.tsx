@@ -1,23 +1,22 @@
 import {AppLayout} from '@hilla/react-components/AppLayout.js';
 import Placeholder from 'Frontend/components/placeholder/Placeholder';
 import React, {Suspense, useEffect, useState} from 'react';
-import {Outlet, useNavigate} from 'react-router-dom';
+import {NavLink, Outlet, useNavigate} from 'react-router-dom';
 import css from './MainLayout.module.css';
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
-import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
-import {NavSearch} from "Frontend/components/navbar/NavSearch";
 import {ChatEndpoint2, UserEndpoint} from "Frontend/generated/endpoints";
 import {AuthActions} from "Frontend/redux/feat/auth/authSlice";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
-import {NavigationSearch} from "Frontend/components/navigation/NavigationSearch";
 import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
 import {MenuBar} from "@hilla/react-components/MenuBar";
 import {createRoot} from "react-dom/client";
 import {Img} from "react-image";
 import {ChatActions} from "Frontend/redux/feat/chat/chatSlice";
 import {MenuBarItem} from "@vaadin/menu-bar/src/vaadin-menu-bar";
+import {Tab} from "@hilla/react-components/Tab";
+import {Tabs} from "@hilla/react-components/Tabs";
 import {Avatar} from "Frontend/components/avatar/Avatar";
 
 type EventType = {
@@ -41,8 +40,7 @@ const menuComponent = (component: React.ReactNode) => {
     return container;
 }
 
-export default function MainLayout() {
-    const currentTitle = useRouteMetadata()?.title ?? 'My App';
+export default function MainAdmin() {
     const user = useAppSelector(AuthSelectors.getCurrentUser());
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -68,8 +66,8 @@ export default function MainLayout() {
 
     const menuBarItems = [
         {
-            component: menuComponent(
-                <div style={{cursor: "pointer"}}>
+            component:  menuComponent(
+                <div style={{cursor:"pointer"}}>
                     <Avatar names={[user?.fullName || "UK"]} size={32}/>
                 </div>
             ),
@@ -121,10 +119,18 @@ export default function MainLayout() {
                  style={{height: "100vh", backgroundColor: "hsl(214, 100%, 98%)"}}>
                 <Img src={"images/logo.png"} onClick={() => navigate("/")} style={{width: "50%", cursor: "pointer"}}
                      className={"mx-8 py-2"}/>
-                <div className="mt-2">
-                    {searchState ? <NavigationSearch onClose={() => setSearchState(false)}/> :
-                        <NavSearch onFocus={() => setSearchState(true)}/>}
-                </div>
+                    <Tabs orientation="vertical">
+                        <Tab>
+                            <NavLink to={"/admin"} tabIndex={-1} className="flex justify-between gap-x-6 py-3 ">
+                                <span>Dashboard</span>
+                            </NavLink>
+                        </Tab>
+                        <Tab>
+                            <NavLink to={"/admin/user"} tabIndex={-1} className="flex justify-between gap-x-6 py-3 ">
+                                <span>User Management</span>
+                            </NavLink>
+                        </Tab>
+                    </Tabs>
             </div>
             <Suspense fallback={<Placeholder/>}>
                 <Outlet/>
