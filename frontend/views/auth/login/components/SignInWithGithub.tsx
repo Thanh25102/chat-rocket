@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Loading} from "Frontend/views/login/LoginView";
+import {Loading} from "Frontend/views/auth/login/LoginView";
 import {Img} from "react-image";
 import {useNavigate} from "react-router-dom";
 
@@ -12,7 +12,7 @@ const SignInWithGithub = () => {
         setLoading(true);
         e.preventDefault();
         // await signIn("github", { callbackUrl: '/' })
-        window.location.replace('http://localhost:8080/oauth2/authorization/github');
+        location.href = "http://localhost:8080/oauth2/authorization/github"
         setLoading(false);
     }
 
@@ -28,7 +28,7 @@ const SignInWithGithub = () => {
                     width={20}
                     height={20}
                     alt='github'
-                    src='icons/github.png'
+                    src='../../../../../src/main/resources/META-INF/resources/icons/github.png'
                     className='w-[20px] h-[20xp] bg-[transparent]'
                 />
             }

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Loading} from "Frontend/views/login/LoginView";
+import {Loading} from "Frontend/views/auth/login/LoginView";
 
 const SignInWithGoogle = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -21,7 +21,7 @@ const SignInWithGoogle = () => {
                     width={20}
                     height={20}
                     alt='google'
-                    src='icons/google.png'
+                    src='../../../../../src/main/resources/META-INF/resources/icons/google.png'
                     className='w-[20px] h-[20xp]'
                 />
             }

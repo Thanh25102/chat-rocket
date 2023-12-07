@@ -4,32 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="complete">
-      <change afterPath="$PROJECT_DIR$/frontend/views/chat/ChatGPT/ChatNormal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/chat/ChatGPT/ChatStreaming.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/chat/ChatReact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/login-google/LoginGoogle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/OpenApiHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467/storage_v2/_src_/database/hillarocket.FIH14g/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/AuthLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/account/IdentifyAccount.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/account/IdentifyAccount.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/code/SendCodeView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/code/SendCodeView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/login/LoginView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/password/ChangePassword.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/register/RegisterView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/views/auth/register/RegisterView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ClockEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/EmailHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/i/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/utils/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/converter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login-google/LoginGoogle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/login/components/SignInWithGithub.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/login/components/SignInWithGoogle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/register/RegisterView.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/password/ChangePassword.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/register/RegisterView.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/AuthenticatedUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/AuthenticatedUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/ChatGptConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/cache/MessageCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +52,8 @@
         <option value="Dockerfile" />
         <option value="Record" />
         <option value="Interface" />
-        <option value="TypeScript JSX File" />
         <option value="Class" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -103,42 +109,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;9ca79357-9e56-4402-8125-086d1d606467&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/src/main/resources/META-INF/resources/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JPA.DatabaseSchemaImportDialog": "9ca79357-9e56-4402-8125-086d1d606467",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/frontend/views/auth/password",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "spring.configuration.checksum": "4ef287ed9e9ab3ebcc238fe42b239463",
+    "ts.external.directory.path": "C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -147,17 +153,18 @@
       <recent name="com.hillarocket.application.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\auth\password" />
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\auth\option" />
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views" />
       <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources\images" />
       <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\chat" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\admin" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\auth" />
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\auth\register" />
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\auth\login" />
+      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\views\code" />
       <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources\images" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\src\main\resources\META-INF\resources\videos" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\public\static\videos" />
-      <recent name="C:\DiskLearn\Intellij\JavaSpring\hilla-rocket\frontend\public\static" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.example.application.domain" />
@@ -310,7 +317,7 @@
       <workItem from="1701754603322" duration="49000" />
       <workItem from="1701876211601" duration="2148000" />
       <workItem from="1701878399140" duration="6756000" />
-      <workItem from="1701918908281" duration="2007000" />
+      <workItem from="1701918908281" duration="35592000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -464,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701651439398</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat">
+      <option name="closed" value="true" />
+      <created>1701921394208</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701921394209</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +506,8 @@
     <MESSAGE value="feat: temp to build" />
     <MESSAGE value="feat: refactor &amp; change ui" />
     <MESSAGE value="complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete" />
+    <MESSAGE value="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -508,6 +524,20 @@
           <url>file://$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx</url>
           <line>37</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java</url>
+          <line>24</line>
+          <properties class="com.hillarocket.application.handler.CustomOidcUserHandler" method="loadUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

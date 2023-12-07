@@ -1,13 +1,17 @@
 import MainLayout from 'Frontend/views/MainLayout.js';
 import {lazy} from 'react';
 import {createBrowserRouter, RouteObject} from 'react-router-dom';
-import LoginView from "Frontend/views/login/LoginView";
+import LoginView from "Frontend/views/auth/login/LoginView";
 import {AuthControl} from "Frontend/views/AuthControl";
 import {UserManagement} from "Frontend/views/admin/user/UserManagement";
-import RegisterView from "Frontend/views/register/RegisterView";
+import RegisterView from "Frontend/views/auth/register/RegisterView";
+import SendCodeView from "Frontend/views/auth/code/SendCodeView";
 import MainAdmin from "Frontend/views/admin/MainAdmin";
 import ChatReact from "Frontend/views/chat/ChatReact";
-import {LoginGoogleView} from "Frontend/views/login-google/LoginGoogle";
+import AuthLayout from "Frontend/views/AuthLayout";
+import IdentifyAccount from "Frontend/views/auth/account/IdentifyAccount";
+import RecoverOption from "Frontend/views/auth/option/RecoverOption";
+import ChangePassword from "Frontend/views/auth/password/ChangePassword";
 
 const TodoView = lazy(async () => import('Frontend/views/todo/TodoView.js'));
 const ChatNormal = lazy(async () => import('Frontend/views/chat/ChatGPT/ChatNormal'));
@@ -40,9 +44,20 @@ export const routes: readonly RouteObject[] = [
             {path: '/admin/user', element: <UserManagement/>, handle: {icon: 'list-alt-solid', title: 'User Mangement'}}
         ],
     },
-    {path: '/login', element: <LoginView/>},
-    // {path: '/login', element: <LoginGoogleView/>},
-    {path: '/register', element: <RegisterView/>},
+    {
+        element: (
+            <AuthLayout/>
+        ),
+        handle: {icon: 'null', title: 'Authentication'},
+        children: [
+            {path: '/login', element: <LoginView/>},
+            {path: '/register', element: <RegisterView/>},
+            {path: '/recover/code', element: <SendCodeView/>},
+            {path: '/recover/password', element: <ChangePassword/>},
+            {path: '/login/identify', element: <IdentifyAccount/>},
+            {path: '/login/recover/option', element: <RecoverOption/>},
+        ],
+    },
 ];
 
 const router = createBrowserRouter([...routes]);

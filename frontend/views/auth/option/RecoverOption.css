@@ -1,0 +1,13 @@
+
+
+vaadin-number-field > input, vaadin-number-field::part(input-field) {
+    background-color: whitesmoke;
+}
+
+vaadin-number-field > label{
+    color: hsla(214, 87%, 92%, 0.69);
+}
+
+vaadin-number-field[focused] > label {
+    color: hsl(214, 100%, 98%);
+}
