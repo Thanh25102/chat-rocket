@@ -1,6 +1,5 @@
 package com.hillarocket.application.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
@@ -40,6 +39,12 @@ public class User implements Serializable {
 
     @Enumerated(EnumType.STRING)
     Role role;
+
+    public User(String fullName, String email, Role role) {
+        this.fullName = fullName;
+        this.email = email;
+        this.role = role;
+    }
 
     public User(UUID id) {
         this.id = id;

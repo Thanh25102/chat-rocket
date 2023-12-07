@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>2098</IntrospectionStateNumber>
       <ServerVersion>15.4</ServerVersion>
-      <StartupTime>1700572049</StartupTime>
+      <StartupTime>1701820401</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -801,7 +809,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2098</IntrospectionStateNumber>
       <ObjectId>16821</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4227,9 +4235,9 @@ false Zulu
     <schema id="264" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1960</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-21.20:36:18.998</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-21.13:36:20</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>2098</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-12-07.00:15:35.730</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-06.17:15:37</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4458,9 +4466,8 @@ conversation_id</ColNames>
     </column>
     <column id="297" parent="268" name="password">
       <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>1142</StateNumber>
+      <StateNumber>2097</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="298" parent="268" name="role">

@@ -32,6 +32,7 @@
     "dotenv": "^16.3.1",
     "lit": "2.8.0",
     "react": "^18.2.0",
+    "react-chat-elements": "^12.0.11",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.11.0",
@@ -100,7 +101,8 @@
     "@mui/material": "$@mui/material",
     "@hilla/react-auth": "$@hilla/react-auth",
     "@hilla/generator-typescript-plugin-subtypes": "$@hilla/generator-typescript-plugin-subtypes",
-    "@hilla/react-crud": "$@hilla/react-crud"
+    "@hilla/react-crud": "$@hilla/react-crud",
+    "react-chat-elements": "$react-chat-elements"
   },
   "vaadin": {
     "dependencies": {
@@ -143,6 +145,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "292ce82525cdba5b40720490b1d37b01df04bec75ea8de21c16c18a2a79bd965"
+    "hash": "9834bb4f0b875e0b43470033828393c36504da7d01a619f4e483b01247066b93"
   }
 }

@@ -6,7 +6,7 @@ const SignInWithGoogle = () => {
 
     const handleClick = (e: any) => {
         e.preventDefault();
-        // signIn("google", { callbackUrl: '/' })
+        location.href = "http://localhost:8080/oauth2/authorization/google"
     }
 
     return (
@@ -26,7 +26,7 @@ const SignInWithGoogle = () => {
                 />
             }
             <p className='font-bold text-md text-white'>
-                Sign in with Google
+                Log in with Google
             </p>
         </button>
     )

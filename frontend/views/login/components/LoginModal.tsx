@@ -102,6 +102,7 @@ export const LoginModal: FC<Props> = ({i18n, onLogin, error = false, disabled = 
                 </div>
                 <div className='pb-2'>
                     <SignInWithGoogle/>
+
                     <SignInWithGithub/>
                 </div>
                 <div className='flex items-center justify-center'>

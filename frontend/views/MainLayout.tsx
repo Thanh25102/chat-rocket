@@ -9,7 +9,6 @@ import {useRouteMetadata} from "Frontend/utils/routing";
 import {AuthThunks} from "Frontend/redux/feat/auth/authThunks";
 import {NavSearch} from "Frontend/components/navbar/NavSearch";
 import {ChatEndpoint2, UserEndpoint} from "Frontend/generated/endpoints";
-import {AuthActions} from "Frontend/redux/feat/auth/authSlice";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import {NavigationSearch} from "Frontend/components/navigation/NavigationSearch";
 import {DrawerToggle} from "@hilla/react-components/DrawerToggle";
@@ -19,6 +18,7 @@ import {Img} from "react-image";
 import {ChatActions} from "Frontend/redux/feat/chat/chatSlice";
 import {MenuBarItem} from "@vaadin/menu-bar/src/vaadin-menu-bar";
 import {Avatar} from "Frontend/components/avatar/Avatar";
+import {AuthActions} from "Frontend/redux/feat/auth/authSlice";
 
 type EventType = {
     id: string,
