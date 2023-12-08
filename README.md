@@ -1,29 +1,49 @@
-# Custom project from Hilla
+# ChatRocket Project
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+Enhance your communication with our ChatRocket, a versatile chat application offering a range of functionalities.
 
-## Running the application
+## Features
 
-The project is a standard Maven project. To run it from the command line,
-type `mvnw` (Windows), or `./mvnw` (Mac & Linux), then open
-http://localhost:8080 in your browser.
+- **Private Chat**: Engage in one-on-one conversations.
+- **Group Chat**: Collaborate effectively through group discussions.
+- **User Management**: Tailor user experiences with comprehensive user management (exclusive to admins).
+- **Google Sign-In**: Enjoy quick and secure access with Google Sign-In option.
+- **Registration and Login**: Experience flawless user registration and login process.
+- **Password Recovery**: Secure user accounts with password recovery feature.
 
-You can also import the project to your IDE of choice as you would with any
-Maven project.
+## Built With
+
+ChatRocket application is developed using:
+
+- `Spring Boot framework` for creating stand-alone, production-grade Spring-based applications
+- `Hilla`, a go-to solution for building highly interactive user applications
+
+## How to Run the Application
+
+### Maven Project
+
+1. `mvnw` (Windows)
+2. `./mvnw` (macOS & Linux)
+3. Launch `http://localhost:8080` in any browser
+
+### Docker Commands
+
+Alternatively, run the application with Docker using the following commands:
+
+``` docker compose build && docker compose up ```
+
+You can now access the application by opening `http://localhost:8080` in your browser.
 
 ## Deploying to Production
 
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
+For deploying the application to production:
 
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
+1. Build the Docker using the commands mentioned in the previous section
+2. Upon successful Docker build, your application will be production-ready
 
-## Project structure
+## Project Structure
+
+An overview of project structure:
 
 <table style="width:100%; text-align: left;">
   <tr><th>Directory</th><th>Description</th></tr>
@@ -44,9 +64,9 @@ source directory, contains the server-side Java views</td></tr>
   <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<code>Application.java</code></td><td>Server entry-point</td></tr>
 </table>
 
-## Useful links
+## Resources
 
-- Read the documentation at [hilla.dev/docs](https://hilla.dev/docs/).
-- Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join
-  our [Discord channel](https://discord.gg/MYFq5RTbBn).
-- Report issues, create pull requests in [GitHub](https://github.com/vaadin/hilla).
+- Dive deeper into Hilla features with the [official documentation](https://hilla.dev/docs/)
+- Stuck somewhere? Shoot your queries on [Stack Overflow](https://stackoverflow.com/questions/tagged/hilla) or join our vibrant [Discord channel](https://discord.gg/MYFq5RTbBn)
+- Help us improvise or report issues on [GitHub](https://github.com/vaadin/hilla)
+
