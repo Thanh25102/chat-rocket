@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="no related mui">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatReact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatReact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hilla-rocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hilla-rocket.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +325,7 @@
       <workItem from="1702022028004" duration="125000" />
       <workItem from="1702022165406" duration="180000" />
       <workItem from="1702022357442" duration="4224000" />
-      <workItem from="1702027562221" duration="1049000" />
+      <workItem from="1702027562221" duration="9933000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -524,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702020370963</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="no related mui">
+      <option name="closed" value="true" />
+      <created>1702028807715</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1702028807715</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,6 +587,12 @@
           <url>file://$PROJECT_DIR$/frontend/components/avatar/Avatar.tsx</url>
           <line>37</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx</url>
+          <line>97</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java</url>

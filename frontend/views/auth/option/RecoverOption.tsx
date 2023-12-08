@@ -3,14 +3,12 @@ import {Button} from "@hilla/react-components/Button";
 import './RecoverOption.css'
 import {Avatar} from "Frontend/components/avatar/Avatar";
 import {Navigate, useLocation, useNavigate} from "react-router-dom";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import {pink} from '@mui/material/colors';
+
 import UserDto from "Frontend/generated/com/hillarocket/application/dto/UserDto";
 import {UserEndpoint} from "Frontend/generated/endpoints";
 import {Notification} from '@hilla/react-components/Notification.js';
+import {RadioGroup} from "@hilla/react-components/RadioGroup";
+import {RadioButton} from "@hilla/react-components/RadioButton";
 
 const options = [
     {
@@ -74,38 +72,25 @@ const RecoverOption = () => {
                     How do you want to receive the code to reset your password?
                 </h4>
                 <div className='mb-2 flex flex-row justify-between my-4'>
-                    <FormControl disabled={loading}>
-                        <RadioGroup
+                    <RadioGroup theme="vertical">
+                        {items.map(card =>
+                            <RadioButton value={card.id} key={card.id}
+                                         style={{
+                                             '--vaadin-input-field-border-width': '2px',
+                                         } as React.CSSProperties}
+                            >
+                                <label slot="label">
+                                    <p className={'text-md text-dark-text font-normal'}>
+                                        {card.type}
+                                    </p>
+                                    <p className={'text-sm text-dark-text font-light'}>
+                                        {card.desc}
+                                    </p>
+                                </label>
+                            </RadioButton>
+                        )}
+                    </RadioGroup>
 
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue={items[0]}
-                            name="radio-buttons-group"
-                            className="space-y-2"
-                        >
-                            {
-                                items.map(card =>
-                                    <FormControlLabel value={card.id} control={<Radio {...controlProps(card.id)}
-                                                                                      sx={{
-                                                                                          color: pink[800],
-                                                                                          '&.Mui-checked': {
-                                                                                              color: pink[600],
-                                                                                          },
-                                                                                      }}/>} label={
-                                        <label slot="label">
-                                            <p className={'text-md text-dark-text font-normal'}>
-                                                {card.type}
-                                            </p>
-                                            <p className={'text-sm text-dark-text font-light'}>
-                                                {card.desc}
-                                            </p>
-                                        </label>
-                                    }/>
-                                )
-                            }
-                        </RadioGroup>
-
-
-                    </FormControl>
                     <div className="flex flex-col flex-grow  w-[120px] justify-center align-middle space-y-1"
                          style={{alignItems: "center"}}>
                         <Avatar names={[user.fullName || "UK"]}/>

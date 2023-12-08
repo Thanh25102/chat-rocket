@@ -11,3 +11,8 @@ vaadin-number-field > label{
 vaadin-number-field[focused] > label {
     color: hsl(214, 100%, 98%);
 }
+
+
+vaadin-radio-button:hover {
+    color:hsl(214, 100%, 98%);
+}

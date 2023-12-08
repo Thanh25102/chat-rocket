@@ -20,7 +20,6 @@
     "@hilla/react-components": "2.2.3",
     "@hilla/react-crud": "2.4.0",
     "@hilla/react-form": "2.4.0",
-    "@mui/material": "^5.14.17",
     "@polymer/polymer": "3.5.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@vaadin/bundles": "24.2.3",
@@ -98,7 +97,6 @@
     "react-dropzone": "$react-dropzone",
     "@emotion/react": "$@emotion/react",
     "@emotion/styled": "$@emotion/styled",
-    "@mui/material": "$@mui/material",
     "@hilla/react-auth": "$@hilla/react-auth",
     "@hilla/generator-typescript-plugin-subtypes": "$@hilla/generator-typescript-plugin-subtypes",
     "@hilla/react-crud": "$@hilla/react-crud",
@@ -145,6 +143,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "9834bb4f0b875e0b43470033828393c36504da7d01a619f4e483b01247066b93"
+    "hash": "afa85159e2169f0599b8a98f70d33bcdfaf928b1cffdfee88af0032de99ce9dd"
   }
 }

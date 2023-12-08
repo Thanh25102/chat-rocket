@@ -3,13 +3,13 @@ import {Tabs} from "@hilla/react-components/Tabs";
 import {Tab} from "@hilla/react-components/Tab";
 import {NavLink} from "react-router-dom";
 import {NavItem} from "Frontend/components/navbar/NavItem";
-import User from "Frontend/generated/com/hillarocket/application/domain/User";
 import {ChatThunks} from "Frontend/redux/feat/chat/chatThunks";
 import {useAppDispatch, useAppSelector} from "Frontend/redux/hooks";
 import {UserEndpoint} from "Frontend/generated/endpoints";
 import OnlineEvent from "Frontend/generated/com/hillarocket/application/dto/OnlineEvent";
-import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
+import User from "Frontend/generated/com/hillarocket/application/domain/User";
+import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 
 type Props = {
     users?: User[];
