@@ -44,6 +44,7 @@ public class User implements Serializable {
         this.fullName = fullName;
         this.email = email;
         this.role = role;
+
     }
 
     public User(UUID id) {

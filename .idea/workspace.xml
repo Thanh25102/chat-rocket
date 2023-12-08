@@ -4,39 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/AuthLayout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/account/IdentifyAccount.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/account/IdentifyAccount.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/code/SendCodeView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/code/SendCodeView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/login/LoginView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/password/ChangePassword.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/register/RegisterView.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/views/auth/register/RegisterView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/ClockEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/EmailHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/i/EmailService.java" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bf68132-4a95-4a96-aae5-0239dc0915c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bf68132-4a95-4a96-aae5-0239dc0915c2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login-google/LoginGoogle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/LoginView.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/LoginModal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGithub.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/login/components/SignInWithGithub.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/login/components/SignInWithGoogle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/login/components/SignInWithGoogle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/register/RegisterView.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/password/ChangePassword.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/register/RegisterView.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/cache/MessageCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/OAuth2LoginHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/endpoint/UserEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/UserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,42 +85,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JPA.DatabaseSchemaImportDialog": "9ca79357-9e56-4402-8125-086d1d606467",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/frontend/views/auth/password",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "spring.configuration.checksum": "4ef287ed9e9ab3ebcc238fe42b239463",
-    "ts.external.directory.path": "C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;9ca79357-9e56-4402-8125-086d1d606467&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ChatRocketApp.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Cherry-picking in main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/frontend/views/auth/password&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -204,6 +185,13 @@
         <item itemvalue="Database Script.schema.sql" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -317,7 +305,16 @@
       <workItem from="1701754603322" duration="49000" />
       <workItem from="1701876211601" duration="2148000" />
       <workItem from="1701878399140" duration="6756000" />
-      <workItem from="1701918908281" duration="35592000" />
+      <workItem from="1701918908281" duration="35882000" />
+      <workItem from="1701962236647" duration="359000" />
+      <workItem from="1701962651002" duration="118000" />
+      <workItem from="1701962888510" duration="1316000" />
+      <workItem from="1701965549813" duration="17000" />
+      <workItem from="1701966191614" duration="2423000" />
+      <workItem from="1702013867038" duration="4640000" />
+      <workItem from="1702018931977" duration="146000" />
+      <workItem from="1702019087996" duration="287000" />
+      <workItem from="1702019388673" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -479,14 +476,48 @@
       <option name="project" value="LOCAL" />
       <updated>1701921394209</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="super authentication, oauth2, reset password with email">
+      <option name="closed" value="true" />
+      <created>1701960234181</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701960234181</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Update .gitignore to include various development tools and environments.">
+      <option name="closed" value="true" />
+      <created>1701968687688</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701968687688</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments.">
+      <option name="closed" value="true" />
+      <created>1702014973182</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1702014973182</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Complete setup" />
     <MESSAGE value="Done login" />
     <MESSAGE value="Build gpt &amp; fix socket connection" />
     <MESSAGE value="Turn off project loom" />
@@ -507,7 +538,12 @@
     <MESSAGE value="feat: refactor &amp; change ui" />
     <MESSAGE value="complete" />
     <MESSAGE value="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove jwt, convert to statefull app, add oauth2 google, add chatgpt feat" />
+    <MESSAGE value="Update workspace settings and tasks&#10;&#10;Updated several workspace configurations and changes list in .idea workspace.xml file. Also modified the datasource file. This included updated comments for changes list" />
+    <MESSAGE value="super authentication, oauth2, reset password with email" />
+    <MESSAGE value="change gitignore " />
+    <MESSAGE value="Update .gitignore to include various development tools and environments." />
+    <MESSAGE value="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

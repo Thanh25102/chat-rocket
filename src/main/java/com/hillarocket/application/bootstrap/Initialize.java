@@ -28,12 +28,22 @@ public class Initialize implements CommandLineRunner {
     }
 
 
+    private static final String DEFAULT_PASSWORD = "123456";
+
     private void initUsers() {
         IntStream.range(0, 10)
-                .forEach(i ->
-                        userRepo.save(new User(null, faker.name().fullName(), faker.internet().emailAddress(), passwordEncoder.encode("123456"), null, null, Role.USER)
-                        )
-                );
+                .forEach(i -> saveUserWithDefaultValues());
+    }
+
+    private void saveUserWithDefaultValues() {
+        userRepo.save(
+                User.builder()
+                        .fullName(faker.name().fullName())
+                        .email(faker.internet().emailAddress())
+                        .password(passwordEncoder.encode(DEFAULT_PASSWORD))
+                        .role(Role.USER)
+                        .build()
+        );
     }
 
 }

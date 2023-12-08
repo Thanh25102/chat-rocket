@@ -37,4 +37,4 @@ CREATE TABLE IF NOT EXISTS GROUP_MEMBER
     PRIMARY KEY (user_id, conversation_id),
     FOREIGN KEY (user_id) REFERENCES USERS (id),
     FOREIGN KEY (conversation_id) REFERENCES CONVERSATIONS (id)
-);
+)
