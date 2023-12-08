@@ -23,12 +23,17 @@ public class AuthenticatedUser {
 
     @Transactional
     public Optional<User> get() {
+        var userEmail = findAuthenticatedUserEmail();
+        return userRepo.findByEmail(userEmail);
+    }
+
+    private String findAuthenticatedUserEmail() {
         try {
             return authContext.getAuthenticatedUser(OidcUser.class)
-                    .flatMap(u -> userRepo.findByEmail(u.getEmail()));
+                    .map(OidcUser::getEmail)
+                    .orElseGet(() -> SecurityContextHolder.getContext().getAuthentication().getName());
         } catch (ClassCastException e) {
-            var email = SecurityContextHolder.getContext().getAuthentication().getName();
-            return userRepo.findByEmail(email);
+            return SecurityContextHolder.getContext().getAuthentication().getName();
         }
     }
 

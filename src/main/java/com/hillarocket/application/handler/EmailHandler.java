@@ -1,7 +1,5 @@
 package com.hillarocket.application.handler;
 
-import com.hillarocket.application.config.AuthenticatedUser;
-import com.hillarocket.application.handler.i.EmailService;
 import dev.hilla.exception.EndpointException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;

@@ -15,6 +15,5 @@ const authStateSelector = (state: PartialAuthState) => state.auth;
 
 export const AuthSelectors = {
     authStateSelector,
-    getCurrentUser: () => createSelector(authStateSelector, ({user}) => user),
-    getAllUsers: () => createSelector(authStateSelector, ({users}) => users)
+    getCurrentUser: () => createSelector(authStateSelector, ({user}) => user)
 };
