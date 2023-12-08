@@ -3,10 +3,7 @@ package com.hillarocket.application.handler;
 import com.hillarocket.application.domain.Conversation;
 import com.hillarocket.application.domain.GroupMember;
 import com.hillarocket.application.domain.User;
-import com.hillarocket.application.dto.ConversationMessage;
-import com.hillarocket.application.dto.CreateGroupConversion;
-import com.hillarocket.application.dto.GroupMemberDto;
-import com.hillarocket.application.dto.MessageDto;
+import com.hillarocket.application.dto.*;
 import com.hillarocket.application.enumration.ConversionType;
 import com.hillarocket.application.mapper.GroupMemberMapper;
 import com.hillarocket.application.mapper.MessageMapper;
@@ -21,10 +18,12 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -85,7 +84,7 @@ public class ChatHandler {
         var conversations = conversationRepo.findConversationByUserId(userId);
         return conversations.stream().map(conversation -> {
             var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
-            var lastedMessageRedis = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
+            var lastedMessageRedis = getLatestMessages(conversation);
             var lastedMessage = lastedMessageRedis == null || lastedMessageRedis.isEmpty() ?
                     messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList().stream().map(messageMapper::toMsgDto).toList() : lastedMessageRedis;
             return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, lastedMessage);
@@ -95,7 +94,7 @@ public class ChatHandler {
     public List<ConversationMessage> getConversationGroupByName(String name) {
         var conversations = conversationRepo.findConversationGroupByName(name, ConversionType.GROUP);
         return conversations.stream().map(conversation -> {
-            var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
+            var users = convertGroupMembersToUserDto(conversation.getGroupMembers());
             return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, List.of());
         }).toList();
     }
@@ -128,7 +127,7 @@ public class ChatHandler {
         return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, getMessageFromRedis(conversation));
     }
 
-    private List<MessageDto> getMessageFromRedis(Conversation conversation) {
+    private List<MessageDto> getMessageFromRedis(@Nonnull Conversation conversation) {
         var messagesDto = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
         if (messagesDto == null || messagesDto.isEmpty()) {
             var messages = messageRepo.find20NewestMessagesByConversationId(conversation.getId()).orElse(List.of());
@@ -155,7 +154,7 @@ public class ChatHandler {
         return new ConversationMessage(id, conversation.getName(), conversation.getType(), users, getMessageFromRedis(conversation));
     }
 
-    public ConversationMessage createConversation(CreateGroupConversion conversionDto) throws IOException {
+    public ConversationMessage createConversation(@Nonnull CreateGroupConversion conversionDto) throws IOException {
         var conversation = conversationRepo.save(new Conversation(conversionDto.name(), ConversionType.GROUP));
         var groupMember = conversionDto.userIds().stream()
                 .map(id -> groupMemberMapper.toGroupMemberEntity(new GroupMemberDto(UUID.fromString(id), conversation.getId(), LocalDateTime.now(), null)))
@@ -163,4 +162,21 @@ public class ChatHandler {
         groupMemberRepo.saveAll(groupMember);
         return this.getConversationById(conversation.getId().toString());
     }
+
+
+    private List<UserDto> convertGroupMembersToUserDto(@Nonnull Set<GroupMember> groupMembers) {
+        return groupMembers.stream()
+                .map(mem -> userMapper.toUserDto(mem.getUser()))
+                .toList();
+    }
+
+    private List<MessageDto> getLatestMessages(@Nonnull Conversation conversation) {
+        var lastedMessageRedis = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
+        return lastedMessageRedis == null || lastedMessageRedis.isEmpty() ?
+                messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList()
+                        .stream().map(messageMapper::toMsgDto)
+                        .toList() :
+                lastedMessageRedis;
+    }
+
 }

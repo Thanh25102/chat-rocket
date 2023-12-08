@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1bf68132-4a95-4a96-aae5-0239dc0915c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1bf68132-4a95-4a96-aae5-0239dc0915c2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9ca79357-9e56-4402-8125-086d1d606467.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="no related mui">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelect/users-select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/UsersSelected/users-selected.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/dialog/create-group.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/UserTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatReact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatReact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hilla-rocket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hilla-rocket.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +104,7 @@
     &quot;Spring Boot.ChatRocketApp.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Cherry-picking in main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/DiskLearn/Intellij/JavaSpring/hilla-rocket/frontend/views/auth/password&quot;,
@@ -108,11 +114,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;4ef287ed9e9ab3ebcc238fe42b239463&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\DiskLearn\\Intellij\\JavaSpring\\hilla-rocket\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -315,6 +321,16 @@
       <workItem from="1702018931977" duration="146000" />
       <workItem from="1702019087996" duration="287000" />
       <workItem from="1702019388673" duration="692000" />
+      <workItem from="1702020098640" duration="632000" />
+      <workItem from="1702020749297" duration="163000" />
+      <workItem from="1702021053867" duration="410000" />
+      <workItem from="1702021481938" duration="84000" />
+      <workItem from="1702021578870" duration="302000" />
+      <workItem from="1702021893506" duration="121000" />
+      <workItem from="1702022028004" duration="125000" />
+      <workItem from="1702022165406" duration="180000" />
+      <workItem from="1702022357442" duration="4224000" />
+      <workItem from="1702027562221" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -500,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702014973182</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="temp">
+      <option name="closed" value="true" />
+      <created>1702020370963</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1702020370963</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,8 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Done login" />
-    <MESSAGE value="Build gpt &amp; fix socket connection" />
     <MESSAGE value="Turn off project loom" />
     <MESSAGE value="Fix bug version Java 21, complete setup socket" />
     <MESSAGE value="feat get &amp; create conversation" />
@@ -543,7 +565,9 @@
     <MESSAGE value="change gitignore " />
     <MESSAGE value="Update .gitignore to include various development tools and environments." />
     <MESSAGE value="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor codebase and update .gitignore&#10;&#10;Removed unnecessary imports, code segments, and files for a cleaner codebase. This included the deletion of the Provider.tsx file from the front-end redux, and several imports from various Java files. Additional changes made to implement better code practices, such as splitting a function in AuthenticatedUser.java for better readability. Changes to .gitignore file were also made to ignore more development tools and environments." />
+    <MESSAGE value="temp" />
+    <MESSAGE value="no related mui" />
+    <option name="LAST_COMMIT_MESSAGE" value="no related mui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,6 +589,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java</url>
           <line>25</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/CustomOidcUserHandler.java</url>

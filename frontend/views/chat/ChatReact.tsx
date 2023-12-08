@@ -1,12 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {MessageInput} from '@hilla/react-components/MessageInput.js';
-import type {MessageListItem} from '@vaadin/message-list';
 import {useAppSelector} from "Frontend/redux/hooks";
 import {Navigate} from "react-router-dom";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
 import {ChatSelectors} from "Frontend/redux/feat/chat/chatSelectors";
 import {ChatEndpoint, ChatEndpoint2} from "Frontend/generated/endpoints";
-import {fromMessage, fromMessages, toMessagesType, toMessageType} from "Frontend/utils/converter";
+import {toMessagesType, toMessageType} from "Frontend/utils/converter";
 import MessageLoader from "Frontend/components/loading/MessageLoading";
 import {Avatar} from "Frontend/components/avatar/Avatar";
 import {MessageList, MessageType} from "react-chat-elements"
