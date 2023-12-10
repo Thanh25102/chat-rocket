@@ -52,8 +52,8 @@ public class ChatHandler {
     }
 
     public Flux<MessageDto> join(String roomId) {
-        Sinks.Many<MessageDto> sink = chatRooms.computeIfAbsent(roomId, _ -> Sinks.many().multicast().directBestEffort());
-        return replayedFluxes.computeIfAbsent(roomId, _ -> sink.asFlux());
+        Sinks.Many<MessageDto> sink = chatRooms.computeIfAbsent(roomId, id -> Sinks.many().multicast().directBestEffort());
+        return replayedFluxes.computeIfAbsent(roomId, id -> sink.asFlux());
     }
 
     public void send(String roomId, MessageDto message) {

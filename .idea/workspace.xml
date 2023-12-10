@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Update README for ChatRocket project&#10;&#10;The README file has been updated to reflect the details of the ChatRocket project instead of the previous Hilla custom project. It now includes details about the features, set-up, and running instructions for the ChatRocket application. Additionally, Docker build and deployment instructions are added, providing an alternative way to run the application.">
+    <list default="true" id="580e4617-07e6-42ab-86e7-2f0ceb77f6ea" name="Changes" comment="Update views and improve admin menu handling.&#10;&#10;This commit makes several modifications to frontend routes and views, improving how navigation options are displayed for admin users. A function is added to the admin menu to display different options based on the user's role. Visual updates also include changing the user chat interface to ChatChit and updating the TodoView display message to be more relevant to the application's context.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/navbar/ConversationTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/MainLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/admin/MainAdmin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/admin/MainAdmin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/auth/option/RecoverOption.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/chat/ChatChit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/todo/TodoView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/todo/TodoView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/bootstrap/Initialize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hillarocket/application/handler/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +323,7 @@
       <workItem from="1702022165406" duration="180000" />
       <workItem from="1702022357442" duration="4224000" />
       <workItem from="1702027562221" duration="16718000" />
-      <workItem from="1702196875089" duration="5613000" />
+      <workItem from="1702196875089" duration="9326000" />
     </task>
     <task id="LOCAL-00001" summary="Complete setup">
       <option name="closed" value="true" />
@@ -547,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702043483873</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Update views and improve admin menu handling.&#10;&#10;This commit makes several modifications to frontend routes and views, improving how navigation options are displayed for admin users. A function is added to the admin menu to display different options based on the user's role. Visual updates also include changing the user chat interface to ChatChit and updating the TodoView display message to be more relevant to the application's context.">
+      <option name="closed" value="true" />
+      <created>1702203971798</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1702203971798</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat get &amp; create conversation" />
     <MESSAGE value="feat: setup redis handle save" />
     <MESSAGE value="attach redis and flux together" />
     <MESSAGE value="feat(online): set up user online" />
@@ -612,7 +613,8 @@
     <MESSAGE value="no related mui" />
     <MESSAGE value="remove MUI due to incompatibility with intellij (CPU upto 80%)" />
     <MESSAGE value="Update README for ChatRocket project&#10;&#10;The README file has been updated to reflect the details of the ChatRocket project instead of the previous Hilla custom project. It now includes details about the features, set-up, and running instructions for the ChatRocket application. Additionally, Docker build and deployment instructions are added, providing an alternative way to run the application." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README for ChatRocket project&#10;&#10;The README file has been updated to reflect the details of the ChatRocket project instead of the previous Hilla custom project. It now includes details about the features, set-up, and running instructions for the ChatRocket application. Additionally, Docker build and deployment instructions are added, providing an alternative way to run the application." />
+    <MESSAGE value="Update views and improve admin menu handling.&#10;&#10;This commit makes several modifications to frontend routes and views, improving how navigation options are displayed for admin users. A function is added to the admin menu to display different options based on the user's role. Visual updates also include changing the user chat interface to ChatChit and updating the TodoView display message to be more relevant to the application's context." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update views and improve admin menu handling.&#10;&#10;This commit makes several modifications to frontend routes and views, improving how navigation options are displayed for admin users. A function is added to the admin menu to display different options based on the user's role. Visual updates also include changing the user chat interface to ChatChit and updating the TodoView display message to be more relevant to the application's context." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

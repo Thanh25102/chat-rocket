@@ -1,6 +1,7 @@
 package com.hillarocket.application.bootstrap;
 
 import com.github.javafaker.Faker;
+import com.hillarocket.application.domain.Role;
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.repo.UserRepo;
 import org.springframework.boot.CommandLineRunner;
@@ -35,10 +36,12 @@ public class Initialize implements CommandLineRunner {
     }
 
     private void saveUserWithDefaultValues() {
-        User user = new User();
-        user.setFullName(faker.name().fullName());
-        user.setEmail(faker.internet().emailAddress());
-        user.setPassword(passwordEncoder.encode(DEFAULT_PASSWORD));
+        User user = User.builder()
+                .fullName(faker.name().fullName())
+                .email(faker.internet().emailAddress())
+                .password(passwordEncoder.encode(DEFAULT_PASSWORD))
+                .role(Role.USER)
+                .build();
         userRepo.save(user);
     }
 }
