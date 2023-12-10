@@ -1,18 +1,17 @@
 import {useState} from "react";
 import {Loading} from "Frontend/views/auth/login/LoginView";
 import {Img} from "react-image";
-import {useNavigate} from "react-router-dom";
 
+const host = "http://103.20.102.120:8080"
+// const host = "http://localhost:8080"
 const SignInWithGithub = () => {
     const [loading, setLoading] = useState<boolean>(false);
-
-    const navigate = useNavigate();
 
     const handleClick = async (e: any) => {
         setLoading(true);
         e.preventDefault();
         // await signIn("github", { callbackUrl: '/' })
-        location.href = "http://localhost:8080/oauth2/authorization/github"
+        location.href = `${host}/oauth2/authorization/github`
         setLoading(false);
     }
 

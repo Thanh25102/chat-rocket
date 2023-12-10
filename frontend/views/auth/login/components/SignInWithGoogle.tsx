@@ -1,12 +1,14 @@
 import {useState} from "react";
 import {Loading} from "Frontend/views/auth/login/LoginView";
 
+const host = "http://103.20.102.120:8080"
+// const host = "http://localhost:8080"
 const SignInWithGoogle = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     const handleClick = (e: any) => {
         e.preventDefault();
-        location.href = "http://localhost:8080/oauth2/authorization/google"
+        location.href = `${host}/oauth2/authorization/github`
     }
 
     return (
