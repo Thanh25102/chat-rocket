@@ -15,8 +15,10 @@ import {Avatar} from "Frontend/components/avatar/Avatar";
 export default function ChatChit() {
     const [items, setItems] = useState<MessageListItem[]>([]);
     const user = useAppSelector(AuthSelectors.getCurrentUser());
-    if (!user) return <Navigate to={"/login"} replace/>;
     const currentConversation = useAppSelector(ChatSelectors.getCurrentConversation())
+
+    if (!user) return <Navigate to={"/login"} replace/>;
+    if (!currentConversation || !currentConversation.conversationId) return <Navigate to={"/"} replace/>;
 
     useEffect(() => {
         if (!currentConversation || !currentConversation.conversationId) return;
@@ -31,27 +33,6 @@ export default function ChatChit() {
             setItems([])
         }
     }, [currentConversation, currentConversation?.conversationId]);
-
-    const [userFocused, setUserFocused] = useState<string[]>([]);
-
-    const handleMessage = (msg: string) => {
-        if (!currentConversation || !currentConversation.conversationId) return;
-        const message = {
-            messageText: msg,
-            senderName: user.fullName,
-            senderId: user.id,
-            conversationId: currentConversation.conversationId,
-            time: new Date().toISOString()
-        }
-        ChatEndpoint.send(currentConversation.conversationId, message)
-        ChatEndpoint2.send(currentConversation.users.map(u => u.id), message)
-    }
-    const handleConversationName = () => {
-        if (!currentConversation) return "Chat";
-        if (currentConversation.conversationName) return currentConversation.conversationName;
-        const userGroup = currentConversation.users.filter(u => u.id !== user.id)
-        return userGroup.map(u => u.fullName).join(", ");
-    }
 
     useEffect(() => {
         if (!currentConversation || !currentConversation.conversationId) return;
@@ -68,19 +49,42 @@ export default function ChatChit() {
         }
     }, [currentConversation, currentConversation?.conversationId]);
 
+    const [userFocused, setUserFocused] = useState<string[]>([]);
+
+    const handleMessage = (msg: string) => {
+        if (!currentConversation || !currentConversation.conversationId) return;
+        const message = {
+            "messageText": msg,
+            "senderName": user.fullName,
+            "senderId": user.id,
+            "conversationId": currentConversation.conversationId,
+            "time": new Date().toISOString()
+        }
+        ChatEndpoint.send(currentConversation.conversationId, message)
+        ChatEndpoint2.send(currentConversation.users.map(u => u.id), message)
+    }
+
+    const handleConversationName = () => {
+        if (!currentConversation) return "Chat";
+        if (currentConversation.conversationName) return currentConversation.conversationName;
+        const userGroup = currentConversation.users.filter(u => u.id !== user.id)
+        return userGroup.map(u => u.fullName).join(", ");
+    }
+
+
     const handleFocus = () => ChatEndpoint.focus(currentConversation?.conversationId, {
-        isFocus: true,
-        fullName: user.fullName
+        "isFocus": true,
+        "fullName": user.fullName
     });
 
     const handleBlur = () => ChatEndpoint.focus(currentConversation?.conversationId, {
-        isFocus: false,
-        fullName: user.fullName
+        "isFocus": false,
+        "fullName": user.fullName
     });
 
     return (
-        <div className={"content"} style={{height: "90vh", display: "flex", flexDirection: "column"}}>
-            <div style={{display: "flex", alignItems: "center", height: "10vh"}} className={"space-x-4 ml-4 py-2"}>
+        <div className={"content"} style={{"height": "90vh", "display": "flex", "flexDirection": "column"}}>
+            <div style={{"display": "flex", "alignItems": "center", "height": "10vh"}} className={"space-x-4 ml-4 py-2"}>
                 <Avatar
                     names={currentConversation?.users.filter(u => u.id !== user.id).map(u => u.fullName || "u") || ["U"]}
                     size={36}/>
@@ -91,7 +95,7 @@ export default function ChatChit() {
                     <span className="text-xs">Online 3p truoc</span>
                 </div>
             </div>
-            <MessageList items={items} className={"flex-grow"} style={{maxHeight: "800px", overflowY: "scroll"}}/>
+            <MessageList items={items} className={"flex-grow"} style={{"maxHeight": "800px", "overflowY": "scroll"}}/>
             <div>
                 {
                     userFocused.filter(u => u !== user.fullName).length > 0 && (
@@ -103,7 +107,7 @@ export default function ChatChit() {
                         </div>
                     )
                 }
-                <MessageInput className={"flex-grow"} style={{height: "60px"}} onFocus={handleFocus} onBlur={handleBlur}
+                <MessageInput className={"flex-grow"} style={{"height": "60px"}} onFocus={handleFocus} onBlur={handleBlur}
                               onSubmit={(e: CustomEvent) => handleMessage(e.detail.value)}/>
             </div>
 

@@ -10,6 +10,7 @@ import {UserEndpoint} from "Frontend/generated/endpoints";
 import OnlineEvent from "Frontend/generated/com/hillarocket/application/dto/OnlineEvent";
 import UserStatus from "Frontend/generated/com/hillarocket/application/enumration/UserStatus";
 import {AuthSelectors} from "Frontend/redux/feat/auth/authSelectors";
+import ConversionType from "Frontend/generated/com/hillarocket/application/enumration/ConversionType";
 
 type Props = {
     conversations?: ConversationMessage[]
@@ -45,6 +46,17 @@ export const ConversationTabs: FC<Props> = ({conversations = []}) => {
     }, [usersOnline])
 
     return <Tabs slot="drawer" orientation="vertical">
+        <Tab key={"/chat-bot-streaming"}>
+            <NavLink to={"/chat-bot-streaming"} tabIndex={-1} className="flex justify-between gap-x-6 py-3">
+                <NavItem conversation={{
+                    conversationId: "chat-gpt-key",
+                    messages: [],
+                    conversationName: "ChatRocket bot support",
+                    users: [{fullName: "AI Support"}],
+                    conversionType: ConversionType.SINGLE,
+                }} isOnline={true}/>
+            </NavLink>
+        </Tab>
         {
             conversations.map((c) =>
                 <Tab key={c.conversationId}>

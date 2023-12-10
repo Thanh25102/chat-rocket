@@ -21,10 +21,7 @@ import reactor.core.publisher.Sinks;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
@@ -55,8 +52,8 @@ public class ChatHandler {
     }
 
     public Flux<MessageDto> join(String roomId) {
-        Sinks.Many<MessageDto> sink = chatRooms.computeIfAbsent(roomId, id -> Sinks.many().multicast().directBestEffort());
-        return replayedFluxes.computeIfAbsent(roomId, id -> sink.asFlux());
+        Sinks.Many<MessageDto> sink = chatRooms.computeIfAbsent(roomId, _ -> Sinks.many().multicast().directBestEffort());
+        return replayedFluxes.computeIfAbsent(roomId, _ -> sink.asFlux());
     }
 
     public void send(String roomId, MessageDto message) {
@@ -82,19 +79,20 @@ public class ChatHandler {
 
     public List<ConversationMessage> getConversationByUserId(UUID userId) {
         var conversations = conversationRepo.findConversationByUserId(userId);
+
         return conversations.stream().map(conversation -> {
-            var users = conversation.getGroupMembers().stream().map(mem -> userMapper.toUserDto(mem.getUser())).toList();
-            var lastedMessageRedis = getLatestMessages(conversation);
-            var lastedMessage = lastedMessageRedis == null || lastedMessageRedis.isEmpty() ?
-                    messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList().stream().map(messageMapper::toMsgDto).toList() : lastedMessageRedis;
-            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, lastedMessage);
+            var users = conversation.getGroupMembers()
+                    .stream().map(mem -> userMapper.toUserDto(mem.getUser()))
+                    .toList();
+
+            return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, getLatestMessages(conversation));
         }).toList();
     }
 
     public List<ConversationMessage> getConversationGroupByName(String name) {
         var conversations = conversationRepo.findConversationGroupByName(name, ConversionType.GROUP);
         return conversations.stream().map(conversation -> {
-            var users = convertGroupMembersToUserDto(conversation.getGroupMembers());
+            var users = getUserDtoListFromGroupMembers(conversation.getGroupMembers());
             return new ConversationMessage(conversation.getId(), conversation.getName(), conversation.getType(), users, List.of());
         }).toList();
     }
@@ -163,20 +161,17 @@ public class ChatHandler {
         return this.getConversationById(conversation.getId().toString());
     }
 
-
-    private List<UserDto> convertGroupMembersToUserDto(@Nonnull Set<GroupMember> groupMembers) {
+    private List<UserDto> getUserDtoListFromGroupMembers(@Nonnull Set<GroupMember> groupMembers) {
         return groupMembers.stream()
                 .map(mem -> userMapper.toUserDto(mem.getUser()))
                 .toList();
     }
 
     private List<MessageDto> getLatestMessages(@Nonnull Conversation conversation) {
-        var lastedMessageRedis = redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1);
-        return lastedMessageRedis == null || lastedMessageRedis.isEmpty() ?
-                messageRepo.findNewestMessageByConversationId(conversation.getId()).stream().toList()
-                        .stream().map(messageMapper::toMsgDto)
-                        .toList() :
-                lastedMessageRedis;
+        var lastedMessageRedis = Optional.ofNullable(redisTemplate.opsForList().range(conversation.getId().toString(), 0, -1));
+        return lastedMessageRedis.orElseGet(() ->
+                messageRepo.findNewestMessageByConversationId(conversation.getId())
+                        .stream().map(messageMapper::toMsgDto).toList()
+        );
     }
-
 }

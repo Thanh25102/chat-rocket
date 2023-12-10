@@ -24,7 +24,6 @@ const options = [
 
 ]
 const RecoverOption = () => {
-    const [items, setItems] = useState(options);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false)
     const location = useLocation();
@@ -34,29 +33,18 @@ const RecoverOption = () => {
 
     if (!user) return <Navigate to={"/login"}/>
 
-
     const handleContinue = useCallback(() => {
         setLoading(true)
-        selectedValue === "EMAIL" && UserEndpoint.recoverAccount(user.email).then(() => navigate("/recover/code", {state: {user: user}})).catch(() =>
-            Notification.show('Something went wrong, please try again!', {
-                position: 'bottom-start',
-                duration: 0,
-            })
-        ).finally(() => setLoading(false));
+        if (selectedValue === "EMAIL")
+            UserEndpoint.recoverAccount(user.email)
+                .then(() => navigate("/recover/code", {state: {user: user}}))
+                .catch(() =>
+                    Notification.show('Something went wrong, please try again!', {
+                        position: 'bottom-start',
+                        duration: 0,
+                    }))
+                .finally(() => setLoading(false));
     }, [user.email, selectedValue])
-
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedValue(event.target.value);
-    };
-    const controlProps = (item: string) => ({
-        checked: selectedValue === item,
-        onChange: handleChange,
-        value: item,
-        name: 'color-radio-button-demo',
-        inputProps: {'aria-label': item},
-    });
-
 
     return (
         <div className='p-4 px-8 flex flex-col h-full justify-between'>
@@ -73,7 +61,7 @@ const RecoverOption = () => {
                 </h4>
                 <div className='mb-2 flex flex-row justify-between my-4'>
                     <RadioGroup theme="vertical">
-                        {items.map(card =>
+                        {options.map(card =>
                             <RadioButton value={card.id} key={card.id}
                                          style={{
                                              '--vaadin-input-field-border-width': '2px',

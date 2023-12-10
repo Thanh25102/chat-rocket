@@ -7,7 +7,6 @@ import {UserManagement} from "Frontend/views/admin/user/UserManagement";
 import RegisterView from "Frontend/views/auth/register/RegisterView";
 import SendCodeView from "Frontend/views/auth/code/SendCodeView";
 import MainAdmin from "Frontend/views/admin/MainAdmin";
-import ChatReact from "Frontend/views/chat/ChatReact";
 import AuthLayout from "Frontend/views/AuthLayout";
 import IdentifyAccount from "Frontend/views/auth/account/IdentifyAccount";
 import RecoverOption from "Frontend/views/auth/option/RecoverOption";
@@ -16,6 +15,7 @@ import ChangePassword from "Frontend/views/auth/password/ChangePassword";
 const TodoView = lazy(async () => import('Frontend/views/todo/TodoView.js'));
 const ChatNormal = lazy(async () => import('Frontend/views/chat/ChatGPT/ChatNormal'));
 const ChatStreaming = lazy(async () => import('Frontend/views/chat/ChatGPT/ChatStreaming'));
+const ChatChit = lazy(async () => import('Frontend/views/chat/ChatChit'));
 
 export const routes: readonly RouteObject[] = [
     {
@@ -29,7 +29,7 @@ export const routes: readonly RouteObject[] = [
             {path: '/', element: <TodoView/>, handle: {icon: 'list-alt-solid', title: 'Todo'}},
             {path: '/chat-bot-normal', element: <ChatNormal/>, handle: {icon: 'list-alt-solid', title: 'ChatGPT'}},
             {path: '/chat-bot-streaming', element: <ChatStreaming/>, handle: {icon: 'list-alt-solid', title: 'ChatGPT'}},
-            {path: '/chat-user', element: <ChatReact/>, handle: {icon: 'list-alt-solid', title: 'ChatChit'}},
+            {path: '/chat-user', element: <ChatChit/>, handle: {icon: 'list-alt-solid', title: 'ChatChit'}},
         ],
     },
     {

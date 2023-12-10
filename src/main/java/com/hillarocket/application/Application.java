@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.concurrent.Executors;
+import java.util.function.Function;
 
 
 /**
@@ -24,12 +25,14 @@ import java.util.concurrent.Executors;
 @Slf4j
 @Theme(value = "hilla-rocket")
 public class Application implements AppShellConfigurator {
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Bean
     TomcatProtocolHandlerCustomizer<?> protocolHandlerVirtualThreadExecutorCustomizer() {
+
         return protocolHandler -> protocolHandler.setExecutor(Executors.newVirtualThreadPerTaskExecutor());
     }
 
