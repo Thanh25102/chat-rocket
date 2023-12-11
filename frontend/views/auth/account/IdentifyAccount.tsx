@@ -57,6 +57,7 @@ const IdentifyAccount = () => {
                         <Button
                             className='font-bold text-[0.9rem] rounded-l text-dark-text'
                             // onClick={submit}
+                            onClick={()=>navigate("/login")}
                             style={{backgroundColor: 'hsla(214, 87%, 92%, 0.69)', color: 'hsl(214, 35%, 21%)'}}
                         >
                             Cancel

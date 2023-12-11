@@ -35,7 +35,14 @@ services:
     restart: always
     ports:
       - "8081:8080"
-
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
 volumes:
   my_dbdata:
     driver: local

@@ -1,5 +1,5 @@
 # ---- Build Stage ----
-FROM openjdk:21 AS build
+FROM maven:3.9.5-sapmachine-21 AS build
 
 # Set the working directory in the Docker image
 WORKDIR /app
@@ -10,13 +10,14 @@ COPY .mvn .mvn
 COPY pom.xml .
 
 # Download all dependencies
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # Copy the source code
 COPY . .
 
+
 # Package the application with the production profile
-RUN ./mvnw package -Pproduction -DskipTests
+RUN mvn package -Pproduction -DskipTests
 
 # ---- Run Stage ----
 FROM openjdk:21

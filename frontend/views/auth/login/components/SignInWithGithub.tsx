@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Loading} from "Frontend/views/auth/login/LoginView";
 import {Img} from "react-image";
 
-const host = "http://103.20.102.120:8080"
+const host = "https://manhthanh.click"
 // const host = "http://localhost:8080"
 const SignInWithGithub = () => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const SignInWithGithub = () => {
                     width={20}
                     height={20}
                     alt='github'
-                    src='../../../../../src/main/resources/META-INF/resources/icons/github.png'
+                    src='icons/github.png'
                     className='w-[20px] h-[20xp] bg-[transparent]'
                 />
             }

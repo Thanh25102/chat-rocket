@@ -44,6 +44,7 @@ public class UserEndpoint {
         return userHandler.getAll();
     }
 
+    @AnonymousAllowed
     public Optional<UserDto> findByEmail(@Nonnull String email) {
         return userHandler.findByEmail(email);
     }

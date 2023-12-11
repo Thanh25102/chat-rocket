@@ -1,14 +1,14 @@
 import {useState} from "react";
 import {Loading} from "Frontend/views/auth/login/LoginView";
 
-const host = "http://103.20.102.120:8080"
+const host = "https://manhthanh.click"
 // const host = "http://localhost:8080"
 const SignInWithGoogle = () => {
     const [loading, setLoading] = useState<boolean>(false);
 
     const handleClick = (e: any) => {
         e.preventDefault();
-        location.href = `${host}/oauth2/authorization/github`
+        location.href = `${host}/oauth2/authorization/google`
     }
 
     return (
@@ -23,7 +23,7 @@ const SignInWithGoogle = () => {
                     width={20}
                     height={20}
                     alt='google'
-                    src='../../../../../src/main/resources/META-INF/resources/icons/google.png'
+                    src='icons/google.png'
                     className='w-[20px] h-[20xp]'
                 />
             }
