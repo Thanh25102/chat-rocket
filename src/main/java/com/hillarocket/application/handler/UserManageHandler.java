@@ -1,5 +1,6 @@
 package com.hillarocket.application.handler;
 
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.hillarocket.application.domain.User;
 import com.hillarocket.application.repo.UserRepo;
 import dev.hilla.BrowserCallable;
@@ -12,7 +13,8 @@ import java.util.List;
 import java.util.UUID;
 
 @BrowserCallable
-@RolesAllowed("ROLE_ADMIN")
+// @RolesAllowed("ROLE_ADMIN")
+@AnonymousAllowed
 public class UserManageHandler extends CrudRepositoryService<User, UUID, UserRepo> {
     private final PasswordEncoder passwordEncoder;
 
